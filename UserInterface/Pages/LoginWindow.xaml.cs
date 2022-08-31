@@ -57,7 +57,11 @@ namespace UserInterface.Pages
                 }
                 else
                 {
-                    if (user.Correo == null || user.Contrasenahashed == null)
+                    if (tbx_Username.Text.Length == 0 || pwbx_Password.Text.Length == 0)
+                    {
+                        handleAlert(Visibility.Visible, "Datos faltantes.");
+                    }
+                    else if (user.Correo == null || user.Contrasenahashed == null)
                     {
                         handleAlert(Visibility.Visible, "Usuario no existe.");
                     }
