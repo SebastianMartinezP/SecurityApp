@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Oe4fYBxo9sD7vSwt2MRTHMiduqa8QO5evIu1UefaYac6Hqky2kOvldHqIV8DEOCB+514YfJwSS9ehZ5bGEpzfg==",
+  "dgSpecHash": "3y+hjbSQrGC9Qu+FnFwwt4MVM/ej/WhgN3DU9uXePngFtE1F1ih14n3DAIu+b7IQYwBuWE2RBQiTzBls5KD/aQ==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
   "expectedPackageFiles": [
@@ -39,7 +39,8 @@
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\wpf-ui\\2.0.2\\wpf-ui.2.0.2.nupkg.sha512"
   ],
   "logs": []
 }

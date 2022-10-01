@@ -671,6 +671,25 @@
           }
         }
       },
+      "WPF-UI/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Wpf.Ui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Wpf.Ui.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Database/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -684,6 +703,23 @@
         "runtime": {
           "bin/placeholder/Database.dll": {}
         }
+      },
+      "UserInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Database": "1.0.0",
+          "WPF-UI": "2.0.2"
+        },
+        "compile": {
+          "bin/placeholder/UserInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserInterface.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -1624,10 +1660,42 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "WPF-UI/2.0.2": {
+      "sha512": "Nj2Viy7dbqin4L//9c99wo2cYOT90uG2k1JAGnXbnbvKAOAbERwGxIm3sAKziB21RP9hKW/Z2jurAsZ4Xu0Tkg==",
+      "type": "package",
+      "path": "wpf-ui/2.0.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net461/Wpf.Ui.dll",
+        "lib/net461/Wpf.Ui.xml",
+        "lib/net47/Wpf.Ui.dll",
+        "lib/net47/Wpf.Ui.xml",
+        "lib/net48/Wpf.Ui.dll",
+        "lib/net48/Wpf.Ui.xml",
+        "lib/net5.0-windows7.0/Wpf.Ui.dll",
+        "lib/net5.0-windows7.0/Wpf.Ui.xml",
+        "lib/net6.0-windows7.0/Wpf.Ui.dll",
+        "lib/net6.0-windows7.0/Wpf.Ui.xml",
+        "lib/netcoreapp3.1/Wpf.Ui.dll",
+        "lib/netcoreapp3.1/Wpf.Ui.xml",
+        "tools/VisualStudioToolsManifest.xml",
+        "wpf-ui.2.0.2.nupkg.sha512",
+        "wpf-ui.nuspec",
+        "wpfui.png"
+      ]
+    },
     "Database/1.0.0": {
       "type": "project",
       "path": "../Database/Database.csproj",
       "msbuildProject": "../Database/Database.csproj"
+    },
+    "UserInterface/1.0.0": {
+      "type": "project",
+      "path": "../UserInterface/UserInterface.csproj",
+      "msbuildProject": "../UserInterface/UserInterface.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1636,7 +1704,8 @@
       "Database >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
-      "Oracle.EntityFrameworkCore >= 6.21.61"
+      "Oracle.EntityFrameworkCore >= 6.21.61",
+      "UserInterface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1668,6 +1737,9 @@
           "projectReferences": {
             "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
               "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+            },
+            "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj": {
+              "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj"
             }
           }
         }
