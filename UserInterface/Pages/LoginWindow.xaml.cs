@@ -45,7 +45,7 @@ namespace UserInterface.Pages
                 this.username = tbx_Username.Text;
                 this.password = pwbx_Password.Text;
 
-                Database.Models.Usuario? user = Business.Usuario.getUsuario(this.username, this.password);
+                Database.Models.Usuario? user = Business.Usuario.GetUsuario(this.username, this.password);
 
 
                 //Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();

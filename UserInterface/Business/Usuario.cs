@@ -13,14 +13,14 @@ namespace UserInterface.Business
     public static class Usuario
     {
         #region Read 
-        public static Database.Models.Usuario? getUsuario(string username, string pass)
+        public static Database.Models.Usuario? GetUsuario(string username, string pass)
         {
 			try
 			{
 				using (ModelContext context = new ModelContext())
 				{
-                    Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(user => 
-                        user.Correo.Equals(username) && user.Contrasenahashed.Equals(pass));
+                    Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(u => 
+                        u.Correo.Equals(username) && u.Contrasenahashed.Equals(pass));
 
 					if (usuario == null)
 					{
@@ -37,7 +37,7 @@ namespace UserInterface.Business
             }
         }
 
-        public static List<Database.Models.Usuario> getAllUsuario()
+        public static List<Database.Models.Usuario> GetAllUsuario()
         {
             try
             {
@@ -64,14 +64,17 @@ namespace UserInterface.Business
         #endregion
 
         #region Create
-        public static bool? Save(Database.Models.Usuario usuarioSave)
+        public static bool? Create(Database.Models.Usuario usuarioSave)
 		{
 			try
 			{
                 using (ModelContext context = new ModelContext())
                 {
-                    Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(user =>
-                        user.Correo.Equals(usuarioSave.Correo) && user.Contrasenahashed.Equals(usuarioSave.Contrasenahashed));
+                    Database.Models.Usuario? usuario = context.Usuario
+                        .FirstOrDefault(u =>
+                            u.Correo.Equals(usuarioSave.Correo) 
+                            && u.Contrasenahashed.Equals(usuarioSave.Contrasenahashed)
+                        );
 
                     if (usuario != null) // encontró un registro existente, no guardar.
                     {
@@ -100,8 +103,11 @@ namespace UserInterface.Business
             {
                 using (ModelContext context = new ModelContext())
                 {
-                    Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(user =>
-                        user.Correo.Equals(usuarioUpdate.Correo) && user.Contrasenahashed.Equals(usuarioUpdate.Contrasenahashed));
+                    Database.Models.Usuario? usuario = context.Usuario
+                        .FirstOrDefault(u =>
+                            u.Correo.Equals(usuarioUpdate.Correo) 
+                            && u.Contrasenahashed.Equals(usuarioUpdate.Contrasenahashed)
+                        );
 
                     if (usuario == null) // no encontró un registro existente, no actualizar.
                     {
@@ -134,8 +140,11 @@ namespace UserInterface.Business
             {
                 using (ModelContext context = new ModelContext())
                 {
-                    Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(user =>
-                        user.Correo.Equals(usuarioDisable.Correo) && user.Contrasenahashed.Equals(usuarioDisable.Contrasenahashed));
+                    Database.Models.Usuario? usuario = context.Usuario
+                        .FirstOrDefault(u =>
+                            u.Correo.Equals(usuarioDisable.Correo) 
+                            && u.Contrasenahashed.Equals(usuarioDisable.Contrasenahashed)
+                        );
 
                     if (usuario == null) // no encontró un registro existente, no deshabilitar.
                     {

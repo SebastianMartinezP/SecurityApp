@@ -8,7 +8,7 @@ ModelContext context = new ModelContext();
 #region Read
 
 //Database.Models.Usuario? usuarioRead =
-//    UserInterface.Business.Usuario.getUsuario("sebas.martinezp@duocuc.cl", "hashed123");
+//    UserInterface.Business.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
 
 //if (usuarioRead != null)
 //{
@@ -29,7 +29,7 @@ ModelContext context = new ModelContext();
 #region ReadAll
 
 //List<Database.Models.Usuario> usuariosRead =
-//    UserInterface.Business.Usuario.getAllUsuario();
+//    UserInterface.Business.Usuario.GetAllUsuario();
 
 //if (usuariosRead.Any())
 //{
@@ -42,7 +42,7 @@ ModelContext context = new ModelContext();
 //        Console.WriteLine(user.Contrasenahashed);
 //        Console.WriteLine(user.Ishabilitado);
 //    }
-    
+
 //}
 //else
 //{
@@ -62,7 +62,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var result = UserInterface.Business.Usuario.Save(usuarioCreate);
+//var result = UserInterface.Business.Usuario.Create(usuarioCreate);
 
 //if (result != null)
 //{
@@ -152,6 +152,79 @@ ModelContext context = new ModelContext();
 //    else
 //    {
 //        Console.WriteLine("NO Actualizo");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+#endregion
+
+
+#region Testing CRUD PerfilUsuario
+
+#region Create
+
+//Database.Models.PerfilUsuario perfilUsuarioCreate = new Database.Models.PerfilUsuario()
+//{
+//    Descripcion = "Testing123"
+//};
+
+//var result = UserInterface.Business.PerfilUsuario.Create(perfilUsuarioCreate);
+
+//if (result != null)
+//{
+//    if (result == true)
+//    {
+//        Console.WriteLine("OK");
+//        Console.WriteLine(perfilUsuarioCreate.Idperfil);
+//        Console.WriteLine(perfilUsuarioCreate.Descripcion);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+#region Read
+
+//Database.Models.PerfilUsuario? perfilUsuarioRead = UserInterface.Business.PerfilUsuario.GetPerfilUsuario("Admin");
+//if (perfilUsuarioRead != null)
+//{
+//    Console.WriteLine("OK");
+//    Console.WriteLine(perfilUsuarioRead.Idperfil);
+//    Console.WriteLine(perfilUsuarioRead.Descripcion);
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+#region ReadAll
+
+//List<Database.Models.PerfilUsuario> perfilUsuarioReadAll = 
+//    UserInterface.Business.PerfilUsuario.GetAllPerfilUsuario();
+
+//if (perfilUsuarioReadAll.Any())
+//{
+//    Console.WriteLine("OK");
+//    foreach (var p in perfilUsuarioReadAll)
+//    {
+//        Console.WriteLine(p.Idperfil);
+//        Console.WriteLine(p.Descripcion);
 //    }
 
 //}
