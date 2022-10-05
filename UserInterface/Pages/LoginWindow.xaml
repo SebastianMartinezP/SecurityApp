@@ -1,4 +1,4 @@
-﻿<ui:UiWindow
+﻿<mah:MetroWindow
     
     x:Class="UserInterface.Pages.LoginWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -7,12 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:UserInterface.Pages"
     
-    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    Background="{ui:ThemeResource ApplicationBackgroundBrush}"
-    ExtendsContentIntoTitleBar="True"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     
-    WindowBackdropType="Mica"
-    WindowCornerPreference="Round"
     WindowStartupLocation="CenterScreen" 
     WindowStyle="None"
     
@@ -59,12 +56,13 @@
             Orientation="Horizontal"
             HorizontalAlignment="Left"
             Margin="10">
-                <ui:SymbolIcon
-                    Symbol="Person12"
-                    Filled="False"
+                <iconPacks:PackIconFontAwesome
+                    Kind="UserAltSolid"
+                    
                     FontSize="24"
                     Foreground="White"
                     Margin="0,0,10,0"/>
+
                 <TextBox x:Name="tbx_Username" 
                          Width="250"
                          FontSize="20"/>
@@ -74,13 +72,13 @@
             Orientation="Horizontal"
             HorizontalAlignment="Left"
             Margin="10">
-                <ui:SymbolIcon
-                    Symbol="LockClosed12"
-                    Filled="False"
+                <iconPacks:PackIconFontAwesome
+                    Kind="LockSolid"
                     FontSize="24"
                     Foreground="White"
                     Margin="0,0,10,0"/>
-                <ui:PasswordBox x:Name="pwbx_Password" 
+
+                <PasswordBox x:Name="pwbx_Password" 
                          Width="250"
                          FontSize="20"/>
 
@@ -91,9 +89,8 @@
             Orientation="Horizontal"
             HorizontalAlignment="Center"
             Margin="10">
-                <ui:SymbolIcon
-                    Symbol="ErrorCircle12"
-                    Filled="False"
+                <iconPacks:PackIconFontAwesome
+                    Kind="WindowCloseSolid"
                     FontSize="24"
                     Foreground="#E1AD01"
                     Margin="0,0,10,0"/>
@@ -115,12 +112,5 @@
                 HorizontalAlignment="Center"
                 Click="Login"/>
         </StackPanel>
-
-        <!--  Title Bar  -->
-        <ui:TitleBar
-            CanMaximize="False"
-            ShowMaximize="False"
-            Grid.Row="0">
-        </ui:TitleBar>
     </Grid>
-</ui:UiWindow>
+</mah:MetroWindow>

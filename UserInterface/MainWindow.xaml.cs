@@ -13,8 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Wpf.Ui.Controls;
-using Wpf.Ui.Extensions;
+using MahApps.Metro.Controls;
 
 
 namespace UserInterface
@@ -22,18 +21,19 @@ namespace UserInterface
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Wpf.Ui.Controls.UiWindow
+    public partial class MainWindow : MetroWindow
     {
         public string? username { get; set; }
 
-        public MainWindow() => InitializeComponent();
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         public MainWindow(string username)
         {
             this.username = username;
             InitializeComponent();
-            this.RemoveTitlebar();
-            this.ApplyBackdrop(Wpf.Ui.Appearance.BackgroundType.Mica);
 
         }
     }

@@ -47,3 +47,9 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Database.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Database.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\ControlzEx.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\MahApps.Metro.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Core.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.FontAwesome.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll

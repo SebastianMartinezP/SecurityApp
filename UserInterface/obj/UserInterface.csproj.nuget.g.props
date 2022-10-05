@@ -18,6 +18,8 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgWPF-UI Condition=" '$(PkgWPF-UI)' == '' ">C:\Users\Seba\.nuget\packages\wpf-ui\2.0.2</PkgWPF-UI>
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Seba\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Seba\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.8</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\Seba\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
   </PropertyGroup>
 </Project>
