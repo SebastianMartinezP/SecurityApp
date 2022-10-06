@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Oe4fYBxo9sD7vSwt2MRTHMiduqa8QO5evIu1UefaYac6Hqky2kOvldHqIV8DEOCB+514YfJwSS9ehZ5bGEpzfg==",
+  "dgSpecHash": "1BcfKBrmN/slW1j2BEdsUEcGO3ch6FjZzaj7v/S4xbngwL55Ex8x0NF9IBFb9B+ginIsXmsFKOmLzoVXbYluvQ==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Seba\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro.iconpacks.fontawesome\\4.11.0\\mahapps.metro.iconpacks.fontawesome.4.11.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.8\\microsoft.entityframeworkcore.abstractions.6.0.8.nupkg.sha512",
@@ -24,6 +27,7 @@
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.4\\microsoft.netcore.platforms.5.0.4.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.entityframeworkcore\\6.21.61\\oracle.entityframeworkcore.6.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.61\\oracle.manageddataaccess.core.3.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
@@ -39,7 +43,9 @@
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Seba\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\wpf-ui\\2.0.2\\wpf-ui.2.0.2.nupkg.sha512"
   ],
   "logs": []
 }

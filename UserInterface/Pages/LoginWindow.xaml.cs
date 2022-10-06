@@ -5,12 +5,12 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-using Wpf.Ui.Controls;
-using Wpf.Ui.Extensions;
+using MahApps.Metro.Controls;
+using ControlzEx.Theming;
 
 namespace UserInterface.Pages
 {
-    public partial class LoginWindow : Wpf.Ui.Controls.UiWindow
+    public partial class LoginWindow : MetroWindow
     {
         private string? username { get; set; }
         private string? password { get; set; }
@@ -29,11 +29,8 @@ namespace UserInterface.Pages
         public LoginWindow()
         {
             InitializeComponent();
-
-            this.RemoveTitlebar();
-            this.ApplyBackdrop(Wpf.Ui.Appearance.BackgroundType.Mica);
-
             handleAlert(Visibility.Hidden, "Error");
+            ThemeManager.Current.ChangeTheme(this, "Dark.Blue");
         }
 
         
@@ -43,9 +40,9 @@ namespace UserInterface.Pages
             {
 
                 this.username = tbx_Username.Text;
-                this.password = pwbx_Password.Text;
+                this.password = pwbx_Password.Password;
 
-                Database.Models.Usuario? user = Business.LoginWindow.getUsuario(this.username, this.password);
+                Database.Models.Usuario? user = Business.Usuario.GetUsuario(this.username, this.password);
 
 
                 //Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
@@ -57,7 +54,7 @@ namespace UserInterface.Pages
                 }
                 else
                 {
-                    if (tbx_Username.Text.Length == 0 || pwbx_Password.Text.Length == 0)
+                    if (tbx_Username.Text.Length == 0 || pwbx_Password.Password.Length == 0)
                     {
                         handleAlert(Visibility.Visible, "Datos faltantes.");
                     }
