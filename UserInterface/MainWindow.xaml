@@ -10,28 +10,87 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     
+
     
-    WindowStartupLocation="CenterScreen" Height="497" Width="974"
+    WindowStartupLocation="CenterScreen" 
+    Height="600" 
+    Width="974"
     
-    >
-    <Grid>
+    MinHeight="600" 
+    MinWidth="974"
+    
+    MaxHeight="600" 
+    MaxWidth="974"
+    
+    Background="#333">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid
-        x:Name="RootMainGrid"
-        Grid.Row="1"
-        Margin="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid HorizontalAlignment="Center" Margin="70">
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <mah:Tile Name="tileProfesionales" Title="Profesionales" Click="tileProfesionales_Click">
+                    </mah:Tile>
+
+                    <mah:Tile Title="Clientes">
+                    </mah:Tile>
+
+                    <mah:Tile Title="Actividades">
+                    </mah:Tile>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <mah:Tile Title="Contratos">
+                    </mah:Tile>
+
+                    <mah:Tile Title="Pagos">
+                    </mah:Tile>
+
+                    <mah:Tile Title="Alertas">
+                    </mah:Tile>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <mah:Tile Title="Checklists" >
+                    </mah:Tile>
+
+                    <mah:Tile Title="Usuarios" >
+                    </mah:Tile>
+
+                    <mah:Tile Title="Perfiles de usuario" >
+                    </mah:Tile>
+                </StackPanel>
+            </StackPanel>
         </Grid>
 
 
+        <!-- Flyout -->
+
+        <mah:Flyout Name="Flyout" IsOpen="True">
+            <mah:FlyoutsControl >
+                <mah:Flyout Header="Settings" Position="Right" Width="1000" Height="500">
+                    
+                </mah:Flyout>
+                <Label Content="jgskjfsd"></Label>
+                <mah:Flyout Header="About" IsOpen="{Binding IsAboutFlyoutOpen}" Position="Right" Width="1000" Height="100">
+                    <!-- The content goes here -->
+                </mah:Flyout>
+
+                
+            </mah:FlyoutsControl>
+        </mah:Flyout>
+
+        
+
+        <!-- Frame de las hojas -->
 
     </Grid>
 </mah:MetroWindow>

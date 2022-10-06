@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MahApps.Metro.Controls;
-
+using UserInterface.Pages;
 
 namespace UserInterface
 {
@@ -24,7 +24,6 @@ namespace UserInterface
     public partial class MainWindow : MetroWindow
     {
         public string? username { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +33,15 @@ namespace UserInterface
         {
             this.username = username;
             InitializeComponent();
+        }
 
+        private void tileProfesionales_Click(object sender, RoutedEventArgs e)
+        {
+            Flyout.Content = new Frame()
+            {
+                Content = new Page1()
+            };
+            Flyout.IsOpen = true;
         }
     }
 }

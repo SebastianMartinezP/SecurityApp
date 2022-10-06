@@ -53,3 +53,5 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.FontAwesome.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\Page1.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\Page1.baml
