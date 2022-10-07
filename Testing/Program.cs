@@ -1,4 +1,5 @@
 ﻿using Database.Models;
+using System.Windows.Media.Media3D;
 using UserInterface.Business;
 ModelContext context = new ModelContext();
 
@@ -234,6 +235,133 @@ ModelContext context = new ModelContext();
 //}
 
 #endregion
+
+#endregion
+
+
+
+#region Testing CRUD CheckList
+
+#region CREATE
+
+//Database.Models.CheckList cl = new Database.Models.CheckList()
+//{
+//    Iselementoseguridad = "1",
+//    Isluminaria = "1",
+//    Ismaterial = "1",
+//    Isredagua = "1",
+//    Isseguro = "1",
+//    Isseniales = "1",
+//    Istrabajoseguro = "1",
+//    Descripcion = "Descripcion generica del registro de prueba 1",
+//    Fecharegistro = DateTime.Now,
+//};
+
+//var result = UserInterface.Business.CheckList.Create(cl);
+
+//if (result != null)
+//{
+//    if (result == true)
+//    {
+//        Console.WriteLine("OK");
+//        Console.WriteLine(cl.Idcheck);
+//        Console.WriteLine(cl.Iselementoseguridad);
+//        Console.WriteLine(cl.Isluminaria);
+//        Console.WriteLine(cl.Ismaterial);
+//        Console.WriteLine(cl.Isredagua);
+//        Console.WriteLine(cl.Isseguro);
+//        Console.WriteLine(cl.Isseniales);
+//        Console.WriteLine(cl.Istrabajoseguro);
+//        Console.WriteLine(cl.Descripcion);
+//        Console.WriteLine(cl.Fecharegistro);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+
+#region UPDATE
+
+//Database.Models.CheckList cl = new Database.Models.CheckList()
+//{
+//    Iselementoseguridad = "1",
+//    Isluminaria = "1",
+//    Ismaterial = "0",
+//    Isredagua = "0",
+//    Isseguro = "1",
+//    Isseniales = "0",
+//    Istrabajoseguro = "0",
+//    Descripcion = "Descripcion generica del registro de prueba 3",
+//    Fecharegistro = DateTime.Now,
+//};
+
+//var result = UserInterface.Business.CheckList.Update(cl, 22);
+
+//if (result != null)
+//{
+//    if (result == true)
+//    {
+//        Console.WriteLine("OK");
+//        Console.WriteLine(cl.Idcheck);
+//        Console.WriteLine(cl.Iselementoseguridad);
+//        Console.WriteLine(cl.Isluminaria);
+//        Console.WriteLine(cl.Ismaterial);
+//        Console.WriteLine(cl.Isredagua);
+//        Console.WriteLine(cl.Isseguro);
+//        Console.WriteLine(cl.Isseniales);
+//        Console.WriteLine(cl.Istrabajoseguro);
+//        Console.WriteLine(cl.Descripcion);
+//        Console.WriteLine(cl.Fecharegistro);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+
+//Database.Models.CheckList cl2 = new Database.Models.CheckList()
+//{
+//    Descripcion = "Descripcion generica del registro de prueba 3"
+//};
+
+//var result2 = UserInterface.Business.CheckList.RegisterUpgrade(cl2, 22);
+
+//if (result2 != null)
+//{
+//    if (result2 == true)
+//    {
+//        Console.WriteLine(cl2.Descripcion);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+
+
 
 #endregion
 

@@ -43,3 +43,9 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\Wpf.Ui.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\UserInterface.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\UserInterface.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\ControlzEx.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\MahApps.Metro.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Core.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.FontAwesome.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
