@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1BcfKBrmN/slW1j2BEdsUEcGO3ch6FjZzaj7v/S4xbngwL55Ex8x0NF9IBFb9B+ginIsXmsFKOmLzoVXbYluvQ==",
+  "dgSpecHash": "i6mWmJnjV5lZYhh0pJiV7xhuolBkBEKjkRE87ahuzYpfhgisUCrsJPTdYdfuWnl+2FM3nIhniUXzy/twOCGVGA==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
   "expectedPackageFiles": [
@@ -10,9 +10,9 @@
     "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro.iconpacks.fontawesome\\4.11.0\\mahapps.metro.iconpacks.fontawesome.4.11.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.8\\microsoft.entityframeworkcore.abstractions.6.0.8.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.8\\microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.8\\microsoft.entityframeworkcore.design.6.0.8.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.8\\microsoft.entityframeworkcore.relational.6.0.8.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.8\\microsoft.entityframeworkcore.tools.6.0.8.nupkg.sha512",
@@ -44,8 +44,7 @@
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Seba\\.nuget\\packages\\wpf-ui\\2.0.2\\wpf-ui.2.0.2.nupkg.sha512"
+    "C:\\Users\\Seba\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

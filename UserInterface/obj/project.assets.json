@@ -106,11 +106,11 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/6.0.8": {
+      "Microsoft.EntityFrameworkCore/6.0.9": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.8",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.9",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.9",
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -131,7 +131,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.8": {
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.9": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -144,7 +144,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.8": {
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.9": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -766,30 +766,27 @@
           }
         }
       },
-      "WPF-UI/2.0.2": {
-        "type": "package",
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "System.Drawing.Common": "6.0.0"
+          "AutoMapper": "11.0.1",
+          "Database": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.9"
         },
         "compile": {
-          "lib/net6.0-windows7.0/Wpf.Ui.dll": {
-            "related": ".xml"
-          }
+          "bin/placeholder/Business.dll": {}
         },
         "runtime": {
-          "lib/net6.0-windows7.0/Wpf.Ui.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
+          "bin/placeholder/Business.dll": {}
+        }
       },
       "Database/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
+          "Microsoft.EntityFrameworkCore": "6.0.9",
           "Oracle.EntityFrameworkCore": "6.21.61"
         },
         "compile": {
@@ -1017,10 +1014,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.EntityFrameworkCore/6.0.8": {
-      "sha512": "BDtUZEMjptfhldCvmaDYobVThQvgtcXEmVSGQGmpXDRYaxXuNb6CALJDG0+kTqHaqR+DgbjCKQc7ryi5dB3FGA==",
+    "Microsoft.EntityFrameworkCore/6.0.9": {
+      "sha512": "3QxYF6TR14O3cSZitdzM10Smsw+hweLXyB45PN4ZVjrX4GqzUoGZ0ZC06r0ST7O7SgYxNjxw34ay5XXbBTX86A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/6.0.8",
+      "path": "microsoft.entityframeworkcore/6.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1028,35 +1025,35 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.8": {
-      "sha512": "mZwjzgw9wGc8JPFUwKHe+8OW4gCi1v3jYhe9AhUU4+NW439rN3RnkFlZJ8WBq/yhRbXD3cYers4e+gprOBokew==",
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.9": {
+      "sha512": "XglcSAr6EtjqJpI0DjMMDWkq3l5zG45hRHgrodZFMxNxE7KettJ+X8Em39Aaa0XQwH2P+NHVyK+xhtPX8ogdEA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.8",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.6.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.8": {
-      "sha512": "gUdJEXpS60IGOlGELDsToGQj4cDr1uqlmlet0drUHUoHGE6O+z9oJlOekZQH7gVnaFDmaoO5HIdCT2KgRdXwPw==",
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.9": {
+      "sha512": "rNIx4fr7KWH4ypghhI+78PhCUYBHdjVbQ3yKvj/KmUIe4d9pysHXT3lF9TuReVdMDsn5mEx+3Yez8s80J4/JLA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.8",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -1896,32 +1893,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "WPF-UI/2.0.2": {
-      "sha512": "Nj2Viy7dbqin4L//9c99wo2cYOT90uG2k1JAGnXbnbvKAOAbERwGxIm3sAKziB21RP9hKW/Z2jurAsZ4Xu0Tkg==",
-      "type": "package",
-      "path": "wpf-ui/2.0.2",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net461/Wpf.Ui.dll",
-        "lib/net461/Wpf.Ui.xml",
-        "lib/net47/Wpf.Ui.dll",
-        "lib/net47/Wpf.Ui.xml",
-        "lib/net48/Wpf.Ui.dll",
-        "lib/net48/Wpf.Ui.xml",
-        "lib/net5.0-windows7.0/Wpf.Ui.dll",
-        "lib/net5.0-windows7.0/Wpf.Ui.xml",
-        "lib/net6.0-windows7.0/Wpf.Ui.dll",
-        "lib/net6.0-windows7.0/Wpf.Ui.xml",
-        "lib/netcoreapp3.1/Wpf.Ui.dll",
-        "lib/netcoreapp3.1/Wpf.Ui.xml",
-        "tools/VisualStudioToolsManifest.xml",
-        "wpf-ui.2.0.2.nupkg.sha512",
-        "wpf-ui.nuspec",
-        "wpfui.png"
-      ]
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
     },
     "Database/1.0.0": {
       "type": "project",
@@ -1931,11 +1906,13 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "AutoMapper >= 11.0.1",
+      "Business >= 1.0.0",
       "Database >= 1.0.0",
       "MahApps.Metro >= 2.4.9",
       "MahApps.Metro.IconPacks.FontAwesome >= 4.11.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
-      "WPF-UI >= 2.0.2"
+      "Microsoft.EntityFrameworkCore >= 6.0.9",
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.8"
     ]
   },
   "packageFolders": {
@@ -1955,7 +1932,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1963,8 +1940,11 @@
       },
       "frameworks": {
         "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+          "targetAlias": "net6.0-windows7.0",
           "projectReferences": {
+            "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
+              "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+            },
             "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
               "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
             }
@@ -1979,8 +1959,12 @@
     },
     "frameworks": {
       "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+        "targetAlias": "net6.0-windows7.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[11.0.1, )"
+          },
           "MahApps.Metro": {
             "target": "Package",
             "version": "[2.4.9, )"
@@ -1989,15 +1973,15 @@
             "target": "Package",
             "version": "[4.11.0, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.9, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.8, )"
-          },
-          "WPF-UI": {
-            "target": "Package",
-            "version": "[2.0.2, )"
           }
         },
         "imports": [

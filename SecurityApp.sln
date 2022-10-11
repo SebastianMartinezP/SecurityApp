@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInterface", "UserInterface\UserInterface.csproj", "{D10BFDB7-BD54-47EE-B984-950C28337D69}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{B0DEECBF-702E-431C-B50D-DA0F12E88981}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D10BFDB7-BD54-47EE-B984-950C28337D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10BFDB7-BD54-47EE-B984-950C28337D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10BFDB7-BD54-47EE-B984-950C28337D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DEECBF-702E-431C-B50D-DA0F12E88981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DEECBF-702E-431C-B50D-DA0F12E88981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DEECBF-702E-431C-B50D-DA0F12E88981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DEECBF-702E-431C-B50D-DA0F12E88981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

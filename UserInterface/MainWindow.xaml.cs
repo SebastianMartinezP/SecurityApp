@@ -37,9 +37,15 @@ namespace UserInterface
 
         private void tileProfesionales_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void tileUsuarios_Click(object sender, RoutedEventArgs e)
+        {
             Flyout.Content = new Frame()
             {
-                Content = new Page1()
+                Width = 1000,
+                Height = 1000,
+                Content = new PageUsuario()
             };
             Flyout.IsOpen = true;
         }

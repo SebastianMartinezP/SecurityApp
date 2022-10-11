@@ -1,6 +1,4 @@
 ﻿using Database.Models;
-using System.Windows.Media.Media3D;
-using UserInterface.Business;
 ModelContext context = new ModelContext();
 
 
@@ -9,7 +7,7 @@ ModelContext context = new ModelContext();
 #region Read
 
 //Database.Models.Usuario? usuarioRead =
-//    UserInterface.Business.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
+//    UserInterface.DTO.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
 
 //if (usuarioRead != null)
 //{
@@ -30,7 +28,7 @@ ModelContext context = new ModelContext();
 #region ReadAll
 
 //List<Database.Models.Usuario> usuariosRead =
-//    UserInterface.Business.Usuario.GetAllUsuario();
+//    UserInterface.DTO.Usuario.GetAllUsuario();
 
 //if (usuariosRead.Any())
 //{
@@ -63,7 +61,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var result = UserInterface.Business.Usuario.Create(usuarioCreate);
+//var result = UserInterface.DTO.Usuario.Create(usuarioCreate);
 
 //if (result != null)
 //{
@@ -100,7 +98,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var resultUpdate = UserInterface.Business.Usuario.Update(usuarioUpdate);
+//var resultUpdate = UserInterface.DTO.Usuario.Update(usuarioUpdate);
 
 //if (resultUpdate != null)
 //{
@@ -137,7 +135,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var resultDisable = UserInterface.Business.Usuario.Disable(usuarioDisable);
+//var resultDisable = UserInterface.DTO.Usuario.Disable(usuarioDisable);
 
 //if (resultDisable != null)
 //{
@@ -175,7 +173,7 @@ ModelContext context = new ModelContext();
 //    Descripcion = "Testing123"
 //};
 
-//var result = UserInterface.Business.PerfilUsuario.Create(perfilUsuarioCreate);
+//var result = UserInterface.DTO.PerfilUsuario.Create(perfilUsuarioCreate);
 
 //if (result != null)
 //{
@@ -200,7 +198,7 @@ ModelContext context = new ModelContext();
 
 #region Read
 
-//Database.Models.PerfilUsuario? perfilUsuarioRead = UserInterface.Business.PerfilUsuario.GetPerfilUsuario("Admin");
+//Database.Models.PerfilUsuario? perfilUsuarioRead = UserInterface.DTO.PerfilUsuario.GetPerfilUsuario("Admin");
 //if (perfilUsuarioRead != null)
 //{
 //    Console.WriteLine("OK");
@@ -217,7 +215,7 @@ ModelContext context = new ModelContext();
 #region ReadAll
 
 //List<Database.Models.PerfilUsuario> perfilUsuarioReadAll = 
-//    UserInterface.Business.PerfilUsuario.GetAllPerfilUsuario();
+//    UserInterface.DTO.PerfilUsuario.GetAllPerfilUsuario();
 
 //if (perfilUsuarioReadAll.Any())
 //{
@@ -257,7 +255,7 @@ ModelContext context = new ModelContext();
 //    Fecharegistro = DateTime.Now,
 //};
 
-//var result = UserInterface.Business.CheckList.Create(cl);
+//var result = UserInterface.DTO.CheckList.Create(cl);
 
 //if (result != null)
 //{
@@ -304,7 +302,7 @@ ModelContext context = new ModelContext();
 //    Fecharegistro = DateTime.Now,
 //};
 
-//var result = UserInterface.Business.CheckList.Update(cl, 22);
+//var result = UserInterface.DTO.CheckList.Update(cl, 22);
 
 //if (result != null)
 //{
@@ -339,7 +337,7 @@ ModelContext context = new ModelContext();
 //    Descripcion = "Descripcion generica del registro de prueba 3"
 //};
 
-//var result2 = UserInterface.Business.CheckList.RegisterUpgrade(cl2, 22);
+//var result2 = UserInterface.DTO.CheckList.RegisterUpgrade(cl2, 22);
 
 //if (result2 != null)
 //{

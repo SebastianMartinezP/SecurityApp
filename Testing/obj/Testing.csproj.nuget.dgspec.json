@@ -4,6 +4,75 @@
     "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj": {}
   },
   "projects": {
+    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj",
+        "projectName": "Business",
+        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
+        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows7.0",
+            "projectReferences": {
+              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
+                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -18,7 +87,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -26,7 +95,7 @@
         },
         "frameworks": {
           "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+            "targetAlias": "net6.0-windows7.0",
             "projectReferences": {}
           }
         },
@@ -38,11 +107,15 @@
       },
       "frameworks": {
         "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+          "targetAlias": "net6.0-windows7.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
               "version": "[11.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -95,7 +168,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -103,8 +176,11 @@
         },
         "frameworks": {
           "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+            "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
+              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
+                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+              },
               "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
                 "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
               },
@@ -122,11 +198,15 @@
       },
       "frameworks": {
         "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+          "targetAlias": "net6.0-windows7.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
               "version": "[11.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -139,10 +219,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.21.61, )"
             }
           },
           "imports": [
@@ -179,7 +255,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -187,8 +263,11 @@
         },
         "frameworks": {
           "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+            "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
+              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
+                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+              },
               "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
                 "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
               }
@@ -203,8 +282,12 @@
       },
       "frameworks": {
         "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+          "targetAlias": "net6.0-windows7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
             "MahApps.Metro": {
               "target": "Package",
               "version": "[2.4.9, )"
@@ -213,15 +296,15 @@
               "target": "Package",
               "version": "[4.11.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
-            },
-            "WPF-UI": {
-              "target": "Package",
-              "version": "[2.0.2, )"
             }
           },
           "imports": [

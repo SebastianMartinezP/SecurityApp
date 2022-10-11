@@ -37,35 +37,48 @@
 
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <mah:Tile Name="tileProfesionales" Title="Profesionales" Click="tileProfesionales_Click">
+                    <mah:Tile 
+                        Name="tileProfesionales" 
+                        Title="Profesionales" 
+                        Click="tileProfesionales_Click">
                     </mah:Tile>
 
-                    <mah:Tile Title="Clientes">
+                    <mah:Tile 
+                        Title="Clientes">
                     </mah:Tile>
 
-                    <mah:Tile Title="Actividades">
-                    </mah:Tile>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <mah:Tile Title="Contratos">
-                    </mah:Tile>
-
-                    <mah:Tile Title="Pagos">
-                    </mah:Tile>
-
-                    <mah:Tile Title="Alertas">
+                    <mah:Tile 
+                        Title="Actividades">
                     </mah:Tile>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <mah:Tile Title="Checklists" >
+                    <mah:Tile 
+                        Title="Contratos">
                     </mah:Tile>
 
-                    <mah:Tile Title="Usuarios" >
+                    <mah:Tile 
+                        Title="Pagos">
                     </mah:Tile>
 
-                    <mah:Tile Title="Perfiles de usuario" >
+                    <mah:Tile 
+                        Title="Alertas">
+                    </mah:Tile>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <mah:Tile 
+                        Title="Checklists" >
+                    </mah:Tile>
+
+                    <mah:Tile 
+                        Name="tileUsuarios" 
+                        Title="Usuarios" 
+                        Click="tileUsuarios_Click" >
+                    </mah:Tile>
+
+                    <mah:Tile 
+                        Title="Perfiles de usuario" >
                     </mah:Tile>
                 </StackPanel>
             </StackPanel>
@@ -74,13 +87,13 @@
 
         <!-- Flyout -->
 
-        <mah:Flyout Name="Flyout" IsOpen="True">
+        <mah:Flyout Name="Flyout" IsOpen="False">
             <mah:FlyoutsControl >
-                <mah:Flyout Header="Settings" Position="Right" Width="1000" Height="500">
+                <mah:Flyout Header="Settings" Position="Left" Width="1000" Height="500">
                     
                 </mah:Flyout>
                 <Label Content="jgskjfsd"></Label>
-                <mah:Flyout Header="About" IsOpen="{Binding IsAboutFlyoutOpen}" Position="Right" Width="1000" Height="100">
+                <mah:Flyout Header="About" IsOpen="{Binding IsAboutFlyoutOpen}" Position="Left" Width="1000" Height="100">
                     <!-- The content goes here -->
                 </mah:Flyout>
 

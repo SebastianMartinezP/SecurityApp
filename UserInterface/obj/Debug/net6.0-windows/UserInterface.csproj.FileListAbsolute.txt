@@ -8,7 +8,6 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\UserInterface.runtimeconfig.json
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\UserInterface.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\UserInterface.pdb
-E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Wpf.Ui.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\App.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\MainWindow.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\UserInterface.g.resources
@@ -55,3 +54,7 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\Page1.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\Page1.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\PageUsuario.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows\Pages\PageUsuario.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Business.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows\Business.pdb
