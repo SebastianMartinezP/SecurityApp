@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Database.Models;
+using Business.Util;
 
 namespace Business.DTO
 {
@@ -9,7 +10,7 @@ namespace Business.DTO
     {
 
         #region Create
-        public static bool? Create(Database.Models.PerfilUsuario p)
+        public static bool? Create(DTO.PerfilUsuario p)
         {
             try
             {
@@ -23,7 +24,11 @@ namespace Business.DTO
                         return false;
                     }
 
-                    context.PerfilUsuario.Add(p);
+                    Database.Models.PerfilUsuario profile =
+                        MapperWrapper.Mapper.Map<Database.Models.PerfilUsuario>(p);
+
+
+                    context.PerfilUsuario.Add(profile);
                     context.SaveChanges();
 
                     return true;
@@ -39,10 +44,11 @@ namespace Business.DTO
 
         #region Read
 
-        public static Database.Models.PerfilUsuario? GetPerfilUsuario(string descripcion)
+        public static DTO.PerfilUsuario? GetPerfilUsuario(string descripcion)
         {
             try
             {
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
                     Database.Models.PerfilUsuario? perfilUsuario =
@@ -50,10 +56,13 @@ namespace Business.DTO
 
                     if (perfilUsuario == null)
                     {
-                        return new Database.Models.PerfilUsuario();
+                        return new DTO.PerfilUsuario();
                     }
 
-                    return perfilUsuario;
+                    DTO.PerfilUsuario perfilUsuarioResponse = 
+                        MapperWrapper.Mapper.Map<DTO.PerfilUsuario>(perfilUsuario);
+
+                    return perfilUsuarioResponse;
                 }
             }
             catch (Exception e)
@@ -63,26 +72,32 @@ namespace Business.DTO
             }
         }
 
-        public static List<Database.Models.PerfilUsuario> GetAllPerfilUsuario()
+        public static List<DTO.PerfilUsuario> GetAllPerfilUsuario()
         {
             try
             {
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
-                    List<Database.Models.PerfilUsuario> perfilUsuarios = context.PerfilUsuario.ToList();
+                    List<Database.Models.PerfilUsuario> perfilUsuariosContext = context.PerfilUsuario.ToList();
 
-                    if (perfilUsuarios.Any())
+                    if (perfilUsuariosContext.Any())
                     {
-                        return perfilUsuarios;
+
+                        List<DTO.PerfilUsuario> perfilUsuariosResponse =
+                            // Mapper.Map<ClaseOrigen, ClaseDestino>(objetoAMapear);
+                            MapperWrapper.Mapper.Map<List<Database.Models.PerfilUsuario>, List<DTO.PerfilUsuario>>(perfilUsuariosContext);
+
+                        return perfilUsuariosResponse;
                     }
-                    return new List<Database.Models.PerfilUsuario>();
+                    return new List<DTO.PerfilUsuario>();
 
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                return new List<Database.Models.PerfilUsuario>();
+                return new List<DTO.PerfilUsuario>();
             }
         }
 

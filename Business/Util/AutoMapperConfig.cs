@@ -12,6 +12,7 @@ namespace Business.Util
                 cfg.CreateMap<Database.Models.Usuario, DTO.Usuario>();
                 cfg.CreateMap<Database.Models.CheckList, DTO.CheckList>();
                 cfg.CreateMap<Database.Models.PerfilUsuario, DTO.PerfilUsuario>();
+
             });
 
             MapperWrapper.AssertConfigurationIsValid();

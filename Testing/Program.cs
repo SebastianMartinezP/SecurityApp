@@ -1,4 +1,5 @@
 ﻿using Database.Models;
+using Business;
 ModelContext context = new ModelContext();
 
 
@@ -6,8 +7,8 @@ ModelContext context = new ModelContext();
 
 #region Read
 
-//Database.Models.Usuario? usuarioRead =
-//    UserInterface.DTO.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
+//Business.DTO.Usuario? usuarioRead =
+//    Business.DTO.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
 
 //if (usuarioRead != null)
 //{
@@ -27,26 +28,26 @@ ModelContext context = new ModelContext();
 
 #region ReadAll
 
-//List<Database.Models.Usuario> usuariosRead =
-//    UserInterface.DTO.Usuario.GetAllUsuario();
+List<Business.DTO.Usuario> usuariosRead =
+    Business.DTO.Usuario.GetAllUsuario();
 
-//if (usuariosRead.Any())
-//{
-//    Console.WriteLine("OK");
-//    foreach (var user in usuariosRead)
-//    {
-//        Console.WriteLine(user.Idusuario);
-//        Console.WriteLine(user.Idperfil);
-//        Console.WriteLine(user.Correo);
-//        Console.WriteLine(user.Contrasenahashed);
-//        Console.WriteLine(user.Ishabilitado);
-//    }
+if (usuariosRead.Any())
+{
+    Console.WriteLine("OK");
+    foreach (var user in usuariosRead)
+    {
+        Console.WriteLine(user.Idusuario);
+        Console.WriteLine(user.Idperfil);
+        Console.WriteLine(user.Correo);
+        Console.WriteLine(user.Contrasenahashed);
+        Console.WriteLine(user.Ishabilitado);
+    }
 
-//}
-//else
-//{
-//    Console.WriteLine("ERROR");
-//}
+}
+else
+{
+    Console.WriteLine("ERROR");
+}
 
 #endregion
 
@@ -286,7 +287,6 @@ ModelContext context = new ModelContext();
 
 #endregion
 
-
 #region UPDATE
 
 //Database.Models.CheckList cl = new Database.Models.CheckList()
@@ -357,9 +357,6 @@ ModelContext context = new ModelContext();
 //}
 
 #endregion
-
-
-
 
 #endregion
 

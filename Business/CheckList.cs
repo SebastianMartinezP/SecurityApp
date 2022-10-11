@@ -1,4 +1,5 @@
-﻿using Database.Models;
+﻿using Business.Util;
+using Database.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Business.DTO
     {
         #region Create
         
-        public static bool? Create(Database.Models.CheckList c)
+        public static bool? Create(DTO.CheckList c)
         {
             try
             {
@@ -25,7 +26,10 @@ namespace Business.DTO
                         return false;
                     }
 
-                    context.CheckList.Add(c);
+                    Database.Models.CheckList checklistSave =
+                        MapperWrapper.Mapper.Map<Database.Models.CheckList>(c);
+
+                    context.CheckList.Add(checklistSave);
                     context.SaveChanges();
 
                     return true;
@@ -42,7 +46,7 @@ namespace Business.DTO
 
         #region Update
 
-        public static bool? Update(Database.Models.CheckList c, int idChecklist)
+        public static bool? Update(DTO.CheckList c)
         {
             try
             {
@@ -50,7 +54,7 @@ namespace Business.DTO
                 {
                     Database.Models.CheckList? checkList =
                         context.CheckList.FirstOrDefault(x => 
-                        x.Idcheck == idChecklist);
+                        x.Idcheck == c.Idcheck);
 
                     if (checkList == null) // no encontró un registro existente, no actualizar.
                     {
@@ -79,7 +83,7 @@ namespace Business.DTO
             }
         }
 
-        public static bool? RegisterUpgrade(Database.Models.CheckList c, int IdCheckList)
+        public static bool? RegisterUpgrade(DTO.CheckList c)
         {
             try
             {
@@ -87,7 +91,7 @@ namespace Business.DTO
                 {
                     Database.Models.CheckList? checkList =
                         context.CheckList.FirstOrDefault(x =>
-                        x.Idcheck == IdCheckList);
+                        x.Idcheck == c.Idcheck);
 
                     if (checkList == null) // no encontró un registro existente, no actualizar.
                     {
@@ -113,10 +117,11 @@ namespace Business.DTO
 
         #region Read
 
-        public static Database.Models.CheckList? GetCheckList(int id)
+        public static DTO.CheckList? GetCheckList(int id)
         {
             try
             {
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
                     Database.Models.CheckList? checkList = context.CheckList.FirstOrDefault(c =>
@@ -124,10 +129,12 @@ namespace Business.DTO
 
                     if (checkList == null)
                     {
-                        return new Database.Models.CheckList();
+                        return new DTO.CheckList();
                     }
 
-                    return checkList;
+                    DTO.CheckList checklistResponse = MapperWrapper.Mapper.Map<DTO.CheckList>(checkList);
+
+                    return checklistResponse;
                 }
             }
             catch (Exception e)
@@ -137,26 +144,31 @@ namespace Business.DTO
             }
         }
 
-        public static List<Database.Models.CheckList> GetAllCheckList()
+        public static List<DTO.CheckList> GetAllCheckList()
         {
             try
             {
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
                     List<Database.Models.CheckList> checkLists = context.CheckList.ToList();
 
                     if (checkLists.Any())
                     {
-                        return checkLists;
+                        List<DTO.CheckList> checklistsResponse =
+                            // Mapper.Map<ClaseOrigen, ClaseDestino>(objetoAMapear);
+                            MapperWrapper.Mapper.Map<List<Database.Models.CheckList>, List<DTO.CheckList>>(checkLists);
+
+                        return checklistsResponse;
                     }
-                    return new List<Database.Models.CheckList>();
+                    return new List<DTO.CheckList>();
 
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                return new List<Database.Models.CheckList>();
+                return new List<DTO.CheckList>();
             }
         }
 

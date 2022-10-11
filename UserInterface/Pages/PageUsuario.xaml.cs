@@ -20,7 +20,7 @@ namespace UserInterface.Pages
     /// </summary>
     public partial class PageUsuario : Page
     {
-        public List<Database.Models.Usuario>? usuarios { get; set; }
+        public List<Business.DTO.Usuario>? usuarios { get; set; }
 
 
         public PageUsuario()

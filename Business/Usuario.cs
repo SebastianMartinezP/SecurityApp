@@ -5,7 +5,8 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using Database.Models;
-
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Business.Util;
 namespace Business.DTO
 {
     
@@ -13,10 +14,11 @@ namespace Business.DTO
     {
 
         #region Read 
-        public static Database.Models.Usuario? GetUsuario(string username, string pass)
+        public static DTO.Usuario? GetUsuario(string username, string pass)
         {
 			try
 			{
+                AutoMapperConfig.Configure();
 				using (ModelContext context = new ModelContext())
 				{
                     Database.Models.Usuario? usuario = context.Usuario.FirstOrDefault(u => 
@@ -24,10 +26,13 @@ namespace Business.DTO
 
 					if (usuario == null)
 					{
-						return new Database.Models.Usuario();
+						return new DTO.Usuario();
 					}
 
-					return usuario;
+                    DTO.Usuario usuarioResponse = MapperWrapper.Mapper.Map<DTO.Usuario>(usuario);
+
+
+                    return usuarioResponse;
 				}
 			}
             catch (Exception e)
@@ -37,26 +42,31 @@ namespace Business.DTO
             }
         }
 
-        public static List<Database.Models.Usuario> GetAllUsuario()
+        public static List<DTO.Usuario> GetAllUsuario()
         {
             try
             {
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
-                    List<Database.Models.Usuario> usuarios = context.Usuario.ToList();
-
-                    if (usuarios.Any())
+                    List<Database.Models.Usuario> usuariosContext = context.Usuario.ToList();
+                    
+                    if (usuariosContext.Any())
                     {
-                        return usuarios;
+                        List<DTO.Usuario> usuariosResponse = 
+                            // Mapper.Map<ClaseOrigen, ClaseDestino>(objetoAMapear);
+                            MapperWrapper.Mapper.Map< List<Database.Models.Usuario>, List<DTO.Usuario> >(usuariosContext);
+                        
+                        return usuariosResponse;
                     }
-                    return new List<Database.Models.Usuario>();
+                    return new List<DTO.Usuario>();
 
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                return new List<Database.Models.Usuario>();
+                return new List<DTO.Usuario>();
             }
         }
 
@@ -64,10 +74,11 @@ namespace Business.DTO
         #endregion
 
         #region Create
-        public static bool? Create(Database.Models.Usuario usuarioSave)
+        public static bool? Create(DTO.Usuario usuarioSave)
 		{
 			try
 			{
+                AutoMapperConfig.Configure();
                 using (ModelContext context = new ModelContext())
                 {
                     Database.Models.Usuario? usuario = context.Usuario
@@ -76,12 +87,16 @@ namespace Business.DTO
                             && u.Contrasenahashed.Equals(usuarioSave.Contrasenahashed)
                         );
 
+
                     if (usuario != null) // encontró un registro existente, no guardar.
                     {
                         return false;
                     }
 
-					context.Usuario.Add(usuarioSave);
+                    Database.Models.Usuario user = 
+                        MapperWrapper.Mapper.Map<Database.Models.Usuario>(usuarioSave);
+
+                    context.Usuario.Add(user);
 					context.SaveChanges();
 
                     return true;
@@ -97,7 +112,7 @@ namespace Business.DTO
 
         #region Update
 
-        public static bool? Update(Database.Models.Usuario usuarioUpdate)
+        public static bool? Update(DTO.Usuario usuarioUpdate)
         {
             try
             {
@@ -134,7 +149,7 @@ namespace Business.DTO
 
         #region Disable (deshabilitar)
 
-        public static bool? Disable(Database.Models.Usuario usuarioDisable)
+        public static bool? Disable(DTO.Usuario usuarioDisable)
         {
             try
             {
