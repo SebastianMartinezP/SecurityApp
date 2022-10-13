@@ -8,6 +8,8 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using ControlzEx.Theming;
 
+using Business;
+
 namespace UserInterface.Pages
 {
     public partial class LoginWindow : MetroWindow
@@ -42,7 +44,7 @@ namespace UserInterface.Pages
                 this.username = tbx_Username.Text;
                 this.password = pwbx_Password.Password;
 
-                Database.Models.Usuario? user = Business.Usuario.GetUsuario(this.username, this.password);
+                Business.DTO.Usuario? user = Business.DTO.Usuario.GetUsuario(this.username, this.password);
 
 
                 //Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();

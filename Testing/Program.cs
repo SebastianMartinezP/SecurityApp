@@ -1,5 +1,5 @@
 ﻿using Database.Models;
-using UserInterface.Business;
+using Business;
 ModelContext context = new ModelContext();
 
 
@@ -7,8 +7,8 @@ ModelContext context = new ModelContext();
 
 #region Read
 
-//Database.Models.Usuario? usuarioRead =
-//    UserInterface.Business.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
+//Business.DTO.Usuario? usuarioRead =
+//    Business.DTO.Usuario.GetUsuario("sebas.martinezp@duocuc.cl", "hashed123");
 
 //if (usuarioRead != null)
 //{
@@ -28,26 +28,26 @@ ModelContext context = new ModelContext();
 
 #region ReadAll
 
-//List<Database.Models.Usuario> usuariosRead =
-//    UserInterface.Business.Usuario.GetAllUsuario();
+List<Business.DTO.Usuario> usuariosRead =
+    Business.DTO.Usuario.GetAllUsuario();
 
-//if (usuariosRead.Any())
-//{
-//    Console.WriteLine("OK");
-//    foreach (var user in usuariosRead)
-//    {
-//        Console.WriteLine(user.Idusuario);
-//        Console.WriteLine(user.Idperfil);
-//        Console.WriteLine(user.Correo);
-//        Console.WriteLine(user.Contrasenahashed);
-//        Console.WriteLine(user.Ishabilitado);
-//    }
+if (usuariosRead.Any())
+{
+    Console.WriteLine("OK");
+    foreach (var user in usuariosRead)
+    {
+        Console.WriteLine(user.Idusuario);
+        Console.WriteLine(user.Idperfil);
+        Console.WriteLine(user.Correo);
+        Console.WriteLine(user.Contrasenahashed);
+        Console.WriteLine(user.Ishabilitado);
+    }
 
-//}
-//else
-//{
-//    Console.WriteLine("ERROR");
-//}
+}
+else
+{
+    Console.WriteLine("ERROR");
+}
 
 #endregion
 
@@ -62,7 +62,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var result = UserInterface.Business.Usuario.Create(usuarioCreate);
+//var result = UserInterface.DTO.Usuario.Create(usuarioCreate);
 
 //if (result != null)
 //{
@@ -99,7 +99,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var resultUpdate = UserInterface.Business.Usuario.Update(usuarioUpdate);
+//var resultUpdate = UserInterface.DTO.Usuario.Update(usuarioUpdate);
 
 //if (resultUpdate != null)
 //{
@@ -136,7 +136,7 @@ ModelContext context = new ModelContext();
 //    Idperfil = 1
 
 //};
-//var resultDisable = UserInterface.Business.Usuario.Disable(usuarioDisable);
+//var resultDisable = UserInterface.DTO.Usuario.Disable(usuarioDisable);
 
 //if (resultDisable != null)
 //{
@@ -174,7 +174,7 @@ ModelContext context = new ModelContext();
 //    Descripcion = "Testing123"
 //};
 
-//var result = UserInterface.Business.PerfilUsuario.Create(perfilUsuarioCreate);
+//var result = UserInterface.DTO.PerfilUsuario.Create(perfilUsuarioCreate);
 
 //if (result != null)
 //{
@@ -199,7 +199,7 @@ ModelContext context = new ModelContext();
 
 #region Read
 
-//Database.Models.PerfilUsuario? perfilUsuarioRead = UserInterface.Business.PerfilUsuario.GetPerfilUsuario("Admin");
+//Database.Models.PerfilUsuario? perfilUsuarioRead = UserInterface.DTO.PerfilUsuario.GetPerfilUsuario("Admin");
 //if (perfilUsuarioRead != null)
 //{
 //    Console.WriteLine("OK");
@@ -216,7 +216,7 @@ ModelContext context = new ModelContext();
 #region ReadAll
 
 //List<Database.Models.PerfilUsuario> perfilUsuarioReadAll = 
-//    UserInterface.Business.PerfilUsuario.GetAllPerfilUsuario();
+//    UserInterface.DTO.PerfilUsuario.GetAllPerfilUsuario();
 
 //if (perfilUsuarioReadAll.Any())
 //{
@@ -225,6 +225,129 @@ ModelContext context = new ModelContext();
 //    {
 //        Console.WriteLine(p.Idperfil);
 //        Console.WriteLine(p.Descripcion);
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+#endregion
+
+
+
+#region Testing CRUD CheckList
+
+#region CREATE
+
+//Database.Models.CheckList cl = new Database.Models.CheckList()
+//{
+//    Iselementoseguridad = "1",
+//    Isluminaria = "1",
+//    Ismaterial = "1",
+//    Isredagua = "1",
+//    Isseguro = "1",
+//    Isseniales = "1",
+//    Istrabajoseguro = "1",
+//    Descripcion = "Descripcion generica del registro de prueba 1",
+//    Fecharegistro = DateTime.Now,
+//};
+
+//var result = UserInterface.DTO.CheckList.Create(cl);
+
+//if (result != null)
+//{
+//    if (result == true)
+//    {
+//        Console.WriteLine("OK");
+//        Console.WriteLine(cl.Idcheck);
+//        Console.WriteLine(cl.Iselementoseguridad);
+//        Console.WriteLine(cl.Isluminaria);
+//        Console.WriteLine(cl.Ismaterial);
+//        Console.WriteLine(cl.Isredagua);
+//        Console.WriteLine(cl.Isseguro);
+//        Console.WriteLine(cl.Isseniales);
+//        Console.WriteLine(cl.Istrabajoseguro);
+//        Console.WriteLine(cl.Descripcion);
+//        Console.WriteLine(cl.Fecharegistro);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+#endregion
+
+#region UPDATE
+
+//Database.Models.CheckList cl = new Database.Models.CheckList()
+//{
+//    Iselementoseguridad = "1",
+//    Isluminaria = "1",
+//    Ismaterial = "0",
+//    Isredagua = "0",
+//    Isseguro = "1",
+//    Isseniales = "0",
+//    Istrabajoseguro = "0",
+//    Descripcion = "Descripcion generica del registro de prueba 3",
+//    Fecharegistro = DateTime.Now,
+//};
+
+//var result = UserInterface.DTO.CheckList.Update(cl, 22);
+
+//if (result != null)
+//{
+//    if (result == true)
+//    {
+//        Console.WriteLine("OK");
+//        Console.WriteLine(cl.Idcheck);
+//        Console.WriteLine(cl.Iselementoseguridad);
+//        Console.WriteLine(cl.Isluminaria);
+//        Console.WriteLine(cl.Ismaterial);
+//        Console.WriteLine(cl.Isredagua);
+//        Console.WriteLine(cl.Isseguro);
+//        Console.WriteLine(cl.Isseniales);
+//        Console.WriteLine(cl.Istrabajoseguro);
+//        Console.WriteLine(cl.Descripcion);
+//        Console.WriteLine(cl.Fecharegistro);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
+//    }
+
+//}
+//else
+//{
+//    Console.WriteLine("ERROR");
+//}
+
+
+//Database.Models.CheckList cl2 = new Database.Models.CheckList()
+//{
+//    Descripcion = "Descripcion generica del registro de prueba 3"
+//};
+
+//var result2 = UserInterface.DTO.CheckList.RegisterUpgrade(cl2, 22);
+
+//if (result2 != null)
+//{
+//    if (result2 == true)
+//    {
+//        Console.WriteLine(cl2.Descripcion);
+//    }
+//    else
+//    {
+//        Console.WriteLine("NO GUARDO");
 //    }
 
 //}

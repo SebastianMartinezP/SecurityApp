@@ -1,0 +1,15 @@
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.csproj.AssemblyReference.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.AssemblyInfoInputs.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.AssemblyInfo.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.csproj.CoreCompileInputs.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\bin\Debug\net6.0-windows\Business.deps.json
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\bin\Debug\net6.0-windows\Business.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\bin\Debug\net6.0-windows\Business.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\bin\Debug\net6.0-windows\Database.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\bin\Debug\net6.0-windows\Database.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.csproj.CopyComplete
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\refint\Business.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\Business.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Business\obj\Debug\net6.0-windows\ref\Business.dll

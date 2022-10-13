@@ -1,0 +1,14 @@
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.deps.json
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.runtimeconfig.json
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.csproj.AssemblyReference.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.AssemblyInfoInputs.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.AssemblyInfo.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.csproj.CoreCompileInputs.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\refint\Database.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.pdb
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.genruntimeconfig.cache
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Database\obj\Debug\net6.0-windows7.0\ref\Database.dll
