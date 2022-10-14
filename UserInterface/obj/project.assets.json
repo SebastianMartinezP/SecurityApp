@@ -1916,19 +1916,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Seba\\.nuget\\packages\\": {}
+    "C:\\Users\\Relentless\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
+      "projectUniqueName": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\UserInterface\\UserInterface.csproj",
       "projectName": "UserInterface",
-      "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
-      "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
-      "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\obj\\",
+      "projectPath": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\UserInterface\\UserInterface.csproj",
+      "packagesPath": "C:\\Users\\Relentless\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\UserInterface\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Relentless\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1942,11 +1942,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows7.0",
           "projectReferences": {
-            "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
-              "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+            "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Business\\Business.csproj"
             },
-            "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
-              "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+            "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj": {
+              "projectPath": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj"
             }
           }
         }
