@@ -33,16 +33,9 @@ namespace UserInterface.Pages
 
         public void listUsuarios()
         {
+            usuarios = Business.DTO.Usuario.GetAllUsuario();
+            DataGridUsuarios.DataContext = usuarios;
             DataGridUsuarios.Items.Refresh();
-            if (DataGridUsuarios.DataContext == null)
-            {
-                usuarios = Business.DTO.Usuario.GetAllUsuario();
-                DataGridUsuarios.DataContext = usuarios;
-            }
-            else
-            {
-                DataGridUsuarios.DataContext = usuarios;
-            }
         }
     }
 }

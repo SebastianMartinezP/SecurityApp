@@ -24,34 +24,24 @@ namespace UserInterface
     public partial class MainWindow : MetroWindow
     {
         public string? username { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            windowFrame.Content = new Frame()
+            {
+                Content = new Page1()
+            };
         }
 
         public MainWindow(string username)
         {
             this.username = username;
             InitializeComponent();
-        }
-
-        private void tileProfesionales_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void tileUsuarios_Click(object sender, RoutedEventArgs e)
-        {
-            Flyout.Content = new Frame()
+            windowFrame.Content = new Frame()
             {
-                Width = 1000,
-                Height = 1000,
-                Content = new PageUsuario(),
+                Content = new Page1()
             };
-            
-
-            Flyout.IsOpen = true;
-
-            
         }
     }
 }

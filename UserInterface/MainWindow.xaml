@@ -13,96 +13,134 @@
 
     
     WindowStartupLocation="CenterScreen" 
-    Height="600" 
-    Width="974"
+    Height="700" 
+    Width="1200"
     
-    MinHeight="600" 
-    MinWidth="974"
+    MinHeight="700" 
+    MinWidth="1200"
     
-    MaxHeight="600" 
-    MaxWidth="974"
+    MaxHeight="700" 
+    MaxWidth="1200"
     
     Background="#333">
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="0.1*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="0.1*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid HorizontalAlignment="Center" Margin="70">
+        <!-- Hamburger menu -->
+        <DockPanel Grid.Column="0" Grid.Row="1" Height="Auto" Grid.RowSpan="1" VerticalAlignment="Top" Margin="5">
 
-            <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <mah:Tile 
-                        Name="tileProfesionales" 
-                        Title="Profesionales" 
-                        Click="tileProfesionales_Click">
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Title="Clientes">
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Title="Actividades">
-                    </mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Profesionales</Label>
                 </StackPanel>
+            </mah:Tile>
 
-                <StackPanel Orientation="Horizontal">
-                    <mah:Tile 
-                        Title="Contratos">
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Title="Pagos">
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Title="Alertas">
-                    </mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Clientes</Label>
                 </StackPanel>
+            </mah:Tile>
 
-                <StackPanel Orientation="Horizontal">
-                    <mah:Tile 
-                        Title="Checklists" >
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Name="tileUsuarios" 
-                        Title="Usuarios" 
-                        Click="tileUsuarios_Click" >
-                    </mah:Tile>
-
-                    <mah:Tile 
-                        Title="Perfiles de usuario" >
-                    </mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Actividades</Label>
                 </StackPanel>
-            </StackPanel>
-        </Grid>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Contratos</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Pagos</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Alertas</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Checklists</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Reportes</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Usuarios</Label>
+                </StackPanel>
+            </mah:Tile>
+
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
+                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
+                    <Label FontSize="15" Foreground="White">Perfiles de Usuario</Label>
+                </StackPanel>
+            </mah:Tile>
 
 
-        <!-- Flyout -->
+            <!-- 
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Clientes"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Actividades"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Contratos"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Pagos"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Alertas"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Checklists"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Reportes" IsEnabled="False"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Usuarios"></mah:Tile>
+            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Perfiles de Usuario"></mah:Tile>
+            -->
+            
+        </DockPanel>
 
-        <mah:Flyout Name="Flyout" IsOpen="False">
-            <mah:FlyoutsControl>
-                <mah:Flyout Header="Settings" Position="Left" Width="1000" Height="500">
-
-                </mah:Flyout>
-                <mah:Flyout Header="About" IsOpen="{Binding IsAboutFlyoutOpen}" Position="Left" Width="1000" Height="100">
-                    <!-- The content goes here -->
-                </mah:Flyout>
-
-                
-            </mah:FlyoutsControl>
-        </mah:Flyout>
-
-        
 
         <!-- Frame de las hojas -->
+        <Frame x:Name="windowFrame" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="5">
 
+        </Frame>
+
+
+        <!-- Cuenta -->
+        <StackPanel 
+            Grid.Column="0" Grid.Row="2" Orientation="Horizontal" 
+            Margin="10,5,10,5" 
+            HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            
+            <iconPacks:FontAwesome Width="30" Height="30" Kind="UserCircleRegular" />
+            <Label FontSize="15" Foreground="White" Margin="10,0,0,0">Usuario1</Label>
+
+
+        </StackPanel>
+        
     </Grid>
 </mah:MetroWindow>
