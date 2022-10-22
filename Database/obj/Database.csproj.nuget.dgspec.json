@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj": {}
+    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj": {
+    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj",
+        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj",
         "projectName": "Database",
-        "projectPath": "C:\\Users\\Relentless\\source\\repos\\SebastianMartinezP\\SecurityApp\\Database\\Database.csproj",
-        "packagesPath": "C:\\Users\\Relentless\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Relentless\\Source\\Repos\\SebastianMartinezP\\SecurityApp\\Database\\obj\\",
+        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj",
+        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
+        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Relentless\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

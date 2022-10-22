@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Relentless\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Relentless\\.nuget\\packages"
+      "C:\\Users\\Seba\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Seba\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.NullabilityInfoContext.IsSupported": true,

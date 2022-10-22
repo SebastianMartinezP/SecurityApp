@@ -88,11 +88,10 @@
         <!-- Flyout -->
 
         <mah:Flyout Name="Flyout" IsOpen="False">
-            <mah:FlyoutsControl >
+            <mah:FlyoutsControl>
                 <mah:Flyout Header="Settings" Position="Left" Width="1000" Height="500">
-                    
+
                 </mah:Flyout>
-                <Label Content="jgskjfsd"></Label>
                 <mah:Flyout Header="About" IsOpen="{Binding IsAboutFlyoutOpen}" Position="Left" Width="1000" Height="100">
                     <!-- The content goes here -->
                 </mah:Flyout>

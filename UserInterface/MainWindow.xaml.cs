@@ -45,9 +45,13 @@ namespace UserInterface
             {
                 Width = 1000,
                 Height = 1000,
-                Content = new PageUsuario()
+                Content = new PageUsuario(),
             };
+            
+
             Flyout.IsOpen = true;
+
+            
         }
     }
 }
