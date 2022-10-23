@@ -50,3 +50,4 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\obj\Debug\net6.0
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\obj\Debug\net6.0-windows7.0\Testing.pdb
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\obj\Debug\net6.0-windows7.0\Testing.genruntimeconfig.cache
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\obj\Debug\net6.0-windows7.0\ref\Testing.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows7.0\MahApps.Metro.IconPacks.BootstrapIcons.dll

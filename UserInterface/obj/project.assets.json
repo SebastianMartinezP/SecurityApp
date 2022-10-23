@@ -75,6 +75,28 @@
           }
         }
       },
+      "MahApps.Metro.IconPacks.BootstrapIcons/4.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "MahApps.Metro.IconPacks.FontAwesome/4.11.0": {
         "type": "package",
         "compile": {
@@ -886,6 +908,63 @@
         "mahapps.metro.logo.png",
         "mahapps.metro.nuspec",
         "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "MahApps.Metro.IconPacks.BootstrapIcons/4.11.0": {
+      "sha512": "PiKLp5u58E852bkx1EhqWbCt1Xsyeqyyr+GKXFzJ9OfaKc6pWT2HvskQdlJdRVyGQae8A+3jnzxwUYoh3IlYuQ==",
+      "type": "package",
+      "path": "mahapps.metro.iconpacks.bootstrapicons/4.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/net45/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/net45/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/net45/MahApps.Metro.IconPacks.Core.dll",
+        "lib/net45/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/net45/MahApps.Metro.IconPacks.Core.xml",
+        "lib/net46/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/net46/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/net46/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/net46/MahApps.Metro.IconPacks.Core.dll",
+        "lib/net46/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/net46/MahApps.Metro.IconPacks.Core.xml",
+        "lib/net47/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/net47/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/net47/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/net47/MahApps.Metro.IconPacks.Core.dll",
+        "lib/net47/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/net47/MahApps.Metro.IconPacks.Core.xml",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.xml",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.Core.dll",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/netcoreapp3.0/MahApps.Metro.IconPacks.Core.xml",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.Core.dll",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/netcoreapp3.1/MahApps.Metro.IconPacks.Core.xml",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.BootstrapIcons.dll",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.BootstrapIcons.pdb",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.BootstrapIcons.pri",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.BootstrapIcons.xml",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.BootstrapIcons/MahApps.Metro.IconPacks.BootstrapIcons.xr.xml",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.Core.dll",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.Core.pri",
+        "lib/uap10.0.16299/MahApps.Metro.IconPacks.Core.xml",
+        "logo_small.png",
+        "mahapps.metro.iconpacks.bootstrapicons.4.11.0.nupkg.sha512",
+        "mahapps.metro.iconpacks.bootstrapicons.nuspec"
       ]
     },
     "MahApps.Metro.IconPacks.FontAwesome/4.11.0": {
@@ -1910,6 +1989,7 @@
       "Business >= 1.0.0",
       "Database >= 1.0.0",
       "MahApps.Metro >= 2.4.9",
+      "MahApps.Metro.IconPacks.BootstrapIcons >= 4.11.0",
       "MahApps.Metro.IconPacks.FontAwesome >= 4.11.0",
       "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8"
@@ -1968,6 +2048,10 @@
           "MahApps.Metro": {
             "target": "Package",
             "version": "[2.4.9, )"
+          },
+          "MahApps.Metro.IconPacks.BootstrapIcons": {
+            "target": "Package",
+            "version": "[4.11.0, )"
           },
           "MahApps.Metro.IconPacks.FontAwesome": {
             "target": "Package",

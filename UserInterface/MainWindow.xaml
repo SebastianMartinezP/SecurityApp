@@ -34,93 +34,163 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        
+        <!-- Fondo gris -->
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF26292B"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
+        <Rectangle Grid.Column="0" Grid.Row="2" Grid.RowSpan="1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#17191a"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- 
+        
+        Color barra superior:       #606c74 
+        Color font NombreUsuario:   #FFC3C3C3
+        
+        -->
+        
         <!-- Hamburger menu -->
         <DockPanel Grid.Column="0" Grid.Row="1" Height="Auto" Grid.RowSpan="1" VerticalAlignment="Top" Margin="5">
 
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Profesionales</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Clientes</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Actividades</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Contratos</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Pagos</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Alertas</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal"  Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Checklists</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Reportes</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Usuarios</Label>
-                </StackPanel>
-            </mah:Tile>
-
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
-                    <iconPacks:FontAwesome Width="30" Height="30" Kind="HammerSolid"/>
-                    <Label FontSize="15" Foreground="White">Perfiles de Usuario</Label>
-                </StackPanel>
-            </mah:Tile>
-
-
             <!-- 
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Clientes"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Actividades"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Contratos"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Pagos"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Alertas"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Checklists"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Reportes" IsEnabled="False"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Usuarios"></mah:Tile>
-            <mah:Tile DockPanel.Dock="Top" Margin="0" Width="200" Height="50" Title="Perfiles de Usuario"></mah:Tile>
+            <mah:Tile 
+                DockPanel.Dock="Top" Margin="0" Width="180" Height="40" 
+                HorizontalContentAlignment="Left" Background="#FF26292B"
+                >
+                <StackPanel Orientation="Horizontal" Margin="10,4,10,4">
+                    <StackPanel Width="40">
+                        <iconPacks:FontAwesome Width="26" Height="30" Kind="HammerSolid"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="White">Profesionales</Label>
+                </StackPanel>
+            </mah:Tile>
             -->
             
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="PersonFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Profesionales</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="Building" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Clientes</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="PencilSquare" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Actividades</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="VectorPen" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Contratos</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="CreditCardFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Pagos</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="ExclamationTriangleFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Alertas</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="UiChecks" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Checklists</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="BarChartLineFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Reportes</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="PeopleFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Usuarios</Label>
+                </StackPanel>
+            </Button>
+
+            <Button DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="PersonLinesFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Perfiles de Usuario</Label>
+                </StackPanel>
+            </Button>
         </DockPanel>
 
 
@@ -133,13 +203,24 @@
         <!-- Cuenta -->
         <StackPanel 
             Grid.Column="0" Grid.Row="2" Orientation="Horizontal" 
-            Margin="10,5,10,5" 
+            Margin="5,5,5,5" 
             HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            
-            <iconPacks:FontAwesome Width="30" Height="30" Kind="UserCircleRegular" />
-            <Label FontSize="15" Foreground="White" Margin="10,0,0,0">Usuario1</Label>
+
+            <StackPanel Margin="5,5,0,5">
+                <iconPacks:PackIconBootstrapIcons Width="36" Height="36" Kind="PersonCircle" />
+            </StackPanel>
 
 
+            <StackPanel Orientation="Vertical">
+                <Label 
+                    FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal"
+                    VerticalContentAlignment="Top">
+                    NombreUsuario
+                </Label>
+
+                <Label Margin="0,-12,0,0" Height="25"
+                    FontSize="12" Foreground="#606c74" >NombreAdmin</Label>
+            </StackPanel>
         </StackPanel>
         
     </Grid>

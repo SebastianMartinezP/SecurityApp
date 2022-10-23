@@ -118,3 +118,4 @@ C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\UserInterface\ob
 C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface.pdb
 C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface.genruntimeconfig.cache
 C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\ref\UserInterface.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows7.0\MahApps.Metro.IconPacks.BootstrapIcons.dll

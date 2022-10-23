@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8QSMcjvObwwyzIaIrWDwOhHZYKm9cn6NsHV4djzEppWBebpecaKGuLcFmP/twEoASzI2VwpTa/mhvMKdSVhYlg==",
+  "dgSpecHash": "NMWq4Ai65+pZ2WkvZRuuPEA2ZMUOTy/0CSV8SueUbmVwl9t96dEepV2dU+xUzmlM/hNI0Droip+EqUI8NMYOBA==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Seba\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro.iconpacks.bootstrapicons\\4.11.0\\mahapps.metro.iconpacks.bootstrapicons.4.11.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\mahapps.metro.iconpacks.fontawesome\\4.11.0\\mahapps.metro.iconpacks.fontawesome.4.11.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",

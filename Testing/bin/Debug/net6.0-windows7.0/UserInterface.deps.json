@@ -12,6 +12,7 @@
           "Business": "1.0.0",
           "Database": "1.0.0",
           "MahApps.Metro": "2.4.9",
+          "MahApps.Metro.IconPacks.BootstrapIcons": "4.11.0",
           "MahApps.Metro.IconPacks.FontAwesome": "4.11.0",
           "Microsoft.EntityFrameworkCore": "6.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8"
@@ -67,12 +68,20 @@
           }
         }
       },
-      "MahApps.Metro.IconPacks.FontAwesome/4.11.0": {
+      "MahApps.Metro.IconPacks.BootstrapIcons/4.11.0": {
         "runtime": {
-          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.BootstrapIcons.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.11.0.12"
           },
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.11.0.12"
+          }
+        }
+      },
+      "MahApps.Metro.IconPacks.FontAwesome/4.11.0": {
+        "runtime": {
           "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.FontAwesome.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.11.0.12"
@@ -417,6 +426,13 @@
       "sha512": "sha512-eMTkg6TBnCwHzszw7CP+pxsBeB4ZMsJFiTJJoifUVBysRyEenzzR+TKQJuMvvKK6KzvLxwHmJsFhi9o5p4vxhQ==",
       "path": "mahapps.metro/2.4.9",
       "hashPath": "mahapps.metro.2.4.9.nupkg.sha512"
+    },
+    "MahApps.Metro.IconPacks.BootstrapIcons/4.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PiKLp5u58E852bkx1EhqWbCt1Xsyeqyyr+GKXFzJ9OfaKc6pWT2HvskQdlJdRVyGQae8A+3jnzxwUYoh3IlYuQ==",
+      "path": "mahapps.metro.iconpacks.bootstrapicons/4.11.0",
+      "hashPath": "mahapps.metro.iconpacks.bootstrapicons.4.11.0.nupkg.sha512"
     },
     "MahApps.Metro.IconPacks.FontAwesome/4.11.0": {
       "type": "package",
