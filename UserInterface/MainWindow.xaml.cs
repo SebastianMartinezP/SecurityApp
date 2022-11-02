@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using UserInterface.Pages;
 
 namespace UserInterface
@@ -30,7 +31,8 @@ namespace UserInterface
             InitializeComponent();
             windowFrame.Content = new Frame()
             {
-                Content = new Page1()
+                //Content = new PageUsuario(this)
+                Content = new PagePerfilUsuario(this)
             };
         }
 
@@ -40,7 +42,8 @@ namespace UserInterface
             InitializeComponent();
             windowFrame.Content = new Frame()
             {
-                Content = new Page1()
+                //Content = new PageUsuario(this)
+                Content = new PagePerfilUsuario(this)
             };
         }
     }

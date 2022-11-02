@@ -13,7 +13,7 @@ namespace Business.Util
         private static IConfigurationProvider Configuration
         {
             get => _configuration ?? throw new InvalidOperationException(InvalidOperationMessage);
-            set => _configuration = (_configuration == null) ? value : throw new InvalidOperationException(AlreadyInitialized);
+            set { if (_configuration == null) _configuration = value; }
         }
 
         public static IMapper Mapper

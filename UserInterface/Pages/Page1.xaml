@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel>
-            <Label Content="Página de prueba." FontSize="90" Margin="10"></Label>
+            <Label Content="Bienvenido" FontSize="90" Margin="10"></Label>
             <Label Content="Esto es la página principal." FontSize="30" Margin="10"></Label>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,20,0,0">

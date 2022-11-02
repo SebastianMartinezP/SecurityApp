@@ -46,12 +46,8 @@ namespace UserInterface.Pages
 
                 Business.DTO.Usuario? user = Business.DTO.Usuario.GetUsuario(this.username, this.password);
 
-
-                //Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
-
                 if (user == null)
                 {
-                    //messageBox.Content = "Error con el usuario.";
                     handleAlert(Visibility.Visible, "Error con el usuario.");
                 }
                 else
@@ -74,9 +70,6 @@ namespace UserInterface.Pages
 
                     }
                 }
-
-
-                //messageBox.ShowDialog();
             }
             catch (Exception) { }
             

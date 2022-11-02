@@ -6,7 +6,7 @@ using Business.Util;
 using System.Threading.Tasks;
 using Database.Models;
 
-namespace Business
+namespace Business.DTO
 {
     public partial class Profesional
     {
