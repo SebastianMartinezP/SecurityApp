@@ -7,33 +7,170 @@
       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       xmlns:local="clr-namespace:UserInterface.Pages"
       
+      
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      
       Style="{DynamicResource MahApps.Styles.Page}"
       
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageUsuario">
-    
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="PageUsuario"
+      Background="Transparent"
+      >
+
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="45"/>
             <ColumnDefinition />
-            <ColumnDefinition Width="0.2*"/>
-        </Grid.ColumnDefinitions>  
-        
-        
-        <DataGrid 
-            ItemsSource="{Binding}"
-            x:Name="DataGridUsuarios"
-            Grid.Column="1"
-            Width="500"
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Texto Indicativo -->
+        <Label 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+            Margin="5,0,0,0" Width="300" HorizontalAlignment="Left"
+            FontSize="30" Foreground="#FFC3C3C3" FontWeight="Thin">Usuarios
+        </Label>
+
+
+        <!-- Bara de busqueda -->
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right"
+            Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" 
             >
+            <TextBox 
+                x:Name="tbx_search"
+                Width="400" Height="40"
+                Margin="0,5,0,0" FontSize="18">
+            </TextBox>
 
-            
+            <controls:Tile 
+                Width="40" Height="40" Margin="5,5,5,0">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="Search" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
 
-        </DataGrid>
+        </StackPanel>
+
+
+        <!-- Botones laterales -->
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0">
+
+            <controls:Tile x:Name="btn_add"
+                Click="Add"
+                Width="40" Height="40"  Margin="5,5,0,0">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="PlusSquare" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
+
+            <controls:Tile x:Name="btn_update"
+                Click="Refresh"
+                Width="40" Height="40"  Margin="5,5,0,0">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="ArrowClockwise" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
+
+            <controls:Tile x:Name="btn_edit"
+                Click="Edit"
+                Width="40" Height="40" Margin="5,5,0,0" IsEnabled="False">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="PencilFill" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
+
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DockPanel Grid.Column="1" Grid.Row="1" Margin="0">
+            <DataGrid 
+                SelectedCellsChanged="datagrid_SelectedCellsChanged"
+                x:Name="datagrid"
+                ItemsSource="{Binding}" 
+                Grid.Column="1" Margin="5"
+                FontSize="15" FontWeight="Thin" Foreground="#FFC3C3C3"
+                SelectionMode="Single"
+                IsReadOnly="True">
+            </DataGrid>
+        </DockPanel>
+
+
+        <mah:Flyout 
+            x:Name="Flyout" 
+            Grid.Column="1" Grid.Row="1" Margin="5"
+            Position="Right" Height="Auto"
+            IsOpen="False"
+            Background="#FF26292B"
+            Opacity="0.8"
+            CloseButtonVisibility="Hidden">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="45"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition />
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+
+                <!-- Campos del formulario -->
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">
+                    <Label FontSize="15">IdUsuario</Label>
+                    <TextBox x:Name="tbx_IdUsuario" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">Correo</Label>
+                    <TextBox x:Name="tbx_Correo" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">ContrasenaHashed</Label>
+                    <TextBox x:Name="tbx_ContrasenaHashed" IsReadOnly="True" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">
+                    <Label FontSize="15">IsHabilitado</Label>
+                    <TextBox x:Name="tbx_IsHabilitado" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">IdPerfil</Label>
+                    <TextBox x:Name="tbx_IdPerfil" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">RutCliente</Label>
+                    <TextBox x:Name="tbx_RutCliente" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">RutProfesional</Label>
+                    <TextBox x:Name="tbx_RutProfesional" IsReadOnly="True" FontSize="15"/>
+                </StackPanel>
+
+
+                <!-- Botones aceptar / cancelar -->
+                <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="2" Margin="5" HorizontalAlignment="Right">
+                    <controls:Tile x:Name="btn_accept" 
+                        Click="Save"
+                        Width="80" Height="35" Margin="5,0,0,0" IsEnabled="True"
+                        Title="Aceptar" TitleFontSize="15" VerticalTitleAlignment="Center" HorizontalTitleAlignment="Center">
+                    </controls:Tile>
+
+                    <controls:Tile x:Name="btn_cancel"
+                        Click="Cancel"
+                        Width="80" Height="35" Margin="5,0,0,0" IsEnabled="True" 
+                        Title="Cancelar" TitleFontSize="15" VerticalTitleAlignment="Center" HorizontalTitleAlignment="Center">
+                    </controls:Tile>
+                </StackPanel>
+                
+            </Grid>
+        </mah:Flyout>
+
 
     </Grid>
-    
-    
 </Page>

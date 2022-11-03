@@ -42,6 +42,41 @@ namespace Business.DTO
         }
         #endregion
 
+        #region Update
+
+        public static bool? Update(DTO.PerfilUsuario perfilUpdate)
+        {
+            try
+            {
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.PerfilUsuario? perfil = context.PerfilUsuario
+                        .FirstOrDefault(u => u.Idperfil == perfilUpdate.Idperfil);
+
+                    if (perfil == null) // no encontró un registro existente, no actualizar.
+                    {
+                        return false;
+                    }
+
+                    perfil.Idperfil = perfilUpdate.Idperfil;
+                    perfil.Descripcion = perfilUpdate.Descripcion;
+
+
+                    context.PerfilUsuario.Update(perfil);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
+
         #region Read
 
         public static DTO.PerfilUsuario? GetPerfilUsuario(string descripcion)

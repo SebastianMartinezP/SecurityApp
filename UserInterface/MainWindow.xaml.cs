@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using UserInterface.Pages;
 
 namespace UserInterface
@@ -24,34 +25,26 @@ namespace UserInterface
     public partial class MainWindow : MetroWindow
     {
         public string? username { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            windowFrame.Content = new Frame()
+            {
+                //Content = new PageUsuario(this)
+                Content = new PagePerfilUsuario(this)
+            };
         }
 
         public MainWindow(string username)
         {
             this.username = username;
             InitializeComponent();
-        }
-
-        private void tileProfesionales_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void tileUsuarios_Click(object sender, RoutedEventArgs e)
-        {
-            Flyout.Content = new Frame()
+            windowFrame.Content = new Frame()
             {
-                Width = 1000,
-                Height = 1000,
-                Content = new PageUsuario(),
+                //Content = new PageUsuario(this)
+                Content = new PagePerfilUsuario(this)
             };
-            
-
-            Flyout.IsOpen = true;
-
-            
         }
     }
 }

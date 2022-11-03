@@ -27,6 +27,12 @@
     <Page Update="Pages\Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\PagePerfilUsuario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageProfesional.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\PageUsuario.xaml">
       <SubType>Designer</SubType>
     </Page>

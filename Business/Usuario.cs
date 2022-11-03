@@ -119,10 +119,7 @@ namespace Business.DTO
                 using (ModelContext context = new ModelContext())
                 {
                     Database.Models.Usuario? usuario = context.Usuario
-                        .FirstOrDefault(u =>
-                            u.Correo.Equals(usuarioUpdate.Correo) 
-                            && u.Contrasenahashed.Equals(usuarioUpdate.Contrasenahashed)
-                        );
+                        .FirstOrDefault(u => u.Idusuario == usuarioUpdate.Idusuario);
 
                     if (usuario == null) // no encontró un registro existente, no actualizar.
                     {
@@ -132,6 +129,7 @@ namespace Business.DTO
                     usuario.Correo = usuarioUpdate.Correo;
                     usuario.Contrasenahashed = usuarioUpdate.Contrasenahashed;
                     usuario.Ishabilitado = usuarioUpdate.Ishabilitado;
+                    usuario.Idperfil = usuarioUpdate.Idperfil;
 
                     context.Usuario.Update(usuario);
                     context.SaveChanges();
