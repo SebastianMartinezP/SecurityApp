@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ErrorImage.png" />
     <None Remove="Images\LoginWindow_logo.png" />
   </ItemGroup>
 
@@ -35,10 +36,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ErrorImage.png" />
     <Resource Include="Images\LoginWindow_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\PageError.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PagePerfilUsuario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +53,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\PageError.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\PagePerfilUsuario.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -25,26 +25,71 @@ namespace UserInterface
     public partial class MainWindow : MetroWindow
     {
         public string? username { get; set; }
+        public List<object> pages { get; set; }
+
 
         public MainWindow()
         {
             InitializeComponent();
-            windowFrame.Content = new Frame()
+
+            pages = new List<object>()
             {
-                //Content = new PageUsuario(this)
-                Content = new PagePerfilUsuario(this)
+                new PageHome(this),
+                new PageError(this),
+                new PageActividad(this),
+                new PageCheckList(this),
+                new PageCliente(this),
+                new PageContrato(this),
+                // new PagePago(this),
+                new PagePerfilUsuario(this),
+                new PageProfesional(this),
+                new PageUsuario(this),
             };
+
+            windowFrame.Content = GoTo<PageHome>();
         }
 
         public MainWindow(string username)
         {
             this.username = username;
+
             InitializeComponent();
-            windowFrame.Content = new Frame()
+
+            pages = new List<object>()
             {
-                //Content = new PageUsuario(this)
-                Content = new PagePerfilUsuario(this)
+                new PageHome(this),
+                new PageError(this),
+                // new PageActividad(this),
+                new PageCheckList(this),
+                new PageCliente(this),
+                new PageContrato(this),
+                // new PagePago(this),
+                new PagePerfilUsuario(this),
+                new PageProfesional(this),
+                new PageUsuario(this),
             };
+
+            windowFrame.Content = GoTo<PageHome>();
         }
+
+
+        public object? GoTo<T>()
+        {
+            return 
+                pages.Find(x => x.GetType() == typeof(T)) ??
+                pages.Find(x => x.GetType() == typeof(PageError));
+        }
+
+        private void GoToProfesionales(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageProfesional>();
+        private void GoToClientes(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageCliente>();
+        private void GoToActividades(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageActividad>();
+        private void GoToContratos(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageContrato>();
+        private void GoToPagos(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PagePago>();
+        private void GoToAlertas(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageError>();
+        private void GoToChecklists(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageCheckList>();
+        private void GoToReportes(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageError>();
+        private void GoToUsuarios(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageUsuario>();
+        private void GoToPerfilesDeUsuario(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PagePerfilUsuario>();
+
     }
 }

@@ -28,7 +28,8 @@ namespace Business.DTO
                         return false;
                     }
 
-                    Database.Models.Profesional profesionalDB = MapperWrapper.Mapper.Map<Database.Models.Profesional>(NuevoProfesional);
+                    Database.Models.Profesional profesionalDB = 
+                        MapperWrapper.Mapper.Map<Database.Models.Profesional>(NuevoProfesional);
 
                     context.Profesional.Add(profesionalDB);
                     context.SaveChanges();
@@ -87,7 +88,7 @@ namespace Business.DTO
         #endregion
 
     #region ReadAll
-         public static List<DTO.Profesional>?  ReadAllProfesional()
+        public static List<DTO.Profesional>?  ReadAllProfesional()
         {
             try
             {

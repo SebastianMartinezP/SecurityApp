@@ -340,6 +340,12 @@ namespace Database.Models
                     .HasColumnType("NUMBER(38)")
                     .HasColumnName("VALOR");
 
+                entity.Property(e => e.Vigente)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("VIGENTE")
+                    .IsFixedLength();
+
                 entity.HasOne(d => d.IdactividadNavigation)
                     .WithMany(p => p.Contratos)
                     .HasForeignKey(d => d.Idactividad)

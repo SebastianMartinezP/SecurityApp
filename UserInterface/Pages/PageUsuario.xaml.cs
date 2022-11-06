@@ -62,7 +62,7 @@ namespace UserInterface.Pages
             tbx_IdUsuario.Text = "";
             tbx_Correo.Text = "";
             tbx_ContrasenaHashed.Text = "";
-            tbx_IsHabilitado.Text = "";
+            dtp_IsHabilitado.IsChecked = true;
             tbx_IdPerfil.Text = "";
             tbx_RutCliente.Text = "";
             tbx_RutProfesional.Text = "";
@@ -81,19 +81,12 @@ namespace UserInterface.Pages
 
             tbx_Correo.IsReadOnly = false;
             tbx_ContrasenaHashed.IsReadOnly = false;
-            tbx_IsHabilitado.IsReadOnly = false;
             tbx_IdPerfil.IsReadOnly = false;
 
             tbx_Correo.IsEnabled = true;
             tbx_ContrasenaHashed.IsEnabled = true;
-            tbx_IsHabilitado.IsEnabled = true;
             tbx_IdPerfil.IsEnabled = true;
-
-            
-
-
-            
-
+            dtp_IsHabilitado.IsEnabled = true;
 
             Flyout.IsOpen = true;
         }
@@ -109,7 +102,7 @@ namespace UserInterface.Pages
                 tbx_IdUsuario.Text = selected.Idusuario.ToString();
                 tbx_Correo.Text = selected.Correo.ToString();
                 tbx_ContrasenaHashed.Text = selected.Contrasenahashed.ToString();
-                tbx_IsHabilitado.Text = selected.Ishabilitado.ToString();
+                dtp_IsHabilitado.IsChecked = (selected.Ishabilitado ?? "0").Equals("1");
                 tbx_IdPerfil.Text = selected.Idperfil.ToString();
                 tbx_RutCliente.Text = selected.Rutcliente?.ToString();
                 tbx_RutProfesional.Text = selected.Rutprofesional?.ToString();
@@ -129,13 +122,12 @@ namespace UserInterface.Pages
 
             tbx_Correo.IsReadOnly = false;
             tbx_ContrasenaHashed.IsReadOnly = false;
-            tbx_IsHabilitado.IsReadOnly = false;
             tbx_IdPerfil.IsReadOnly = false;
 
 
             tbx_Correo.IsEnabled = true;
             tbx_ContrasenaHashed.IsEnabled = true;
-            tbx_IsHabilitado.IsEnabled = true;
+            dtp_IsHabilitado.IsEnabled = true;
             tbx_IdPerfil.IsEnabled = true;
 
 
@@ -162,7 +154,7 @@ namespace UserInterface.Pages
                 Contrasenahashed = tbx_ContrasenaHashed.Text,
                 Rutcliente = tbx_RutCliente.Text.Equals("") ? null : tbx_RutCliente.Text,
                 Rutprofesional = tbx_RutProfesional.Text.Equals("") ? null : tbx_RutProfesional.Text,
-                Ishabilitado = tbx_IsHabilitado.Text,
+                Ishabilitado = (dtp_IsHabilitado.IsChecked ?? false) ? "1" : "0",
                 Idperfil = decimal.Parse(tbx_IdPerfil.Text),
             };
 

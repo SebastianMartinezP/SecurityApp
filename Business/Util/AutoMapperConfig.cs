@@ -14,6 +14,10 @@ namespace Business.Util
                 cfg.CreateMap<Database.Models.CheckList, DTO.CheckList>().ReverseMap();
                 cfg.CreateMap<Database.Models.PerfilUsuario, DTO.PerfilUsuario>().ReverseMap();
                 cfg.CreateMap<Database.Models.Profesional, DTO.Profesional>().ReverseMap();
+                cfg.CreateMap<Database.Models.Cliente, DTO.Cliente>().ReverseMap();
+                cfg.CreateMap<Database.Models.Actividad, DTO.Actividad>().ReverseMap();
+                cfg.CreateMap<Database.Models.Pago, DTO.Pago>().ReverseMap();
+                cfg.CreateMap<Database.Models.Contrato, DTO.Contrato>().ReverseMap();
             });
 
             MapperWrapper.AssertConfigurationIsValid();

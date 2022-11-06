@@ -10,7 +10,22 @@
     <Compile Update="Pages\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Page1.xaml.cs">
+    <Compile Update="Pages\PageHome.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageActividad.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageCheckList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageCliente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageContrato.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PagePago.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\PageUsuario.xaml.cs">
@@ -24,7 +39,25 @@
     <Page Update="Pages\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Page1.xaml">
+    <Page Update="Pages\PageError.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageHome.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageActividad.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageCheckList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageCliente.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageContrato.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PagePago.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PagePerfilUsuario.xaml">

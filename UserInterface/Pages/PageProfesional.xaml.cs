@@ -65,7 +65,7 @@ namespace UserInterface.Pages
             tbx_Primerapellido.Text = "";
             tbx_Segundoapellido.Text = "";
             tbx_Numerocontacto.Text = "";
-            tbx_Isvigente.Text = "";
+            dtp_Isvigente.IsChecked = true;
 
             // habilitamos campos clave
 
@@ -79,14 +79,13 @@ namespace UserInterface.Pages
             tbx_Primerapellido.IsReadOnly = false;
             tbx_Segundoapellido.IsReadOnly = false;
             tbx_Numerocontacto.IsReadOnly = false;
-            tbx_Isvigente.IsReadOnly = false;
 
             tbx_Primernombre.IsEnabled = true;
             tbx_Segundonombre.IsEnabled = true;
             tbx_Primerapellido.IsEnabled = true;
             tbx_Segundoapellido.IsEnabled = true;
             tbx_Numerocontacto.IsEnabled = true;
-            tbx_Isvigente.IsEnabled = true;
+            dtp_Isvigente.IsEnabled = true;
 
             Flyout.IsOpen = true;
         }
@@ -105,7 +104,7 @@ namespace UserInterface.Pages
                 tbx_Primerapellido.Text = selected.Primerapellido.ToString();
                 tbx_Segundoapellido.Text = selected.Segundoapellido.ToString();
                 tbx_Numerocontacto.Text = selected.Numerocontacto.ToString();
-                tbx_Isvigente.Text = selected.Isvigente.ToString();
+                dtp_Isvigente.IsChecked = (selected.Isvigente ?? "0").Equals("1");
             }
 
             // deshabilitamos campos clave
@@ -120,14 +119,13 @@ namespace UserInterface.Pages
             tbx_Primerapellido.IsReadOnly = false;
             tbx_Segundoapellido.IsReadOnly = false;
             tbx_Numerocontacto.IsReadOnly = false;
-            tbx_Isvigente.IsReadOnly = false;
 
             tbx_Primernombre.IsEnabled = true;
             tbx_Segundonombre.IsEnabled = true;
             tbx_Primerapellido.IsEnabled = true;
             tbx_Segundoapellido.IsEnabled = true;
             tbx_Numerocontacto.IsEnabled = true;
-            tbx_Isvigente.IsEnabled = true;
+            dtp_Isvigente.IsEnabled = true;
 
 
             Flyout.IsOpen = true;
@@ -157,7 +155,7 @@ namespace UserInterface.Pages
                 Segundoapellido = tbx_Segundoapellido.Text,
                 Numerocontacto = tbx_Numerocontacto.Text,
 
-                Isvigente = tbx_Isvigente.Text,
+                Isvigente = (dtp_Isvigente.IsChecked ?? false) ? "1" : "0",
             };
 
             #region Guardar

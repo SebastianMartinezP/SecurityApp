@@ -29,6 +29,9 @@ namespace Business.DTO
                     Database.Models.CheckList checklistSave =
                         MapperWrapper.Mapper.Map<Database.Models.CheckList>(c);
 
+                    checklistSave.Fecharegistro = DateTime.Today;
+
+
                     context.CheckList.Add(checklistSave);
                     context.SaveChanges();
 
@@ -69,6 +72,7 @@ namespace Business.DTO
                     checkList.Isseguro = c.Isseguro;
                     checkList.Istrabajoseguro = c.Istrabajoseguro;
                     checkList.Descripcion = c.Descripcion;
+                    // fechaRegistro no se actualiza
 
                     context.CheckList.Update(checkList);
                     context.SaveChanges();

@@ -12,6 +12,7 @@ namespace Database.Models
         public decimal Idpago { get; set; }
         public string Rutcliente { get; set; } = null!;
         public decimal Idactividad { get; set; }
+        public string Vigente { get; set; } = null!;
 
         public virtual Actividad IdactividadNavigation { get; set; } = null!;
         public virtual Cliente RutclienteNavigation { get; set; } = null!;

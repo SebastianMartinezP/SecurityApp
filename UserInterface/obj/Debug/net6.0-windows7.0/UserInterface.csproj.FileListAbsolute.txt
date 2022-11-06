@@ -1,7 +1,6 @@
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface.csproj.AssemblyReference.cache
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\MainWindow.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\LoginWindow.g.cs
-E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\Page1.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageUsuario.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\App.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface_MarkupCompile.cache
@@ -43,7 +42,6 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\App.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\MainWindow.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\LoginWindow.baml
-E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\Page1.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageUsuario.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface.g.resources
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\UserInterface.GeneratedMSBuildEditorConfig.editorconfig
@@ -123,3 +121,17 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageProfesional.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PagePerfilUsuario.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PagePerfilUsuario.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageActividad.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageCheckList.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageCliente.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageContrato.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PagePago.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageActividad.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageCheckList.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageCliente.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageContrato.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PagePago.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageHome.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageHome.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageError.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageError.baml

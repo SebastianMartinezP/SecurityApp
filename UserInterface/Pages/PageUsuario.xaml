@@ -142,8 +142,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">
-                    <Label FontSize="15">IsHabilitado</Label>
-                    <TextBox x:Name="tbx_IsHabilitado" IsReadOnly="True" FontSize="15"/>
+                    <CheckBox x:Name="dtp_IsHabilitado" FontSize="15" Content="Usuario Habilitado" Margin="0,10,0,10"/>
                     <Label FontSize="15">IdPerfil</Label>
                     <TextBox x:Name="tbx_IdPerfil" IsReadOnly="True" FontSize="15"/>
                     <Label FontSize="15">RutCliente</Label>

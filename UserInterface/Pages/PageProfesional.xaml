@@ -148,8 +148,7 @@
                     <TextBox x:Name="tbx_Segundoapellido" IsReadOnly="True" FontSize="15"/>
                     <Label FontSize="15">Numerocontacto</Label>
                     <TextBox x:Name="tbx_Numerocontacto" IsReadOnly="True" FontSize="15"/>
-                    <Label FontSize="15">Isvigente</Label>
-                    <TextBox x:Name="tbx_Isvigente" IsReadOnly="True" FontSize="15"/>
+                    <CheckBox x:Name="dtp_Isvigente" FontSize="15" Content="Vigente" Margin="0,10,0,10"/>
                 </StackPanel>
 
 
