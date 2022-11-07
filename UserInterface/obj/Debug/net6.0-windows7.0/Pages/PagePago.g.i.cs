@@ -90,7 +90,7 @@ namespace UserInterface.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/UserInterface;component/pages/pagepago.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/UserInterface;V1.0.0.0;component/pages/pagepago.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\PagePago.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

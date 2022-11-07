@@ -145,6 +145,7 @@ namespace Business.DTO
                     Cliente.Razonsocial = clienteUpdate.Razonsocial;
                     Cliente.Numerocontacto = clienteUpdate.Numerocontacto;
                     Cliente.Ismoroso = clienteUpdate.Ismoroso;
+                    Cliente.Idrubro = clienteUpdate.Idrubro;
 
                     context.Cliente.Update(Cliente);
                     context.SaveChanges();
