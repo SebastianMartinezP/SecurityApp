@@ -40,7 +40,7 @@
             <Label 
                 Content="Login"
                 HorizontalAlignment="Center"
-                FontSize="35"
+                FontSize="30"
                 Margin="0, 35, 0, 0"/>
         </StackPanel>
 
@@ -48,11 +48,11 @@
             Orientation="Vertical"
             Grid.Row="1"
             HorizontalAlignment="Center"
-            Margin="10">
+            Margin="20">
             <Label 
                 Content="Conéctate a tu cuenta"
                 HorizontalAlignment="Center"
-                FontSize="20"
+                FontSize="18"
                 Margin="0,10,0,10"/>
 
             <StackPanel
@@ -100,7 +100,7 @@
                 <Label x:Name="lb_Alert"
                 Content="Conéctate a tu cuenta"
                 HorizontalAlignment="Center"
-                FontSize="15"
+                FontSize="13"
                 Margin="0,5,0,5"
                 Foreground="#E1AD01"/>
 
@@ -110,7 +110,7 @@
             <Button x:Name="btn_Login"
                 Content="Login"
                 Width="100"
-                FontSize="20"
+                FontSize="15"
                 Margin="0,10,0,0"
                 HorizontalAlignment="Center"
                 Click="Login"/>

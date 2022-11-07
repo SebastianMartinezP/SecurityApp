@@ -9,18 +9,9 @@
       Title="Page1">
 
     <Grid>
-        <StackPanel>
-            <Label Content="Bienvenido" FontSize="90" Margin="10" Foreground="#FFC3C3C3"/>
-            <Label Content="Esto es la página principal." FontSize="30" Margin="10" Foreground="#FFC3C3C3"/>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,20,0,0">
-                <TextBlock Width="300" Height="200" TextWrapping="Wrap" FontSize="15">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                </TextBlock>
-                <TextBlock Width="300" Height="200" TextWrapping="Wrap" FontSize="15">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                </TextBlock>
-            </StackPanel>
+        <StackPanel Margin="0,100,0,0">
+            <Label Content="Bienvenido" FontSize="90" Margin="10" Foreground="#FFC3C3C3" Width="466"/>
+            <Label Content="SECURITY" FontSize="30" Foreground="#FFC3C3C3" Width="148" Height="51" Opacity="0.5"/>
         </StackPanel>
         
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Business;
+using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
@@ -209,6 +211,136 @@ namespace UserInterface.Pages
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
 
-        #endregion 
+        #endregion
+
+
+
+        #region Botones Notificacion por correo
+
+        private async void NotifyExpiredAsync(object sender, RoutedEventArgs e)
+        {
+            LoginDialogData result = await _mainWindow.ShowLoginAsync(
+                "Confirmacion necesaria"
+                , "Ingrese su contraseña para continuar" 
+                , new LoginDialogSettings()
+                {
+                    AffirmativeButtonText = "Confirmar",
+                    NegativeButtonText = "Cancelar",
+                    NegativeButtonVisibility = Visibility.Visible,
+                }
+                );
+            if (result == null)
+            {
+                await _mainWindow.ShowMessageAsync("Proceso Abortado", "");
+            }
+            else if (!result.Password.Equals(_mainWindow.user?.Contrasenahashed) 
+                || !result.Username.Equals(_mainWindow.user?.Correo))
+            {
+                await _mainWindow.ShowMessageAsync("Contraseña incorrecta", "envío de correos abortado.");
+            }
+            else
+            {
+                string processMessage = "";
+                // filtramos usuarios de clientes
+                List<Business.DTO.Usuario> AllUsers =
+                    Business.DTO.Usuario.GetAllUsuario().Where(u => u.Rutcliente != null).ToList();
+
+                // estado de los contratos
+                foreach (Business.DTO.Contrato contrato in data)
+                {
+
+                    double daysDiff = (contrato.Fechacontrato.AddMonths(1).AddDays(-10) - DateTime.Today).TotalDays;
+                    if (daysDiff < 0)
+                    {
+                        // Caducados
+                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.ReadCliente(contrato.Rutcliente);
+                        Business.DTO.Usuario? usuarioCliente =
+                            AllUsers.FirstOrDefault(u => u.Rutcliente.Equals(clienteContrato?.Rutcliente));
+
+
+                        if (usuarioCliente != null)
+                        {
+                            Business.DTO.MailResponse? mailResponse =
+                            MailHandler.SendContractExpiredEmail(
+                                "mailsystem@security.com",
+                                usuarioCliente.Correo,
+                                clienteContrato.Razonsocial,
+                                string.Format("Fecha Contrato: {0}", contrato.Fechacontrato.ToString()));
+
+                            processMessage += mailResponse?.Result + '\n';
+                        }
+                    }
+                }
+                await _mainWindow.ShowMessageAsync("Correos Enviados"
+                    , processMessage
+                    , MessageDialogStyle.Affirmative
+                    , new MetroDialogSettings() { MaximumBodyHeight = 1000 });
+            }
+        }
+
+        private async void NotifyAboutToExpireAsync(object sender, RoutedEventArgs e)
+        {
+            LoginDialogData result = await _mainWindow.ShowLoginAsync(
+                "Confirmacion necesaria"
+                , "Ingrese su contraseña para continuar"
+                , new LoginDialogSettings()
+                {
+                    AffirmativeButtonText = "Confirmar",
+                    NegativeButtonText = "Cancelar",
+                    NegativeButtonVisibility = Visibility.Visible,
+                }
+                );
+            if (result == null)
+            {
+                await _mainWindow.ShowMessageAsync("Proceso Abortado", "");
+            }
+            else if (!result.Password.Equals(_mainWindow.user?.Contrasenahashed) 
+                || !result.Username.Equals(_mainWindow.user?.Correo))
+            {
+                await _mainWindow.ShowMessageAsync("Contraseña incorrecta", "envío de correos abortado.");
+            }
+            else
+            {
+                string processMessage = "";
+                // filtramos usuarios de clientes
+                List<Business.DTO.Usuario> AllUsers =
+                    Business.DTO.Usuario.GetAllUsuario().Where(u => u.Rutcliente != null).ToList();
+
+                // estado de los contratos
+                foreach (Business.DTO.Contrato contrato in data)
+                {
+
+                    double daysDiff = (contrato.Fechacontrato.AddMonths(1).AddDays(-10) - DateTime.Today).TotalDays;
+                    if (daysDiff < 10 && daysDiff > 0) // temporada de aviso (10 días)
+                    {
+                        // Por caducar
+                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.ReadCliente(contrato.Rutcliente);
+                        Business.DTO.Usuario? usuarioCliente =
+                            AllUsers.FirstOrDefault(u => u.Rutcliente.Equals(clienteContrato?.Rutcliente));
+
+
+                        if (usuarioCliente != null)
+                        {
+                            Business.DTO.MailResponse? mailResponse =
+                            MailHandler.SendContractAboutToExpireEmail(
+                                "mailsystem@security.com",
+                                usuarioCliente.Correo,
+                                clienteContrato.Razonsocial,
+                                string.Format("Fecha Contrato: {0}", contrato.Fechacontrato.ToString()));
+
+                            processMessage += mailResponse?.Result + '\n';
+                        }
+                    }
+                }
+                await _mainWindow.ShowMessageAsync("Correos Enviados"
+                    , processMessage
+                    , MessageDialogStyle.Affirmative
+                    , new MetroDialogSettings() { MaximumBodyHeight = 1000 });
+            }
+            
+        }
+
+        #endregion
+
     }
 }

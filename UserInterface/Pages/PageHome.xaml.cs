@@ -26,6 +26,7 @@ namespace UserInterface.Pages
         {
             InitializeComponent();
             _mainWindow = mainWindow;
+
         }
     }
 }

@@ -401,3 +401,4 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows7.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\Testing\bin\Debug\net6.0-windows7.0\RestSharp.dll

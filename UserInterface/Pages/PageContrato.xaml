@@ -140,6 +140,45 @@
                             Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
                     </StackPanel>
                 </mah:Tile>
+                
+                <!-- botones para enviar alertas de correos -->
+
+                <mah:Tile Margin="210,0,5,0" IsEnabled="True" Width="180" Click="NotifyExpiredAsync">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="EnvelopeOpenFill" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="Calendar2X" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Label
+                            Content="Correo Caducados"
+                            Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </mah:Tile>
+
+                <mah:Tile Margin="0,0,5,0" IsEnabled="True" Width="180" Click="NotifyAboutToExpireAsync">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="EnvelopeOpenFill" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="ExclamationSquareFill" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Label
+                            Content="Correo por caducar"
+                            Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </mah:Tile>
+
 
 
             </StackPanel>
@@ -153,7 +192,8 @@
             IsOpen="False"
             Background="#FF26292B"
             Opacity="0.8"
-            CloseButtonVisibility="Hidden">
+            CloseButtonVisibility="Hidden"
+            Visibility="Hidden">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="45"/>

@@ -2,35 +2,39 @@
 using FluentEmail.Core;
 using System.Net.Mail;
 using System.Text;
+using Business.Util;
+using Microsoft.CodeAnalysis.Text;
+using RestSharp;
+using System.Text.Json;
 
 public class Program
 {
-    static async Task Main(string[] args)
+    public static void Main(string[] args)
     {
-        var sender = new SmtpSender(() => new SmtpClient("localhost")
+        Business.DTO.MailResponse? mailResponse1 =
+            MailHandler.SendPaymentEmail(
+                "sebas@gmail.com", "sender@gmail.com", "seba", "payment data");
+
+        Business.DTO.MailResponse? mailResponse2 =
+            MailHandler.SendContractExpiredEmail(
+                "sebas@gmail.com", "sender@gmail.com", "seba", "payment data");
+
+        Business.DTO.MailResponse? mailResponse3 =
+            MailHandler.SendContractAboutToExpireEmail(
+                "sebas@gmail.com", "sender@gmail.com", "seba", "payment data");
+
+        if (mailResponse1 != null)
         {
-            EnableSsl = false,
-            DeliveryMethod = SmtpDeliveryMethod.Network,
-            Port = 25,
-
-        });
-
-        StringBuilder template = new();
-        template.AppendLine("<h1>Hola @Model.FirstName,</h1>");
-        template.AppendLine("<p> Gracias por comprar @Model.ProductName. Esperamos que le haya gustado. </p>");
-        template.AppendLine(" - Security.");
-
-
-        Email.DefaultSender = sender;
-
-
-        var email = await Email
-            .From("martinez.sebastian314159@gmail.com")
-            .To("longlivetheking70@gmail.com", "Sebastian")
-            .Subject("Hola 123")
-            .UsingTemplate(template.ToString(), new { FirstName = "Sebastian", ProductName = "Teclado Mecanico"})
-            .SendAsync();
-
+            Console.WriteLine(mailResponse1.Result);
+        }
+        if (mailResponse2 != null)
+        {
+            Console.WriteLine(mailResponse2.Result);
+        }
+        if (mailResponse3 != null)
+        {
+            Console.WriteLine(mailResponse3.Result);
+        }
 
     }
 }

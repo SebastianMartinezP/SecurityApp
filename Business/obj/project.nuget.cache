@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1dVd7fWwap9qCOZOPlsHesqPbNG3qTSy4k0msbyI5X8xYObEuiy7pL35izXh4NRVTzNVyExH2X3vMrpMHNrkjQ==",
+  "dgSpecHash": "TRX5kXR1cOjUPeWdHMdFiSBm2VXi3Lhqd5X0CEYA8Z1pOBRds4zXcxMfmNs/0mqi1r9NV3CfBJhRixxAZzxyGg==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\Seba\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.entityframeworkcore\\6.21.61\\oracle.entityframeworkcore.6.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.61\\oracle.manageddataaccess.core.3.21.61.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
