@@ -3,12 +3,84 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       xmlns:local="clr-namespace:UserInterface.Pages"
+      
+      
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      
+      Style="{DynamicResource MahApps.Styles.Page}"
+      
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PagePago">
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="PageUsuario"
+      Background="Transparent">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="45"/>
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Texto Indicativo -->
+        <Label 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+            Margin="5,0,0,0" Width="300" HorizontalAlignment="Left"
+            FontSize="30" Foreground="#FFC3C3C3" FontWeight="Thin">Pagos
+        </Label>
+
+
+        <!-- Bara de busqueda -->
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right"
+            Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" 
+            >
+            <TextBox 
+                x:Name="tbx_search"
+                Width="400" Height="40"
+                Margin="0,5,0,0" FontSize="18">
+            </TextBox>
+
+            <controls:Tile 
+                Width="40" Height="40" Margin="5,5,5,0">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="Search" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
+
+        </StackPanel>
+
+
+        <!-- Botones laterales -->
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0">
+            <controls:Tile x:Name="btn_update"
+                Click="Refresh"
+                Width="40" Height="40"  Margin="5,5,0,0" IsEnabled="True">
+                <iconPacks:PackIconBootstrapIcons 
+                    Width="25" Height="25" 
+                    Kind="ArrowClockwise" Foreground="#FFC3C3C3"
+                    VerticalAlignment="Center"/>
+            </controls:Tile>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DockPanel Grid.Column="1" Grid.Row="1" Margin="0">
+            <DataGrid DockPanel.Dock="Top"
+                x:Name="datagrid"
+                ItemsSource="{Binding}" 
+                Grid.Column="1" Margin="5"
+                FontSize="15" FontWeight="Thin" Foreground="#FFC3C3C3"
+                SelectionMode="Single"
+                IsReadOnly="True">
+            </DataGrid>
+        </DockPanel>
     </Grid>
 </Page>

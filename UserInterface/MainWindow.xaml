@@ -58,6 +58,19 @@
         <DockPanel 
             Grid.Column="0" Grid.Row="0" Height="Auto" Grid.RowSpan="1" VerticalAlignment="Top" Margin="5">
 
+            <Button Click="GoToInicio" DockPanel.Dock="Top" Height="50" HorizontalContentAlignment="Left"
+                    BorderBrush="#FF26292B" Background="#FF26292B" 
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}">
+                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
+                    <StackPanel Width="30">
+                        <iconPacks:PackIconBootstrapIcons 
+                            Width="24" Height="30" 
+                            Kind="HouseFill" Foreground="#FFC3C3C3"/>
+                    </StackPanel>
+                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Inicio</Label>
+                </StackPanel>
+            </Button>
+            
             <Button Click="GoToProfesionales" DockPanel.Dock="Top" Height="50" HorizontalContentAlignment="Left"
                     BorderBrush="#FF26292B" Background="#FF26292B" 
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}">
@@ -205,13 +218,14 @@
 
 
             <StackPanel Orientation="Vertical">
-                <Label 
+                <Label x:Name="lb_username"
                     FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal"
                     VerticalContentAlignment="Top">
                     NombreUsuario
                 </Label>
 
-                <Label Margin="0,-12,0,0" Height="25"
+                <Label x:Name="lb_name"
+                    Margin="0,-12,0,0" Height="25"
                     FontSize="12" Foreground="#606c74" >NombreAdmin</Label>
             </StackPanel>
         </StackPanel>

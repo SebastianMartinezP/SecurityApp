@@ -46,7 +46,7 @@ namespace UserInterface.Pages
 
                 Business.DTO.Usuario? user = Business.DTO.Usuario.GetUsuario(this.username, this.password);
 
-                if (user == null)
+                if (user == null || user.Idperfil != 1) // solo admins
                 {
                     handleAlert(Visibility.Visible, "Error con el usuario.");
                 }
@@ -64,7 +64,7 @@ namespace UserInterface.Pages
                     {
                         handleAlert(Visibility.Visible, "Login exitoso");
 
-                        MainWindow mainWindow = new MainWindow(this.username);
+                        MainWindow mainWindow = new MainWindow(user);
                         mainWindow.Show();
                         this.Close();
 
