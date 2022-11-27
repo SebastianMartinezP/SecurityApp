@@ -12,7 +12,7 @@ namespace Business.DTO
     {
         #region ReadAll
 
-        public static List<DTO.Pago>? ReadAllPago()
+        public static List<DTO.Pago>? ReadAll()
         {
             try
             {
@@ -40,5 +40,33 @@ namespace Business.DTO
         }
 
         #endregion
+
+        public static DTO.Pago? Read(decimal id)
+        {
+            try
+            {
+                AutoMapperConfig.Configure();
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.Pago? pagoContext =
+                        context.Pago.FirstOrDefault(x => x.Idpago == id);
+
+                    if (pagoContext == null)
+                    {
+                        return new DTO.Pago();
+                    }
+
+                    DTO.Pago pagoResponse =
+                        MapperWrapper.Mapper.Map<DTO.Pago>(pagoContext);
+
+                    return pagoResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+            }
+        }
     }
 }

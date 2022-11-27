@@ -5,10 +5,6 @@ namespace Database.Models
 {
     public partial class Profesional
     {
-        public virtual ICollection<Actividad> Actividads { get; set; }
-        public virtual ICollection<HistorialActividad> HistorialActividads { get; set; }
-        public virtual ICollection<Usuario> Usuarios { get; set; }
-
         public Profesional()
         {
             Actividads = new HashSet<Actividad>();
@@ -24,5 +20,8 @@ namespace Database.Models
         public string Numerocontacto { get; set; } = null!;
         public string Isvigente { get; set; } = null!;
 
+        public virtual ICollection<Actividad> Actividads { get; set; }
+        public virtual ICollection<HistorialActividad> HistorialActividads { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

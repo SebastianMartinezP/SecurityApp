@@ -38,7 +38,7 @@ namespace UserInterface.Pages
             try
             {
                 // contratos
-                data = Business.DTO.Pago.ReadAllPago();
+                data = Business.DTO.Pago.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
             }

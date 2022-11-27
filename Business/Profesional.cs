@@ -56,7 +56,7 @@ namespace Business.DTO
 
     #region Read
 
-        public static DTO.Profesional? ReadProfesional(string RutProfesional)
+        public static DTO.Profesional? Read(string RutProfesional)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Business.DTO
         #endregion
 
     #region ReadAll
-        public static List<DTO.Profesional>?  ReadAllProfesional()
+        public static List<DTO.Profesional>?  ReadAll()
         {
             try
             {

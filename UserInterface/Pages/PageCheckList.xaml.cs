@@ -40,7 +40,7 @@ namespace UserInterface.Pages
         {
             try
             {
-                data = Business.DTO.CheckList.GetAllCheckList();
+                data = Business.DTO.CheckList.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
             }

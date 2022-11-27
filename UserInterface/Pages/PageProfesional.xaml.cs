@@ -43,7 +43,7 @@ namespace UserInterface.Pages
         {
             try
             {
-                data = Business.DTO.Profesional.ReadAllProfesional();
+                data = Business.DTO.Profesional.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
             }

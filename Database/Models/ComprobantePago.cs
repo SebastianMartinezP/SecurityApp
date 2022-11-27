@@ -12,7 +12,7 @@ namespace Database.Models
 
         public decimal Idcomprobante { get; set; }
         public string Numerotarjeta { get; set; } = null!;
-        public decimal Pintarjeta { get; set; }
+        public string Nombretitular { get; set; } = null!;
         public string Fechavalida { get; set; } = null!;
         public DateTime Fecharegistro { get; set; }
         public decimal Monto { get; set; }
@@ -20,6 +20,7 @@ namespace Database.Models
         public decimal Valorusd { get; set; }
         public decimal Valoruf { get; set; }
         public decimal Valorutm { get; set; }
+        public string? Cvv { get; set; }
 
         public virtual ICollection<Pago> Pagos { get; set; }
     }

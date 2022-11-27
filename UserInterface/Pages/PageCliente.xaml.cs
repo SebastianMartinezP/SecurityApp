@@ -34,6 +34,7 @@ namespace UserInterface.Pages
         {
             InitializeComponent();
             SetupDatagrid();
+            SetupComboboxes();
             _mainWindow = mainWindow;
         }
 
@@ -42,9 +43,23 @@ namespace UserInterface.Pages
         {
             try
             {
-                data = Business.DTO.Cliente.ReadAllCliente();
+                data = Business.DTO.Cliente.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
+            }
+            catch (Exception e)
+            {
+                await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
+
+        public async void SetupComboboxes()
+        {
+            try
+            {
+                List<Business.DTO.Rubro>? rubroList = Business.DTO.Rubro.ReadAll();
+                cb_Rubro.ItemsSource = rubroList?.Select(p => p.Descripcion);
+
             }
             catch (Exception e)
             {
@@ -61,7 +76,7 @@ namespace UserInterface.Pages
             tbx_Rutcliente.Text = "";
             tbx_Razonsocial.Text = "";
             tbx_Numerocontacto.Text = "";
-            tbx_Idrubro.Text = "";
+            cb_Rubro.SelectedItem = cb_Rubro.Items[0];
             dtp_Ismoroso.IsChecked = false;
 
             // habilitamos campos clave
@@ -73,11 +88,11 @@ namespace UserInterface.Pages
 
             tbx_Razonsocial.IsReadOnly = false;
             tbx_Numerocontacto.IsReadOnly = false;
-            tbx_Idrubro.IsReadOnly = false;
+            cb_Rubro.IsReadOnly = false;
 
             tbx_Razonsocial.IsEnabled = true;
             tbx_Numerocontacto.IsEnabled = true;
-            tbx_Idrubro.IsEnabled = true;
+            cb_Rubro.IsEnabled = true;
             dtp_Ismoroso.IsEnabled = true;
 
             Flyout.IsOpen = true;
@@ -94,7 +109,7 @@ namespace UserInterface.Pages
                 tbx_Rutcliente.Text = selected.Rutcliente.ToString();
                 tbx_Razonsocial.Text = selected.Razonsocial.ToString();
                 tbx_Numerocontacto.Text = selected.Numerocontacto?.ToString();
-                tbx_Idrubro.Text = selected.Idrubro.ToString();
+                cb_Rubro.SelectedItem = Business.DTO.Rubro.Read((int)selected.Idrubro).Descripcion;
                 dtp_Ismoroso.IsChecked = (selected.Ismoroso ?? "0").Equals("1");
             }
 
@@ -107,11 +122,11 @@ namespace UserInterface.Pages
 
             tbx_Razonsocial.IsReadOnly = true;
             tbx_Numerocontacto.IsReadOnly = false;
-            tbx_Idrubro.IsReadOnly = false;
+            cb_Rubro.IsReadOnly = false;
 
             tbx_Razonsocial.IsEnabled = false;
             tbx_Numerocontacto.IsEnabled = true;
-            tbx_Idrubro.IsEnabled = true;
+            cb_Rubro.IsEnabled = true;
             dtp_Ismoroso.IsEnabled = true;
 
 
@@ -137,7 +152,7 @@ namespace UserInterface.Pages
                 Ismoroso = (dtp_Ismoroso.IsChecked ?? false) ? "1" : "0",
                 Numerocontacto = tbx_Numerocontacto.Text,
                 Razonsocial = tbx_Razonsocial.Text,
-                Idrubro = decimal.Parse(tbx_Idrubro.Text),
+                Idrubro = Business.DTO.Rubro.Read(cb_Rubro.SelectedItem.ToString()).Idrubro,
                 Rutcliente = tbx_Rutcliente.Text,
             };
 

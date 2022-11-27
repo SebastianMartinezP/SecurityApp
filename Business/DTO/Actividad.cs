@@ -25,9 +25,17 @@ namespace Business.DTO
 
 
         public Actividad()
-
         {
 
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}\t|\t{1} - {2}", 
+                Descripcion.Length > 30 ? Descripcion.Substring(0, 30) + "..." : Descripcion,
+                Fechainicio.ToString("dd/MMM"),
+                Fechatermino.ToString("dd/MMM")
+                );
         }
     }
 }

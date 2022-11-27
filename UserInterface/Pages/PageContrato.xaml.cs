@@ -6,15 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-using Business;
 using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -35,6 +27,7 @@ namespace UserInterface.Pages
         {
             InitializeComponent();
             SetupDatagrid();
+            SetupComboboxes();
             _mainWindow = mainWindow;
         }
 
@@ -43,7 +36,7 @@ namespace UserInterface.Pages
             try
             {
                 // contratos
-                data = Business.DTO.Contrato.ReadAllContrato();
+                data = Business.DTO.Contrato.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
 
@@ -75,10 +68,27 @@ namespace UserInterface.Pages
             }
         }
 
+        public async void SetupComboboxes()
+        {
+            try
+            {
+                List<Business.DTO.Actividad>? actividades = Business.DTO.Actividad.ReadAll();
+                cb_Actividad.ItemsSource = actividades?.Select(a => a.Descripcion);
+
+                List<Business.DTO.Pago>? pagos = Business.DTO.Pago.ReadAll();
+                cb_Pago.ItemsSource = pagos?.Select(p => p.Fecharegistro);
+            }
+            catch (Exception e)
+            {
+                await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
+
         private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void Add(object sender, RoutedEventArgs e)
         {
+            SetupComboboxes(); // cada vez que se accione al añadir.
             FlyoutMode = "Add";
 
             tbx_Idcontrato.Text = "";
@@ -86,11 +96,13 @@ namespace UserInterface.Pages
             tbx_Valor.Text = "";
             tbx_Fechacontrato.Text = DateTime.Today.ToString("dd/MM/yyyy");
 
-            tbx_Idpago.Text = "";
+            cb_Pago.SelectedItem = cb_Actividad.Items[0];
             tbx_Rutcliente.Text = "";
-            tbx_Idactividad.Text = "";
+            //tbx_Idactividad.Text = "";
 
             dtp_Vigente.IsChecked = false;
+
+            cb_Actividad.SelectedItem = cb_Actividad.Items[0];
 
             // deshabilitamos campos clave
             tbx_Idcontrato.IsReadOnly = true;
@@ -112,10 +124,11 @@ namespace UserInterface.Pages
                 tbx_Valor.Text = selected.Valor.ToString();
                 tbx_Fechacontrato.Text = selected.Fechacontrato.ToString("dd-MM-yyyy");
 
-                tbx_Idpago.Text = selected.Idpago.ToString();
+                cb_Pago.SelectedItem = Business.DTO.Pago.Read(selected.Idpago).Fecharegistro;
                 tbx_Rutcliente.Text = selected.Rutcliente.ToString();
-                tbx_Idactividad.Text = selected.Idactividad.ToString();
+                //tbx_Idactividad.Text = selected.Idactividad.ToString();
                 dtp_Vigente.IsChecked = (selected.Vigente ?? "0").Equals("1");
+                cb_Actividad.SelectedItem = Business.DTO.Actividad.Read(selected.Idactividad).Descripcion;
             }
 
             // deshabilitamos campos clave
@@ -129,7 +142,6 @@ namespace UserInterface.Pages
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Contrato)datagrid.SelectedItem;
-
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
 
@@ -145,8 +157,8 @@ namespace UserInterface.Pages
                 Descripcion = tbx_Descripcion.Text,
                 Valor = decimal.Parse(tbx_Valor.Text),
                 Rutcliente = tbx_Rutcliente.Text,
-                Idactividad = decimal.Parse(tbx_Idactividad.Text),
                 Vigente = (dtp_Vigente.IsChecked ?? false) ? "1" : "0",
+                Idactividad = Business.DTO.Actividad.Read(cb_Actividad.SelectedItem.ToString()).Idactividad,
             };
 
             #region Guardar
@@ -253,7 +265,7 @@ namespace UserInterface.Pages
                     if (daysDiff < 0)
                     {
                         // Caducados
-                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.ReadCliente(contrato.Rutcliente);
+                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.Read(contrato.Rutcliente);
                         Business.DTO.Usuario? usuarioCliente =
                             AllUsers.FirstOrDefault(u => u.Rutcliente.Equals(clienteContrato?.Rutcliente));
 
@@ -314,7 +326,7 @@ namespace UserInterface.Pages
                     if (daysDiff < 10 && daysDiff > 0) // temporada de aviso (10 días)
                     {
                         // Por caducar
-                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.ReadCliente(contrato.Rutcliente);
+                        Business.DTO.Cliente? clienteContrato = Business.DTO.Cliente.Read(contrato.Rutcliente);
                         Business.DTO.Usuario? usuarioCliente =
                             AllUsers.FirstOrDefault(u => u.Rutcliente.Equals(clienteContrato?.Rutcliente));
 

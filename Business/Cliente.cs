@@ -46,9 +46,8 @@ namespace Business.DTO
             }
             catch (Exception e)
             {
-                throw;//Console.WriteLine(e.ToString());
-                //return null;
-
+                Console.WriteLine(e);
+                return null;
             }
         }
 
@@ -58,7 +57,7 @@ namespace Business.DTO
         #region Read
 
 
-        public static DTO.Cliente? ReadCliente(string rutCliente)
+        public static DTO.Cliente? Read(string rutCliente)
         {
             try
             {
@@ -89,7 +88,7 @@ namespace Business.DTO
         #endregion
 
         #region ReadAll
-        public static List<DTO.Cliente>? ReadAllCliente()
+        public static List<DTO.Cliente>? ReadAll()
         {
             try
             {

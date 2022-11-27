@@ -21,6 +21,11 @@ namespace Business.DTO
         public string Rutcliente { get; set; } = null!;
         public decimal Idactividad { get; set; }
         public string Vigente { get; set; } = null!;
-
+        public decimal? Asesoria { get; set; }
+        public decimal? Capacitacion { get; set; }
+        public decimal? AsesoriaDisponible { get; set; }
+        public decimal? CapacitacionDisponible { get; set; }
+        public decimal? AsesoriaExtra { get; set; }
+        public decimal? CapacitacionExtra { get; set; }
     }
 }

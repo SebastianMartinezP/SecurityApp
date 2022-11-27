@@ -79,7 +79,7 @@ namespace Business.DTO
 
         #region Read
 
-        public static DTO.PerfilUsuario? GetPerfilUsuario(string descripcion)
+        public static DTO.PerfilUsuario? Read(string descripcion)
         {
             try
             {
@@ -107,7 +107,36 @@ namespace Business.DTO
             }
         }
 
-        public static List<DTO.PerfilUsuario> GetAllPerfilUsuario()
+
+        public static DTO.PerfilUsuario? Read(int id)
+        {
+            try
+            {
+                AutoMapperConfig.Configure();
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.PerfilUsuario? perfilUsuario =
+                        context.PerfilUsuario.FirstOrDefault(x => x.Idperfil == id);
+
+                    if (perfilUsuario == null)
+                    {
+                        return new DTO.PerfilUsuario();
+                    }
+
+                    DTO.PerfilUsuario perfilUsuarioResponse =
+                        MapperWrapper.Mapper.Map<DTO.PerfilUsuario>(perfilUsuario);
+
+                    return perfilUsuarioResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+        public static List<DTO.PerfilUsuario> ReadAll()
         {
             try
             {

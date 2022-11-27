@@ -18,6 +18,8 @@ namespace Business.Util
                 cfg.CreateMap<Database.Models.Actividad, DTO.Actividad>().ReverseMap();
                 cfg.CreateMap<Database.Models.Pago, DTO.Pago>().ReverseMap();
                 cfg.CreateMap<Database.Models.Contrato, DTO.Contrato>().ReverseMap();
+                cfg.CreateMap<Database.Models.Rubro, DTO.Rubro>().ReverseMap();
+                cfg.CreateMap<Database.Models.TipoActividad, DTO.TipoActividad>().ReverseMap();
             });
 
             MapperWrapper.AssertConfigurationIsValid();

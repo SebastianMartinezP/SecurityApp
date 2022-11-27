@@ -156,13 +156,13 @@
                     <Label FontSize="15">Fecha del registro</Label>
                     <TextBox x:Name="tbx_Fecharegistro" IsReadOnly="True" FontSize="15" IsEnabled="False"/>
                     <Label FontSize="15">Tipo Actividad</Label>
-                    <TextBox x:Name="tbx_Idtipoactividad" IsReadOnly="False" FontSize="15"/>
+                    <ComboBox x:Name="cb_Tipoactividad" IsReadOnly="False" FontSize="15"/>
                     <Label FontSize="15">Rut Cliente</Label>
                     <TextBox x:Name="tbx_Rutcliente" IsReadOnly="False" FontSize="15"/>
                     <Label FontSize="15">Rut profesional</Label>
                     <TextBox x:Name="tbx_Rutprofesional" IsReadOnly="False" FontSize="15"/>
-                    <Label FontSize="15">Id Checklist</Label>
-                    <TextBox x:Name="tbx_Idcheck" IsReadOnly="False" FontSize="15"/>
+                    <Label FontSize="15">Detalle Checklist</Label>
+                    <TextBox x:Name="tbx_Checklist" IsReadOnly="False" FontSize="15"/>
                 </StackPanel>
 
 

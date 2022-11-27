@@ -42,8 +42,8 @@ namespace Business.DTO
             }
             catch (Exception e)
             {
-                throw;//Console.WriteLine(e.ToString());
-                //return null;
+                Console.WriteLine(e);
+                return null;
             }
         }
 
@@ -103,10 +103,10 @@ namespace Business.DTO
                         return new DTO.Contrato();
                     }
 
-                    DTO.Contrato profesionalResponse = 
+                    DTO.Contrato contratoReponse = 
                         MapperWrapper.Mapper.Map<DTO.Contrato>(contratoContext);
 
-                    return profesionalResponse;
+                    return contratoReponse;
                 }
             }
             catch (Exception e)
@@ -121,7 +121,7 @@ namespace Business.DTO
 
         #region ReadAll
 
-        public static List<DTO.Contrato>? ReadAllContrato()
+        public static List<DTO.Contrato>? ReadAll()
         {
             try
             {

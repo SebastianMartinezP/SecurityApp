@@ -143,8 +143,14 @@
 
                 <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">
                     <CheckBox x:Name="dtp_IsHabilitado" FontSize="15" Content="Usuario Habilitado" Margin="0,10,0,10"/>
+                    
+                    <!-- 
                     <Label FontSize="15">IdPerfil</Label>
                     <TextBox x:Name="tbx_IdPerfil" IsReadOnly="True" FontSize="15"/>
+                     -->
+                    
+                    <Label FontSize="15">Perfil</Label>
+                    <ComboBox x:Name="cb_Perfil" IsReadOnly="True" FontSize="15"/>
                     <Label FontSize="15">RutCliente</Label>
                     <TextBox x:Name="tbx_RutCliente" IsReadOnly="True" FontSize="15"/>
                     <Label FontSize="15">RutProfesional</Label>

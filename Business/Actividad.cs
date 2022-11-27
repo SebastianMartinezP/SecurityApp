@@ -39,8 +39,8 @@ namespace Business.DTO
             }
             catch (Exception e)
             {
-                throw;//Console.WriteLine(e.ToString());
-                //return null;
+                Console.WriteLine(e);
+                return null;
             }
         }
         
@@ -88,7 +88,7 @@ namespace Business.DTO
         #endregion
 
         #region ReadAll
-        public static List<DTO.Actividad>? ReadAllActividad()
+        public static List<DTO.Actividad>? ReadAll()
         {
             try
             {
@@ -111,6 +111,68 @@ namespace Business.DTO
             {
                 Console.WriteLine(e.ToString());
                 return null;
+            }
+        }
+
+        #endregion
+
+        #region Read
+
+        public static DTO.Actividad? Read(decimal idActividad)
+        {
+            try
+            {
+                AutoMapperConfig.Configure();
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.Actividad? actividadContext =
+                        context.Actividad.FirstOrDefault(p => p.Idactividad == idActividad);
+
+                    if (actividadContext == null)
+                    {
+                        return new DTO.Actividad();
+                    }
+
+                    DTO.Actividad actividadResponse =
+                        MapperWrapper.Mapper.Map<DTO.Actividad>(actividadContext);
+
+                    return actividadResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+
+            }
+        }
+
+        public static DTO.Actividad? Read(string Descripcion)
+        {
+            try
+            {
+                AutoMapperConfig.Configure();
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.Actividad? actividadContext =
+                        context.Actividad.FirstOrDefault(p => p.Descripcion.Equals(Descripcion));
+
+                    if (actividadContext == null)
+                    {
+                        return new DTO.Actividad();
+                    }
+
+                    DTO.Actividad actividadResponse =
+                        MapperWrapper.Mapper.Map<DTO.Actividad>(actividadContext);
+
+                    return actividadResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+
             }
         }
 

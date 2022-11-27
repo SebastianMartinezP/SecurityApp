@@ -121,7 +121,7 @@ namespace Business.DTO
 
         #region Read
 
-        public static DTO.CheckList? GetCheckList(int id)
+        public static DTO.CheckList? Read(int id)
         {
             try
             {
@@ -148,7 +148,34 @@ namespace Business.DTO
             }
         }
 
-        public static List<DTO.CheckList> GetAllCheckList()
+        public static DTO.CheckList? Read(string descripcion)
+        {
+            try
+            {
+                AutoMapperConfig.Configure();
+                using (ModelContext context = new ModelContext())
+                {
+                    Database.Models.CheckList? checkList = context.CheckList.FirstOrDefault(c =>
+                        c.Descripcion.Equals(descripcion));
+
+                    if (checkList == null)
+                    {
+                        return new DTO.CheckList();
+                    }
+
+                    DTO.CheckList checklistResponse = MapperWrapper.Mapper.Map<DTO.CheckList>(checkList);
+
+                    return checklistResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+        public static List<DTO.CheckList> ReadAll()
         {
             try
             {

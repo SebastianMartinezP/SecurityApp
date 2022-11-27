@@ -34,6 +34,7 @@ namespace UserInterface.Pages
         {
             InitializeComponent();
             SetupDatagrid();
+            SetupComboboxes();
             _mainWindow = mainWindow;
         }
 
@@ -41,9 +42,23 @@ namespace UserInterface.Pages
         {
             try
             {
-                data = Business.DTO.Actividad.ReadAllActividad();
+                data = Business.DTO.Actividad.ReadAll();
                 datagrid.DataContext = data;
                 datagrid.Items.Refresh();
+            }
+            catch (Exception e)
+            {
+                await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
+
+        public async void SetupComboboxes()
+        {
+            try
+            {
+                List<Business.DTO.TipoActividad>? tipoActividadList = Business.DTO.TipoActividad.ReadAll();
+                cb_Tipoactividad.ItemsSource = tipoActividadList?.Select(p => p.Descripcion);
+
             }
             catch (Exception e)
             {
@@ -70,10 +85,10 @@ namespace UserInterface.Pages
             tbx_Cantidadasistente.Text = "";
             tbx_Fecharegistro.Text = DateTime.Today.ToString();
 
-            tbx_Idtipoactividad.Text = "";
+            cb_Tipoactividad.SelectedItem = cb_Tipoactividad.Items[0];
             tbx_Rutcliente.Text = "";
             tbx_Rutprofesional.Text = "";
-            tbx_Idcheck.Text = "";
+            tbx_Checklist.Text = "";
 
             // deshabilitamos campos clave
             tbx_Idactividad.IsReadOnly = true;
@@ -104,10 +119,14 @@ namespace UserInterface.Pages
                 tbx_Cantidadasistente.Text = selected.Cantidadasistente.ToString();
                 tbx_Fecharegistro.Text = selected.Fecharegistro?.ToString("dd-MM-yyyy");
 
-                tbx_Idtipoactividad.Text = selected.Idtipoactividad.ToString();
+                cb_Tipoactividad.SelectedItem = Business.DTO.TipoActividad.Read((int)selected.Idtipoactividad).Descripcion;
                 tbx_Rutcliente.Text = selected.Rutcliente.ToString();
                 tbx_Rutprofesional.Text = selected.Rutprofesional.ToString();
-                tbx_Idcheck.Text = selected.Idcheck.ToString();
+                if (selected.Idcheck != null)
+                {
+                    tbx_Checklist.Text = Business.DTO.CheckList.Read((int)selected.Idcheck).Descripcion;
+                }
+                
 
             }
 
@@ -118,8 +137,8 @@ namespace UserInterface.Pages
             tbx_Fecharegistro.IsEnabled = false;
             tbx_Rutcliente.IsReadOnly = true;
             tbx_Rutcliente.IsEnabled = false;
-            tbx_Idcheck.IsReadOnly = true;
-            tbx_Idcheck.IsEnabled = false;
+            tbx_Checklist.IsReadOnly = true;
+            tbx_Checklist.IsEnabled = false;
 
 
 
@@ -151,10 +170,11 @@ namespace UserInterface.Pages
                 Fechatermino = (dtp_Fechatermino.SelectedDate ?? new DateTime(1999,01,01)),
                 Horainicio = (tp_Horainicio.SelectedDateTime ?? new DateTime(1999,01,01)),
                 Horatermino = (tp_Horatermino.SelectedDateTime ?? new DateTime(1999,01,01)),
-                Idtipoactividad = decimal.Parse(tbx_Idtipoactividad.Text),
-                Idcheck = decimal.Parse(tbx_Idcheck.Text),
+                Idtipoactividad = Business.DTO.TipoActividad.Read(cb_Tipoactividad.SelectedItem.ToString()).Idtipoactividad,
                 Rutprofesional = tbx_Rutprofesional.Text,
             };
+
+            newData.Idcheck = tbx_Checklist.Text != null ? Business.DTO.CheckList.Read(tbx_Checklist.Text).Idcheck : null;
 
             #region Guardar
 

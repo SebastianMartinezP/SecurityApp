@@ -11,6 +11,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        /*
         Business.DTO.MailResponse? mailResponse1 =
             MailHandler.SendPaymentEmail(
                 "sebas@gmail.com", "sender@gmail.com", "seba", "payment data");
@@ -35,7 +36,12 @@ public class Program
         {
             Console.WriteLine(mailResponse3.Result);
         }
-
+        */
+        List<Business.DTO.Actividad>? actividades = Business.DTO.Actividad.ReadAll();
+        foreach (var item in actividades)
+        {
+            Console.WriteLine(item.ToString());
+        }
     }
 }
 

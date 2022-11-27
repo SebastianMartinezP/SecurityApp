@@ -74,10 +74,10 @@ namespace UserInterface
 
             // setup usuario
             this.user = _user;
-            Business.DTO.Profesional? profesional = Business.DTO.Profesional.ReadProfesional(user.Rutprofesional ?? "");
+            Business.DTO.Profesional? profesional = Business.DTO.Profesional.Read(user.Rutprofesional ?? "");
 
-            lb_username.Content = user.Correo.Length > 0 ? user.Correo.Split('@')[0] : "Usuario";
-            lb_name.Content = profesional?.Primernombre.Length > 0 ? profesional.Primernombre : "Nombre";
+            lb_name.Content = user.Correo.Length > 0 ? user.Correo.Split('@')[0] : "Usuario";
+            lb_username.Content = profesional?.Primernombre.Length > 0 ? profesional.Primernombre : "Nombre";
         }
 
 

@@ -11,37 +11,39 @@ namespace Database.Models
         {
         }
 
-        public ModelContext(DbContextOptions<ModelContext> options) : base(options)
+        public ModelContext(DbContextOptions<ModelContext> options)
+            : base(options)
         {
         }
 
-        public virtual DbSet<Database.Models.Actividad> Actividad { get; set; } = null!;
-        public virtual DbSet<Database.Models.CanalPago> CanalPago { get; set; } = null!;
-        public virtual DbSet<Database.Models.CheckList> CheckList { get; set; } = null!;
-        public virtual DbSet<Database.Models.Cliente> Cliente { get; set; } = null!;
-        public virtual DbSet<Database.Models.ComprobantePago> ComprobantePago { get; set; } = null!;
-        public virtual DbSet<Database.Models.Contrato> Contrato { get; set; } = null!;
-        public virtual DbSet<Database.Models.HistorialActividad> HistorialActividad { get; set; } = null!;
-        public virtual DbSet<Database.Models.Pago> Pago { get; set; } = null!;
-        public virtual DbSet<Database.Models.PerfilUsuario> PerfilUsuario { get; set; } = null!;
-        public virtual DbSet<Database.Models.Profesional> Profesional { get; set; } = null!;
-        public virtual DbSet<Database.Models.Rubro> Rubro { get; set; } = null!;
-        public virtual DbSet<Database.Models.TipoActividad> TipoActividad { get; set; } = null!;
-        public virtual DbSet<Database.Models.Usuario> Usuario { get; set; } = null!;
+        public virtual DbSet<Actividad> Actividad { get; set; } = null!;
+        public virtual DbSet<CanalPago> CanalPago { get; set; } = null!;
+        public virtual DbSet<CheckList> CheckList { get; set; } = null!;
+        public virtual DbSet<Cliente> Cliente { get; set; } = null!;
+        public virtual DbSet<ComprobantePago> ComprobantePago { get; set; } = null!;
+        public virtual DbSet<Contrato> Contrato { get; set; } = null!;
+        public virtual DbSet<HistorialActividad> HistorialActividad { get; set; } = null!;
+        public virtual DbSet<Pago> Pago { get; set; } = null!;
+        public virtual DbSet<PerfilUsuario> PerfilUsuario { get; set; } = null!;
+        public virtual DbSet<Profesional> Profesional { get; set; } = null!;
+        public virtual DbSet<Rubro> Rubro { get; set; } = null!;
+        public virtual DbSet<TipoActividad> TipoActividad { get; set; } = null!;
+        public virtual DbSet<Usuario> Usuario { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseOracle("User Id=C##Security;Password=sec123;Data Source=localhost:1521/xe;");
+                optionsBuilder.UseOracle("User Id=c##Security;Password=sec123;Data Source=localhost:1521/xe;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("C##SECURITY").UseCollation("USING_NLS_COMP");
+            modelBuilder.HasDefaultSchema("C##SECURITY")
+                .UseCollation("USING_NLS_COMP");
 
-            modelBuilder.Entity<Database.Models.Actividad>(entity =>
+            modelBuilder.Entity<Actividad>(entity =>
             {
                 entity.HasKey(e => e.Idactividad)
                     .HasName("SYS_C007613");
@@ -129,7 +131,7 @@ namespace Database.Models
                     .HasConstraintName("ACTIVIDAD_PROFESIONAL_FK");
             });
 
-            modelBuilder.Entity<Database.Models.CanalPago>(entity =>
+            modelBuilder.Entity<CanalPago>(entity =>
             {
                 entity.HasKey(e => e.Idcanalpago)
                     .HasName("SYS_C007616");
@@ -147,7 +149,7 @@ namespace Database.Models
                     .HasColumnName("DESCRIPCION");
             });
 
-            modelBuilder.Entity<Database.Models.CheckList>(entity =>
+            modelBuilder.Entity<CheckList>(entity =>
             {
                 entity.HasKey(e => e.Idcheck)
                     .HasName("SYS_C007620");
@@ -211,7 +213,7 @@ namespace Database.Models
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<Database.Models.Cliente>(entity =>
+            modelBuilder.Entity<Cliente>(entity =>
             {
                 entity.HasKey(e => e.Rutcliente)
                     .HasName("SYS_C007624");
@@ -250,7 +252,7 @@ namespace Database.Models
                     .HasConstraintName("CLIENTE_RUBRO_FK");
             });
 
-            modelBuilder.Entity<Database.Models.ComprobantePago>(entity =>
+            modelBuilder.Entity<ComprobantePago>(entity =>
             {
                 entity.HasKey(e => e.Idcomprobante)
                     .HasName("SYS_C007679");
@@ -261,6 +263,11 @@ namespace Database.Models
                     .HasColumnType("NUMBER(38)")
                     .ValueGeneratedOnAdd()
                     .HasColumnName("IDCOMPROBANTE");
+
+                entity.Property(e => e.Cvv)
+                    .HasMaxLength(3)
+                    .IsUnicode(false)
+                    .HasColumnName("CVV");
 
                 entity.Property(e => e.Fecharegistro)
                     .HasColumnType("DATE")
@@ -275,14 +282,15 @@ namespace Database.Models
                     .HasColumnType("NUMBER(38)")
                     .HasColumnName("MONTO");
 
+                entity.Property(e => e.Nombretitular)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("NOMBRETITULAR");
+
                 entity.Property(e => e.Numerotarjeta)
                     .HasMaxLength(16)
                     .IsUnicode(false)
                     .HasColumnName("NUMEROTARJETA");
-
-                entity.Property(e => e.Pintarjeta)
-                    .HasColumnType("NUMBER(38)")
-                    .HasColumnName("PINTARJETA");
 
                 entity.Property(e => e.Tipomoneda)
                     .HasMaxLength(20)
@@ -302,7 +310,7 @@ namespace Database.Models
                     .HasColumnName("VALORUTM");
             });
 
-            modelBuilder.Entity<Database.Models.Contrato>(entity =>
+            modelBuilder.Entity<Contrato>(entity =>
             {
                 entity.HasKey(e => e.Idcontrato)
                     .HasName("SYS_C007632");
@@ -313,6 +321,30 @@ namespace Database.Models
                     .HasColumnType("NUMBER(38)")
                     .ValueGeneratedOnAdd()
                     .HasColumnName("IDCONTRATO");
+
+                entity.Property(e => e.Asesoria)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("ASESORIA");
+
+                entity.Property(e => e.AsesoriaDisponible)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("ASESORIA_DISPONIBLE");
+
+                entity.Property(e => e.AsesoriaExtra)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("ASESORIA_EXTRA");
+
+                entity.Property(e => e.Capacitacion)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("CAPACITACION");
+
+                entity.Property(e => e.CapacitacionDisponible)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("CAPACITACION_DISPONIBLE");
+
+                entity.Property(e => e.CapacitacionExtra)
+                    .HasColumnType("NUMBER")
+                    .HasColumnName("CAPACITACION_EXTRA");
 
                 entity.Property(e => e.Descripcion)
                     .HasMaxLength(250)
@@ -359,7 +391,7 @@ namespace Database.Models
                     .HasConstraintName("CONTRATO_CLIENTE_FK");
             });
 
-            modelBuilder.Entity<Database.Models.HistorialActividad>(entity =>
+            modelBuilder.Entity<HistorialActividad>(entity =>
             {
                 entity.HasKey(e => e.Idhistorial)
                     .HasName("SYS_C007635");
@@ -395,7 +427,7 @@ namespace Database.Models
                     .HasConstraintName("HIS_ACTIVIDAD_PRO_FK");
             });
 
-            modelBuilder.Entity<Database.Models.Pago>(entity =>
+            modelBuilder.Entity<Pago>(entity =>
             {
                 entity.HasKey(e => e.Idpago)
                     .HasName("SYS_C007685");
@@ -430,7 +462,7 @@ namespace Database.Models
                     .HasConstraintName("PAGO_COMPROBANTE_PAGO_FK");
             });
 
-            modelBuilder.Entity<Database.Models.PerfilUsuario>(entity =>
+            modelBuilder.Entity<PerfilUsuario>(entity =>
             {
                 entity.HasKey(e => e.Idperfil)
                     .HasName("SYS_C007638");
@@ -448,7 +480,7 @@ namespace Database.Models
                     .HasColumnName("DESCRIPCION");
             });
 
-            modelBuilder.Entity<Database.Models.Profesional>(entity =>
+            modelBuilder.Entity<Profesional>(entity =>
             {
                 entity.HasKey(e => e.Rutprofesional)
                     .HasName("SYS_C007644");
@@ -492,7 +524,7 @@ namespace Database.Models
                     .HasColumnName("SEGUNDONOMBRE");
             });
 
-            modelBuilder.Entity<Database.Models.Rubro>(entity =>
+            modelBuilder.Entity<Rubro>(entity =>
             {
                 entity.HasKey(e => e.Idrubro)
                     .HasName("SYS_C007647");
@@ -510,7 +542,7 @@ namespace Database.Models
                     .HasColumnName("DESCRIPCION");
             });
 
-            modelBuilder.Entity<Database.Models.TipoActividad>(entity =>
+            modelBuilder.Entity<TipoActividad>(entity =>
             {
                 entity.HasKey(e => e.Idtipoactividad)
                     .HasName("SYS_C007651");
@@ -532,7 +564,7 @@ namespace Database.Models
                     .HasColumnName("MONTOACTIVIDAD");
             });
 
-            modelBuilder.Entity<Database.Models.Usuario>(entity =>
+            modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.Idusuario)
                     .HasName("SYS_C007657");

@@ -5,16 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-
-using Business;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
@@ -35,9 +25,21 @@ namespace UserInterface.Pages
         {
             InitializeComponent();
             SetupDatagrid();
+            SetupComboboxes();
             _mainWindow = mainWindow;
         }
 
+        public async void SetupComboboxes()
+        {
+            try
+            {
+                cb_Perfil.ItemsSource = Business.DTO.PerfilUsuario.ReadAll().Select(p => p.Descripcion);
+            }
+            catch (Exception e)
+            {
+                await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
 
         public async void SetupDatagrid()
         {
@@ -63,9 +65,9 @@ namespace UserInterface.Pages
             tbx_Correo.Text = "";
             tbx_ContrasenaHashed.Text = "";
             dtp_IsHabilitado.IsChecked = true;
-            tbx_IdPerfil.Text = "";
             tbx_RutCliente.Text = "";
             tbx_RutProfesional.Text = "";
+            cb_Perfil.SelectedItem = cb_Perfil.Items[0];
 
             // habilitamos campos clave
 
@@ -81,11 +83,9 @@ namespace UserInterface.Pages
 
             tbx_Correo.IsReadOnly = false;
             tbx_ContrasenaHashed.IsReadOnly = false;
-            tbx_IdPerfil.IsReadOnly = false;
 
             tbx_Correo.IsEnabled = true;
             tbx_ContrasenaHashed.IsEnabled = true;
-            tbx_IdPerfil.IsEnabled = true;
             dtp_IsHabilitado.IsEnabled = true;
 
             Flyout.IsOpen = true;
@@ -103,9 +103,9 @@ namespace UserInterface.Pages
                 tbx_Correo.Text = selected.Correo.ToString();
                 tbx_ContrasenaHashed.Text = selected.Contrasenahashed.ToString();
                 dtp_IsHabilitado.IsChecked = (selected.Ishabilitado ?? "0").Equals("1");
-                tbx_IdPerfil.Text = selected.Idperfil.ToString();
                 tbx_RutCliente.Text = selected.Rutcliente?.ToString();
                 tbx_RutProfesional.Text = selected.Rutprofesional?.ToString();
+                cb_Perfil.SelectedItem = Business.DTO.PerfilUsuario.Read((int)selected.Idperfil);
             }
 
             // deshabilitamos campos clave
@@ -122,13 +122,10 @@ namespace UserInterface.Pages
 
             tbx_Correo.IsReadOnly = false;
             tbx_ContrasenaHashed.IsReadOnly = false;
-            tbx_IdPerfil.IsReadOnly = false;
-
 
             tbx_Correo.IsEnabled = true;
             tbx_ContrasenaHashed.IsEnabled = true;
             dtp_IsHabilitado.IsEnabled = true;
-            tbx_IdPerfil.IsEnabled = true;
 
 
             Flyout.IsOpen = true;
@@ -138,7 +135,6 @@ namespace UserInterface.Pages
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Usuario)datagrid.SelectedItem;
-
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
 
@@ -155,9 +151,9 @@ namespace UserInterface.Pages
                 Rutcliente = tbx_RutCliente.Text.Equals("") ? null : tbx_RutCliente.Text,
                 Rutprofesional = tbx_RutProfesional.Text.Equals("") ? null : tbx_RutProfesional.Text,
                 Ishabilitado = (dtp_IsHabilitado.IsChecked ?? false) ? "1" : "0",
-                Idperfil = decimal.Parse(tbx_IdPerfil.Text),
+                Idperfil = Business.DTO.PerfilUsuario.Read(cb_Perfil.SelectedItem.ToString()).Idperfil
             };
-
+            
             #region Guardar
 
             if (FlyoutMode.Equals("Add"))
