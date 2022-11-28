@@ -136,7 +136,7 @@
                     <Label FontSize="15">Razon Social</Label>
                     <TextBox x:Name="tbx_Razonsocial" IsReadOnly="True" FontSize="15"/>
                     <Label FontSize="15">Numero de contacto</Label>
-                    <TextBox x:Name="tbx_Numerocontacto" IsReadOnly="True" FontSize="15"/>
+                    <TextBox x:Name="tbx_Numerocontacto" IsReadOnly="True" FontSize="15" TextChanged="numericTextChanged"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">

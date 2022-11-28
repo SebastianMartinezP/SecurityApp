@@ -12,10 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
-
-using Business;
+using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
+using ControlzEx.Standard;
 
 namespace UserInterface.Pages
 {
@@ -139,7 +140,30 @@ namespace UserInterface.Pages
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
 
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
+        }
 
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool rutProfesional = ValidationHandler.ValidateRut(tbx_Rutprofesional.Text);
+                bool pNombre = ValidationHandler.ValidateString(tbx_Primernombre.Text);
+                //bool sNombre = ValidationHandler.ValidateString(tbx_Segundonombre.Text);
+                bool pApellido = ValidationHandler.ValidateString(tbx_Primerapellido.Text);
+                bool sApellido = ValidationHandler.ValidateString(tbx_Segundoapellido.Text);
+                bool numeroContacto = ValidationHandler.ValidateString(tbx_Numerocontacto.Text);
+                
+                return rutProfesional && pNombre && pApellido && sApellido && numeroContacto;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         #region Botones Aceptar / Cancelar
 
@@ -162,22 +186,31 @@ namespace UserInterface.Pages
 
             if (FlyoutMode.Equals("Add"))
             {
-                bool? result = Business.DTO.Profesional.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Profesional Guardado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Profesional no guardado", "Este profesional ya existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.Profesional.Create(newData);
+
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Profesional Guardado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Profesional no guardado", "Este profesional ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
+                
             }
 
             #endregion
@@ -186,37 +219,47 @@ namespace UserInterface.Pages
 
             else
             {
-                bool? result = Business.DTO.Profesional.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Profesional Actualizado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Profesional no actualizado", "Este profesional no existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.Profesional.Update(newData);
+
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Profesional Actualizado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Profesional no actualizado", "Este profesional no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
+                
             }
 
             #endregion
 
 
             SetupDatagrid();
-            Flyout.IsOpen = false;
+            
 
         }
 
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
 
-        #endregion  
 
+        #endregion
 
+        
     }
 }

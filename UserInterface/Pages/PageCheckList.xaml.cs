@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Business;
+using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
@@ -107,6 +108,20 @@ namespace UserInterface.Pages
         }
 
 
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool descripcion = ValidationHandler.ValidateString(tbx_Descripcion.Text);
+
+                return descripcion;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.CheckList)datagrid.SelectedItem;
@@ -137,22 +152,31 @@ namespace UserInterface.Pages
 
             if (FlyoutMode.Equals("Add"))
             {
-                bool? result = Business.DTO.CheckList.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Checklist Guardado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Checklist no guardado", "Este checklist ya existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.CheckList.Create(newData);
+
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Checklist Guardado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Checklist no guardado", "Este checklist ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
+                
             }
 
             #endregion
@@ -161,32 +185,37 @@ namespace UserInterface.Pages
 
             else
             {
-                newData.Idcheck = decimal.Parse(tbx_Idcheck.Text);
-
-                bool? result = Business.DTO.CheckList.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Checklist Actualizado", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    newData.Idcheck = decimal.Parse(tbx_Idcheck.Text);
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Checklist no actualizado", "Este checklist no existe en el sistema.");
-                        break;
+                    bool? result = Business.DTO.CheckList.Update(newData);
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Checklist Actualizado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Checklist no actualizado", "Este checklist no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
 
             #endregion
 
             SetupDatagrid();
-            
-            Flyout.IsOpen = false;
-
         }
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;

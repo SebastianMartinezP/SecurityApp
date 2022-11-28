@@ -217,7 +217,7 @@
                     <Label FontSize="15">Descripcion</Label>
                     <TextBox x:Name="tbx_Descripcion" IsReadOnly="False" FontSize="15" Height="120" TextWrapping="Wrap"/>
                     <Label FontSize="15">Valor</Label>
-                    <TextBox x:Name="tbx_Valor" IsReadOnly="False" FontSize="15"/>
+                    <TextBox x:Name="tbx_Valor" IsReadOnly="False" FontSize="15" TextChanged="numericTextChanged"/>
                     
                 </StackPanel>
 

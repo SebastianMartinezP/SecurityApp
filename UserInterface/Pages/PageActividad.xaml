@@ -152,7 +152,7 @@
 
                 <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" Margin="5" VerticalAlignment="Top">
                     <Label FontSize="15">Cantidad de asistentes</Label>
-                    <TextBox x:Name="tbx_Cantidadasistente" IsReadOnly="False" FontSize="15"/>
+                    <TextBox x:Name="tbx_Cantidadasistente" IsReadOnly="False" FontSize="15" TextChanged="numericTextChanged"/>
                     <Label FontSize="15">Fecha del registro</Label>
                     <TextBox x:Name="tbx_Fecharegistro" IsReadOnly="True" FontSize="15" IsEnabled="False"/>
                     <Label FontSize="15">Tipo Actividad</Label>

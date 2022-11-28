@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Business;
+using Business.Util;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -56,7 +57,8 @@ namespace UserInterface.Pages
         {
             try
             {
-                List<Business.DTO.TipoActividad>? tipoActividadList = Business.DTO.TipoActividad.ReadAll();
+                List<Business.DTO.TipoActividad>? tipoActividadList = 
+                    Business.DTO.TipoActividad.ReadAll();
                 cb_Tipoactividad.ItemsSource = tipoActividadList?.Select(p => p.Descripcion);
 
             }
@@ -67,7 +69,39 @@ namespace UserInterface.Pages
         }
 
 
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
+        }
+
         private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
+
+
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool descripcion = ValidationHandler.ValidateString(tbx_Descripcion.Text);
+                bool asistentes = ValidationHandler.ValidateString(tbx_Cantidadasistente.Text);
+                bool rutProfesional = ValidationHandler.ValidateRut(tbx_Rutprofesional.Text);
+                bool rutCliente = ValidationHandler.ValidateRut(tbx_Rutcliente.Text);
+                bool direccion = ValidationHandler.ValidateString(tbx_Direccion.Text);
+                bool checklist = ValidationHandler.ValidateString(tbx_Checklist.Text);
+                
+                return 
+                    descripcion 
+                    && asistentes 
+                    && rutProfesional 
+                    && rutCliente 
+                    && direccion 
+                    && checklist;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -119,12 +153,14 @@ namespace UserInterface.Pages
                 tbx_Cantidadasistente.Text = selected.Cantidadasistente.ToString();
                 tbx_Fecharegistro.Text = selected.Fecharegistro?.ToString("dd-MM-yyyy");
 
-                cb_Tipoactividad.SelectedItem = Business.DTO.TipoActividad.Read((int)selected.Idtipoactividad).Descripcion;
+                cb_Tipoactividad.SelectedItem = 
+                    Business.DTO.TipoActividad.Read((int)selected.Idtipoactividad).Descripcion;
                 tbx_Rutcliente.Text = selected.Rutcliente.ToString();
                 tbx_Rutprofesional.Text = selected.Rutprofesional.ToString();
                 if (selected.Idcheck != null)
                 {
-                    tbx_Checklist.Text = Business.DTO.CheckList.Read((int)selected.Idcheck).Descripcion;
+                    tbx_Checklist.Text = 
+                        Business.DTO.CheckList.Read((int)selected.Idcheck).Descripcion;
                 }
                 
 
@@ -146,7 +182,8 @@ namespace UserInterface.Pages
         }
 
 
-        private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        private void datagrid_SelectedCellsChanged(object sender, 
+            SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Actividad)datagrid.SelectedItem;
 
@@ -170,35 +207,48 @@ namespace UserInterface.Pages
                 Fechatermino = (dtp_Fechatermino.SelectedDate ?? new DateTime(1999,01,01)),
                 Horainicio = (tp_Horainicio.SelectedDateTime ?? new DateTime(1999,01,01)),
                 Horatermino = (tp_Horatermino.SelectedDateTime ?? new DateTime(1999,01,01)),
-                Idtipoactividad = Business.DTO.TipoActividad.Read(cb_Tipoactividad.SelectedItem.ToString()).Idtipoactividad,
+                Idtipoactividad = 
+                Business.DTO.TipoActividad
+                .Read(cb_Tipoactividad.SelectedItem.ToString()).Idtipoactividad,
                 Rutprofesional = tbx_Rutprofesional.Text,
             };
 
-            newData.Idcheck = tbx_Checklist.Text != null ? Business.DTO.CheckList.Read(tbx_Checklist.Text).Idcheck : null;
+            newData.Idcheck = 
+                tbx_Checklist.Text != null ? 
+                Business.DTO.CheckList.Read(tbx_Checklist.Text).Idcheck : null;
 
             #region Guardar
 
             if (FlyoutMode.Equals("Add"))
             {
-                newData.Rutcliente = tbx_Rutcliente.Text;
-
-                bool? result = Business.DTO.Actividad.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Actividad Guardada", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", 
+                        "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    newData.Rutcliente = tbx_Rutcliente.Text;
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Actividad no guardada",
-                            "Esta actividad ya existe en el sistema.");
-                        break;
+                    bool? result = Business.DTO.Actividad.Create(newData);
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error",
-                            "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Actividad Guardada", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Actividad no guardada",
+                                "Esta actividad ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error",
+                                "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
 
@@ -208,34 +258,40 @@ namespace UserInterface.Pages
 
             else
             {
-                newData.Idactividad = decimal.Parse(tbx_Idactividad.Text);
-
-                bool? result = Business.DTO.Actividad.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Actividad Actualizada", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", 
+                        "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    newData.Idactividad = decimal.Parse(tbx_Idactividad.Text);
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Actividad no actualizada",
-                            "Esta actividad no existe en el sistema.");
-                        break;
+                    bool? result = Business.DTO.Actividad.Update(newData);
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error",
-                            "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Actividad Actualizada", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Actividad no actualizada",
+                                "Esta actividad no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error",
+                                "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
 
             #endregion
 
             SetupDatagrid();
-
-            Flyout.IsOpen = false;
-
         }
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;

@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+
+using Business.Util;
 
 namespace UserInterface.Pages
 {
@@ -56,6 +59,26 @@ namespace UserInterface.Pages
         }
 
         private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
+
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool correo = ValidationHandler.ValidateEmail(tbx_Correo.Text);
+                bool rutCliente = ValidationHandler.ValidateRut(tbx_RutCliente.Text);
+                bool rutProfesional = ValidationHandler.ValidateRut(tbx_RutProfesional.Text);
+                bool contrasena = ValidationHandler.ValidateString(tbx_ContrasenaHashed.Text);
+
+                bool ruts = rutCliente || rutProfesional;
+
+                return correo && ruts && contrasena;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -158,24 +181,30 @@ namespace UserInterface.Pages
 
             if (FlyoutMode.Equals("Add"))
             {
-                bool? result = Business.DTO.Usuario.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Usuario Guardado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Usuario no guardado", "Este usuario ya existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.Usuario.Create(newData);
 
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Usuario Guardado", "");
+                            break;
 
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Usuario no guardado", "Este usuario ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
             }
 
             #endregion
@@ -186,29 +215,37 @@ namespace UserInterface.Pages
             {
                 newData.Idusuario = decimal.Parse(tbx_IdUsuario.Text);
 
-                bool? result = Business.DTO.Usuario.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Usuario Actualizado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Usuario no actualizado", "Este usuario no existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.Usuario.Update(newData);
+
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Usuario Actualizado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Usuario no actualizado", "Este usuario no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
+                
             }
 
             #endregion
 
 
             SetupDatagrid();
-            Flyout.IsOpen = false;
 
         }
 

@@ -84,6 +84,28 @@ namespace UserInterface.Pages
             }
         }
 
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
+        }
+
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool rutCliente = ValidationHandler.ValidateRut(tbx_Rutcliente.Text);
+                bool descripcion = ValidationHandler.ValidateString(tbx_Descripcion.Text);
+                bool valor = ValidationHandler.ValidateString(tbx_Valor.Text);
+
+                return rutCliente && descripcion && valor;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void Add(object sender, RoutedEventArgs e)
@@ -165,23 +187,31 @@ namespace UserInterface.Pages
 
             if (FlyoutMode.Equals("Add"))
             {
-                bool? result = Business.DTO.Contrato.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Contrato Guardado", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    bool? result = Business.DTO.Contrato.Create(newData);
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Contrato no guardado", 
-                            "Este contrato ya existe en el sistema.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Contrato Guardado", "");
+                            break;
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", 
-                            "Parece que algo salió mal, reintente por favor.");
-                        break;
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Contrato no guardado",
+                                "Este contrato ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error",
+                                "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
 
@@ -191,34 +221,38 @@ namespace UserInterface.Pages
 
             else
             {
-                newData.Idcontrato = decimal.Parse(tbx_Idcontrato.Text);
-
-                bool? result = Business.DTO.Contrato.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Contrato Actualizado", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    newData.Idcontrato = decimal.Parse(tbx_Idcontrato.Text);
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Contrato no actualizado", 
-                            "Este contrato no existe en el sistema.");
-                        break;
+                    bool? result = Business.DTO.Contrato.Update(newData);
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error",
-                            "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Contrato Actualizado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Contrato no actualizado",
+                                "Este contrato no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error",
+                                "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
-
             #endregion
 
             SetupDatagrid();
-
-            Flyout.IsOpen = false;
-
         }
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;

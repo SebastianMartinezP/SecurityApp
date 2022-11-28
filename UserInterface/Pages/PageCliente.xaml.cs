@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Business;
+using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
@@ -64,6 +64,27 @@ namespace UserInterface.Pages
             catch (Exception e)
             {
                 await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
+
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
+        }
+
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool rutCliente = ValidationHandler.ValidateRut(tbx_Rutcliente.Text);
+                bool razonSocial = ValidationHandler.ValidateString(tbx_Razonsocial.Text);
+
+                return rutCliente && razonSocial;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
@@ -160,24 +181,30 @@ namespace UserInterface.Pages
 
             if (FlyoutMode.Equals("Add"))
             {
-                bool? result = Business.DTO.Cliente.Create(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Cliente Guardado", "");
-                        break;
-
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Cliente no guardado", "Este cliente ya existe en el sistema.");
-                        break;
-
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
+                else
+                {
+                    bool? result = Business.DTO.Cliente.Create(newData);
 
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Cliente Guardado", "");
+                            break;
 
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Cliente no guardado", "Este cliente ya existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
+                }
             }
 
             #endregion
@@ -186,32 +213,36 @@ namespace UserInterface.Pages
 
             else
             {
-                newData.Rutcliente = tbx_Rutcliente.Text;
-
-                bool? result = Business.DTO.Cliente.Update(newData);
-
-                switch (result)
+                if (!ValidateFields())
                 {
-                    case true:
-                        await _mainWindow.ShowMessageAsync("Cliente Actualizado", "");
-                        break;
+                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                }
+                else
+                {
+                    newData.Rutcliente = tbx_Rutcliente.Text;
 
-                    case false:
-                        await _mainWindow.ShowMessageAsync("Cliente no actualizado", "Este cliente no existe en el sistema.");
-                        break;
+                    bool? result = Business.DTO.Cliente.Update(newData);
 
-                    case null:
-                        await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
-                        break;
+                    switch (result)
+                    {
+                        case true:
+                            await _mainWindow.ShowMessageAsync("Cliente Actualizado", "");
+                            break;
+
+                        case false:
+                            await _mainWindow.ShowMessageAsync("Cliente no actualizado", "Este cliente no existe en el sistema.");
+                            break;
+
+                        case null:
+                            await _mainWindow.ShowMessageAsync("Error", "Parece que algo salió mal, reintente por favor.");
+                            break;
+                    }
+                    Flyout.IsOpen = false;
                 }
             }
-
             #endregion
 
-
             SetupDatagrid();
-            Flyout.IsOpen = false;
-
         }
 
 
