@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -72,7 +73,8 @@ namespace UserInterface.Pages
         {
             try
             {
-                List<Business.DTO.Actividad>? actividades = Business.DTO.Actividad.ReadAll();
+                List<Business.DTO.Actividad>? actividades = 
+                    Business.DTO.Actividad.ReadAll();
                 cb_Actividad.ItemsSource = actividades?.Select(a => a.Descripcion);
 
                 List<Business.DTO.Pago>? pagos = Business.DTO.Pago.ReadAll();
@@ -82,12 +84,6 @@ namespace UserInterface.Pages
             {
                 await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
             }
-        }
-
-        private void numericTextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
         }
 
         private bool ValidateFields()
@@ -104,6 +100,47 @@ namespace UserInterface.Pages
             {
                 return false;
             }
+        }
+
+
+
+
+        #region Events
+
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                // si hay texto con numero que filtre todos los campos con numeros
+                if (Regex.IsMatch(tb.Text, @"[\d]"))
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        (d.Rutcliente ?? "").Contains(tb.Text)
+                        || d.Valor.ToString().Contains(tb.Text)
+                        || d.Descripcion.Contains(tb.Text));
+                }
+                // si no hay numeros solo filtra campos de texto
+                else
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Descripcion.Contains(tb.Text));
+                }
+                datagrid.Items.Refresh();
+            }
+        }
+
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex
+                .Replace(tb.Text, @"[^\d]", "");
         }
 
         private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
@@ -160,16 +197,11 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
-
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Contrato)datagrid.SelectedItem;
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
-
-
-
-        #region Botones Aceptar / Cancelar
 
         private async void Save(object sender, RoutedEventArgs e)
         {
@@ -180,7 +212,8 @@ namespace UserInterface.Pages
                 Valor = decimal.Parse(tbx_Valor.Text),
                 Rutcliente = tbx_Rutcliente.Text,
                 Vigente = (dtp_Vigente.IsChecked ?? false) ? "1" : "0",
-                Idactividad = Business.DTO.Actividad.Read(cb_Actividad.SelectedItem.ToString()).Idactividad,
+                Idactividad = 
+                Business.DTO.Actividad.Read(cb_Actividad.SelectedItem.ToString()).Idactividad,
             };
 
             #region Guardar
@@ -189,7 +222,8 @@ namespace UserInterface.Pages
             {
                 if (!ValidateFields())
                 {
-                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                    await _mainWindow.ShowMessageAsync("Alerta", 
+                        "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
                 else
                 {
@@ -223,7 +257,8 @@ namespace UserInterface.Pages
             {
                 if (!ValidateFields())
                 {
-                    await _mainWindow.ShowMessageAsync("Alerta", "Hay datos faltantes, por favor ingrese nuevamente.");
+                    await _mainWindow.ShowMessageAsync("Alerta", 
+                        "Hay datos faltantes, por favor ingrese nuevamente.");
                 }
                 else
                 {
@@ -258,6 +293,7 @@ namespace UserInterface.Pages
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
 
         #endregion
+
 
 
 

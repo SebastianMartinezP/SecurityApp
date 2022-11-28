@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-
 using Business.Util;
+using System.Text.RegularExpressions;
 
 namespace UserInterface.Pages
 {
-    /// <summary>
-    /// Interaction logic for PageUsuario.xaml
-    /// </summary>
     public partial class PageUsuario : Page
     {
         public MainWindow _mainWindow { get; set; }
@@ -58,8 +53,6 @@ namespace UserInterface.Pages
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
-
         private bool ValidateFields()
         {
             try
@@ -79,6 +72,9 @@ namespace UserInterface.Pages
             }
         }
 
+
+
+        #region Events
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -154,6 +150,7 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
+        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
@@ -161,9 +158,38 @@ namespace UserInterface.Pages
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
 
-
-
-        #region Botones Aceptar / Cancelar
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                // si hay texto con numero que filtre todos los campos con numeros
+                if (Regex.IsMatch(tb.Text, @"[\d]"))
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        (d.Rutcliente ?? "").Contains(tb.Text) 
+                        || (d.Rutprofesional ?? "").Contains(tb.Text)
+                        || d.Correo.Contains(tb.Text)
+                        || d.Contrasenahashed.Contains(tb.Text)
+                    );
+                }
+                // si no hay numeros solo filtra campos de texto
+                else
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Correo.Contains(tb.Text)
+                        || d.Contrasenahashed.Contains(tb.Text)
+                    );
+                }
+                datagrid.Items.Refresh();
+            }
+        }
 
         private async void Save(object sender, RoutedEventArgs e)
         {
@@ -176,7 +202,7 @@ namespace UserInterface.Pages
                 Ishabilitado = (dtp_IsHabilitado.IsChecked ?? false) ? "1" : "0",
                 Idperfil = Business.DTO.PerfilUsuario.Read(cb_Perfil.SelectedItem.ToString()).Idperfil
             };
-            
+
             #region Guardar
 
             if (FlyoutMode.Equals("Add"))
@@ -239,7 +265,7 @@ namespace UserInterface.Pages
                     }
                     Flyout.IsOpen = false;
                 }
-                
+
             }
 
             #endregion
@@ -249,11 +275,8 @@ namespace UserInterface.Pages
 
         }
 
-
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
-
-        #endregion  
-
-
+        
+        #endregion
     }
 }

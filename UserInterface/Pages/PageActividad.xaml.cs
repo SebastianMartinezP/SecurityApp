@@ -1,28 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using Business;
 using Business.Util;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
 {
-    /// <summary>
-    /// Interaction logic for PageActividad.xaml
-    /// </summary>
     public partial class PageActividad : Page
     {
         public MainWindow _mainWindow { get; set; }
@@ -68,16 +55,6 @@ namespace UserInterface.Pages
             }
         }
 
-
-        private void numericTextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
-        }
-
-        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
-
-
         private bool ValidateFields()
         {
             try
@@ -88,13 +65,13 @@ namespace UserInterface.Pages
                 bool rutCliente = ValidationHandler.ValidateRut(tbx_Rutcliente.Text);
                 bool direccion = ValidationHandler.ValidateString(tbx_Direccion.Text);
                 bool checklist = ValidationHandler.ValidateString(tbx_Checklist.Text);
-                
-                return 
-                    descripcion 
-                    && asistentes 
-                    && rutProfesional 
-                    && rutCliente 
-                    && direccion 
+
+                return
+                    descripcion
+                    && asistentes
+                    && rutProfesional
+                    && rutCliente
+                    && direccion
                     && checklist;
             }
             catch (Exception)
@@ -102,6 +79,54 @@ namespace UserInterface.Pages
                 return false;
             }
         }
+
+
+
+
+        #region Events
+
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                // si hay texto con numero que filtre todos los campos con numeros
+                if (Regex.IsMatch(tb.Text, @"[\d]"))
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Rutcliente.Contains(tb.Text)
+                        || d.Descripcion.Contains(tb.Text)
+                        || (d.Direccion ?? "").Contains(tb.Text)
+                        || (d.Cantidadasistente.ToString() ?? "").Contains(tb.Text)
+                        || (d.Rutprofesional ?? "").Contains(tb.Text)
+                        || (d.Idcheck.ToString() ?? "").Contains(tb.Text)
+                    );
+                }
+                // si no hay numeros solo filtra campos de texto
+                else
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Descripcion.Contains(tb.Text)
+                        || (d.Direccion ?? "").Contains(tb.Text)
+                    );
+                }
+                datagrid.Items.Refresh();
+            }
+        }
+
+        private void numericTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -181,18 +206,12 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
-
-        private void datagrid_SelectedCellsChanged(object sender, 
-            SelectedCellsChangedEventArgs e)
+        private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Actividad)datagrid.SelectedItem;
 
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
-
-
-
-        #region Botones Aceptar / Cancelar
 
         private async void Save(object sender, RoutedEventArgs e)
         {

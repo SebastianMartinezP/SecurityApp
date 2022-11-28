@@ -1,27 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using Business;
 using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
 {
-    /// <summary>
-    /// Interaction logic for PageCheckList.xaml
-    /// </summary>
     public partial class PageCheckList : Page
     {
         public MainWindow _mainWindow { get; set; }
@@ -48,6 +35,42 @@ namespace UserInterface.Pages
             catch (Exception e)
             {
                 await _mainWindow.ShowMessageAsync("Error Interno", e.Message);
+            }
+        }
+
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool descripcion = ValidationHandler.ValidateString(tbx_Descripcion.Text);
+
+                return descripcion;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
+
+        #region Events
+
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                datagrid.DataContext = data?.Where(d =>
+                        d.Descripcion.Contains(tb.Text));
+                datagrid.Items.Refresh();
             }
         }
 
@@ -107,31 +130,12 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
-
-        private bool ValidateFields()
-        {
-            try
-            {
-                bool descripcion = ValidationHandler.ValidateString(tbx_Descripcion.Text);
-
-                return descripcion;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.CheckList)datagrid.SelectedItem;
 
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
-
-
-
-        #region Botones Aceptar / Cancelar
 
         private async void Save(object sender, RoutedEventArgs e)
         {

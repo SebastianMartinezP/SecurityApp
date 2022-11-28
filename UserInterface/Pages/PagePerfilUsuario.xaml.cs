@@ -1,28 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-
-using Business;
 using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace UserInterface.Pages
 {
-    /// <summary>
-    /// Interaction logic for PagePerfilUsuario.xaml
-    /// </summary>
     public partial class PagePerfilUsuario : Page
     {
         public MainWindow _mainWindow { get; set; }
@@ -38,7 +23,6 @@ namespace UserInterface.Pages
             SetupDatagrid();
             _mainWindow = mainWindow;
         }
-
 
         public async void SetupDatagrid()
         {
@@ -68,7 +52,29 @@ namespace UserInterface.Pages
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)  => SetupDatagrid();
+
+
+        #region Events
+
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                datagrid.DataContext = data?.Where(d =>
+                    d.Descripcion.Contains(tb.Text));
+                
+                datagrid.Items.Refresh();
+            }
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -115,17 +121,12 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
-
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.PerfilUsuario)datagrid.SelectedItem;
 
             btn_edit.IsEnabled = datagrid.SelectedItem != null ? true : false;
         }
-
-
-
-        #region Botones Aceptar / Cancelar
 
         private async void Save(object sender, RoutedEventArgs e)
         {
@@ -201,7 +202,6 @@ namespace UserInterface.Pages
             #endregion
             SetupDatagrid();
         }
-
 
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
 

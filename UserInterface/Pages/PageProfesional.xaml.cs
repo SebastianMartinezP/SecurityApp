@@ -1,28 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Text.RegularExpressions;
-
 using Business.Util;
 using MahApps.Metro.Controls.Dialogs;
-using ControlzEx.Standard;
 
 namespace UserInterface.Pages
 {
-    /// <summary>
-    /// Interaction logic for PageProfesional.xaml
-    /// </summary>
     public partial class PageProfesional : Page
     {
         public MainWindow _mainWindow { get; set; }
@@ -39,7 +25,6 @@ namespace UserInterface.Pages
             _mainWindow = mainWindow;
         }
 
-
         public async void SetupDatagrid()
         {
             try
@@ -54,7 +39,68 @@ namespace UserInterface.Pages
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)  => SetupDatagrid();
+        private bool ValidateFields()
+        {
+            try
+            {
+                bool rutProfesional = ValidationHandler.ValidateRut(tbx_Rutprofesional.Text);
+                bool pNombre = ValidationHandler.ValidateString(tbx_Primernombre.Text);
+                //bool sNombre = ValidationHandler.ValidateString(tbx_Segundonombre.Text);
+                bool pApellido = ValidationHandler.ValidateString(tbx_Primerapellido.Text);
+                bool sApellido = ValidationHandler.ValidateString(tbx_Segundoapellido.Text);
+                bool numeroContacto = ValidationHandler.ValidateString(tbx_Numerocontacto.Text);
+                
+                return rutProfesional && pNombre && pApellido && sApellido && numeroContacto;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
+        #region Events
+
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            // si no hay texto solo asignar la data
+            if (tb.Text.Length == 0)
+            {
+                datagrid.DataContext = data;
+                datagrid.Items.Refresh();
+            }
+            else
+            {
+                // si hay texto con numero que filtre todos los campos con numeros
+                if (Regex.IsMatch(tb.Text, @"[\d]"))
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Rutprofesional.Contains(tb.Text)
+                        || d.Primernombre.Contains(tb.Text)
+                        || (d.Segundonombre ?? "").Contains(tb.Text)
+                        || d.Primerapellido.Contains(tb.Text)
+                        || d.Segundoapellido.Contains(tb.Text)
+                        || d.Numerocontacto.Contains(tb.Text)
+                    );
+                }
+                // si no hay numeros solo filtra campos de texto
+                else
+                {
+                    datagrid.DataContext = data?.Where(d =>
+                        d.Rutprofesional.Contains(tb.Text)
+                        || d.Primernombre.Contains(tb.Text)
+                        || (d.Segundonombre ?? "").Contains(tb.Text)
+                        || d.Primerapellido.Contains(tb.Text)
+                        || d.Segundoapellido.Contains(tb.Text)
+                    );
+                }
+                datagrid.Items.Refresh();
+            }
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e) => SetupDatagrid();
 
         private void Add(object sender, RoutedEventArgs e)
         {
@@ -132,7 +178,6 @@ namespace UserInterface.Pages
             Flyout.IsOpen = true;
         }
 
-
         private void datagrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             selected = (Business.DTO.Profesional)datagrid.SelectedItem;
@@ -145,27 +190,6 @@ namespace UserInterface.Pages
             TextBox tb = (TextBox)sender;
             tb.Text = System.Text.RegularExpressions.Regex.Replace(tb.Text, @"[^\d]", "");
         }
-
-        private bool ValidateFields()
-        {
-            try
-            {
-                bool rutProfesional = ValidationHandler.ValidateRut(tbx_Rutprofesional.Text);
-                bool pNombre = ValidationHandler.ValidateString(tbx_Primernombre.Text);
-                //bool sNombre = ValidationHandler.ValidateString(tbx_Segundonombre.Text);
-                bool pApellido = ValidationHandler.ValidateString(tbx_Primerapellido.Text);
-                bool sApellido = ValidationHandler.ValidateString(tbx_Segundoapellido.Text);
-                bool numeroContacto = ValidationHandler.ValidateString(tbx_Numerocontacto.Text);
-                
-                return rutProfesional && pNombre && pApellido && sApellido && numeroContacto;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        #region Botones Aceptar / Cancelar
 
         private async void Save(object sender, RoutedEventArgs e)
         {
@@ -210,7 +234,7 @@ namespace UserInterface.Pages
                     }
                     Flyout.IsOpen = false;
                 }
-                
+
             }
 
             #endregion
@@ -243,23 +267,23 @@ namespace UserInterface.Pages
                     }
                     Flyout.IsOpen = false;
                 }
-                
+
             }
 
             #endregion
 
 
             SetupDatagrid();
-            
+
 
         }
 
-
         private void Cancel(object sender, RoutedEventArgs e) => Flyout.IsOpen = false;
-
 
         #endregion
 
-        
+
+
+
     }
 }
