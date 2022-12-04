@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "06jpxJmDZyhgA81G6fDmvVRaSnBE50RSy17nmuZGfj52SvNzU0Ov1zgbIQHmlPvQVEygfJb5JpZWNSjxXxO2OQ==",
+  "dgSpecHash": "mQAZoKe/bAzW9C9+5qYMxY2ayWiHxE7TC5uuG5agPrRfjo/ZIcxTMyR9OGdWlg4ZXW68nxDNYgq6Ut1nE6pjvg==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,9 @@
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.entityframeworkcore\\6.21.61\\oracle.entityframeworkcore.6.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.61\\oracle.manageddataaccess.core.3.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.compression.base\\20.3.0.59\\syncfusion.compression.base.20.3.0.59.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.licensing\\20.3.0.59\\syncfusion.licensing.20.3.0.59.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.pdf.wpf\\20.3.0.59\\syncfusion.pdf.wpf.20.3.0.59.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\App.xaml
-12807700146
+14-1043080584
 
-16562223806
-2201838058937
-MainWindow.xaml;Pages\LoginWindow.xaml;Pages\PageActividad.xaml;Pages\PageCheckList.xaml;Pages\PageCliente.xaml;Pages\PageContrato.xaml;Pages\PageError.xaml;Pages\PageHome.xaml;Pages\PagePago.xaml;Pages\PagePerfilUsuario.xaml;Pages\PageProfesional.xaml;Pages\PageUsuario.xaml;
+194557423
+223956359957
+MainWindow.xaml;Pages\LoginWindow.xaml;Pages\PageActividad.xaml;Pages\PageCheckList.xaml;Pages\PageCliente.xaml;Pages\PageContrato.xaml;Pages\PageError.xaml;Pages\PageHome.xaml;Pages\PagePago.xaml;Pages\PagePerfilUsuario.xaml;Pages\PageProfesional.xaml;Pages\PageReporte.xaml;Pages\PageReporteGeneral.xaml;Pages\PageUsuario.xaml;
 
-True
+False
 

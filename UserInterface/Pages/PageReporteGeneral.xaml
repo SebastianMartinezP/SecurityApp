@@ -1,0 +1,173 @@
+﻿<Page x:Class="UserInterface.Pages.PageReporteGeneral"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:local="clr-namespace:UserInterface.Pages"
+      
+      
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+
+      Style="{DynamicResource MahApps.Styles.Page}"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="1500" d:DesignWidth="1000"
+      Title="PageReporte"
+      Background="Transparent">
+
+    
+    <Grid x:Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="10"
+            Orientation="Vertical">
+            <Label 
+                FontSize="20"
+                HorizontalAlignment="Center"
+                FontWeight="Light">
+                Reportes Mensuales
+            </Label>
+
+            <Label 
+                Margin="0, 30, 0, 10"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                FontWeight="Light">
+               Contratos
+            </Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <mah:Tile Margin="0,0,5,0" IsEnabled="False" Width="180">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="FileEarmark" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                            <Label x:Name="lb_CountTotal" 
+                               Content="130" Foreground="WhiteSmoke" 
+                               FontSize="40" HorizontalContentAlignment="Left"/>
+                        </StackPanel>
+                        <Label
+                            Content="Total"
+                            Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </mah:Tile>
+
+                <mah:Tile Margin="0,0,5,0" IsEnabled="False" Width="180">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="ExclamationSquareFill" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                            <Label x:Name="lb_CountPorCaducar" 
+                               Content="21" Foreground="WhiteSmoke" 
+                               FontSize="40" HorizontalContentAlignment="Left"/>
+                        </StackPanel>
+                        <Label
+                            Content="Por caducar"
+                            Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </mah:Tile>
+
+                <mah:Tile Margin="0,0,5,0" IsEnabled="False" Width="180">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <iconPacks:PackIconBootstrapIcons 
+                                Width="35" Height="35"  Margin="0,5,5,0"
+                                Kind="Check2Square" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                            <Label x:Name="lb_CountVigentes" 
+                               Content="21" Foreground="WhiteSmoke" 
+                               FontSize="40" HorizontalContentAlignment="Left"/>
+                        </StackPanel>
+                        <Label
+                            Content="Vigentes"
+                            Foreground="WhiteSmoke" FontSize="20" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </mah:Tile>
+                
+                
+            </StackPanel>
+            
+            <Button 
+                Margin="0,30,0,30"
+                Name="btn_GenerarReporteGeneralPDF"
+                Width="200"
+                Height="50"
+                Click="btn_GenerarReporteGeneralPDF_Click">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <iconPacks:PackIconBootstrapIcons 
+                                Width="30" Height="30"  Margin="0,5,5,0"
+                                Kind="FileEarmarkPdf" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                    <Label
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Light"
+                        >Generar Reporte</Label>
+                </StackPanel>
+            </Button>
+            
+            <Label
+                FontSize="20"
+                Margin="0,30,0,10"
+                HorizontalAlignment="Center"
+                FontWeight="Light">
+                Reportes por Cliente
+            </Label>
+
+            <DataGrid
+                x:Name="datagrid"
+                ItemsSource="{Binding}" 
+                Margin="5"
+                FontSize="12" FontWeight="Thin" Foreground="#FFC3C3C3"
+                SelectionMode="Single"
+                Height="500"
+                IsReadOnly="True"
+                SelectedCellsChanged="datagrid_SelectedCellsChanged">
+            </DataGrid>
+
+            <Button 
+                Margin="0,30,0,30"
+                Name="btn_GenerarReporteClientePDF"
+                Width="200"
+                Height="50"
+                IsEnabled="False"
+                Click="btn_GenerarReporteClientePDF_Click">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <iconPacks:PackIconBootstrapIcons 
+                                Width="30" Height="30"  Margin="0,5,5,0"
+                                Kind="FileEarmarkPdf" Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"/>
+                    <Label
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Light"
+                        >Generar Reporte</Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</Page>

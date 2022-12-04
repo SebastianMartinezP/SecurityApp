@@ -132,20 +132,6 @@
                 </StackPanel>
             </Button>
 
-            <!--
-            <Button Click="GoToAlertas"  DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
-                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="5,0,10,0">
-                    <StackPanel Width="30">
-                        <iconPacks:PackIconBootstrapIcons 
-                            Width="24" Height="30" 
-                            Kind="ExclamationTriangleFill" Foreground="#FFC3C3C3"/>
-                    </StackPanel>
-                    <Label FontSize="16" Foreground="#FFC3C3C3" FontWeight="Normal">Alertas</Label>
-                </StackPanel>
-            </Button>
-            -->
-            
             <Button Click="GoToChecklists"  DockPanel.Dock="Top" BorderBrush="#FF26292B" Background="#FF26292B" Height="50"
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}" HorizontalContentAlignment="Left">
                 <StackPanel Orientation="Horizontal" Margin="5,0,10,0">

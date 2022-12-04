@@ -22,6 +22,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Pdf.Wpf" Version="20.3.0.59" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +45,12 @@
     <Compile Update="Pages\PageError.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PageReporte.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageReporteGeneral.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PagePerfilUsuario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +61,14 @@
 
   <ItemGroup>
     <Page Update="Pages\PageError.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageReporte.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageReporteGeneral.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

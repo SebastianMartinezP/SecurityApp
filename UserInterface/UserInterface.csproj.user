@@ -57,6 +57,12 @@
     <Page Update="Pages\PageContrato.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\PageReporte.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageReporteGeneral.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\PagePago.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -46,6 +46,7 @@ namespace UserInterface
                 new PagePerfilUsuario(this),
                 new PageProfesional(this),
                 new PageUsuario(this),
+                new PageReporte(this),
             };
             windowFrame.Content = GoTo<PageHome>();
 
@@ -69,6 +70,7 @@ namespace UserInterface
                 new PagePerfilUsuario(this),
                 new PageProfesional(this),
                 new PageUsuario(this),
+                new PageReporte(this),
             };
             windowFrame.Content = GoTo<PageHome>();
 
@@ -95,7 +97,7 @@ namespace UserInterface
         private void GoToPagos(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PagePago>();
         private void GoToAlertas(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageError>();
         private void GoToChecklists(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageCheckList>();
-        private void GoToReportes(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageError>();
+        private void GoToReportes(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageReporte>();
         private void GoToUsuarios(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PageUsuario>();
         private void GoToPerfilesDeUsuario(object sender, RoutedEventArgs e) => windowFrame.Content = GoTo<PagePerfilUsuario>();
 

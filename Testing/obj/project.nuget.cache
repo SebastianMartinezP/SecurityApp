@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kiVNAMXSid3cgqWMy4iii/c4dgWP8HaZJ8zKfk9IbDAugLI6Jp5GVVnFPblL8Vzo7QDIh5hL6krMiU9NsoJ6aA==",
+  "dgSpecHash": "Ly9kRbfy7rz0Q6cSuwx7RGW/YPQwvAUOwbW1wX6xzAlRLbKKe8rTkpBEFoFQWKeKzrrx+MJZvMDy3lC/gH+pOg==",
   "success": true,
   "projectFilePath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,9 @@
     "C:\\Users\\Seba\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.61\\oracle.manageddataaccess.core.3.21.61.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\razorlight\\2.0.0-rc.3\\razorlight.2.0.0-rc.3.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.compression.base\\20.3.0.59\\syncfusion.compression.base.20.3.0.59.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.licensing\\20.3.0.59\\syncfusion.licensing.20.3.0.59.nupkg.sha512",
+    "C:\\Users\\Seba\\.nuget\\packages\\syncfusion.pdf.wpf\\20.3.0.59\\syncfusion.pdf.wpf.20.3.0.59.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Seba\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",

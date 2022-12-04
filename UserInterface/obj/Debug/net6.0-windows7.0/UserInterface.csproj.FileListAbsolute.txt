@@ -136,3 +136,10 @@ E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageError.g.cs
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageError.baml
 E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows7.0\RestSharp.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageReporte.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageReporte.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageReporteGeneral.g.cs
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\Pages\PageReporteGeneral.baml
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows7.0\Syncfusion.Compression.Base.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows7.0\Syncfusion.Licensing.dll
+E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\bin\Debug\net6.0-windows7.0\Syncfusion.Pdf.Base.dll
