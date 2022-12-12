@@ -152,10 +152,8 @@
                     
                     <Label FontSize="15">Perfil</Label>
                     <ComboBox x:Name="cb_Perfil" IsReadOnly="True" FontSize="15"/>
-                    <Label FontSize="15">RutCliente</Label>
-                    <TextBox x:Name="tbx_RutCliente" IsReadOnly="True" FontSize="15"/>
-                    <Label FontSize="15">RutProfesional</Label>
-                    <TextBox x:Name="tbx_RutProfesional" IsReadOnly="True" FontSize="15"/>
+                    <Label FontSize="15">Rut</Label>
+                    <TextBox x:Name="tbx_Rut" IsReadOnly="True" FontSize="15"/>
                 </StackPanel>
 
 

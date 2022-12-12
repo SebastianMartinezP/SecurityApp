@@ -58,13 +58,10 @@ namespace UserInterface.Pages
             try
             {
                 bool correo = ValidationHandler.ValidateEmail(tbx_Correo.Text);
-                bool rutCliente = ValidationHandler.ValidateRut(tbx_RutCliente.Text);
-                bool rutProfesional = ValidationHandler.ValidateRut(tbx_RutProfesional.Text);
+                bool rut = ValidationHandler.ValidateRut(tbx_Rut.Text);
                 bool contrasena = ValidationHandler.ValidateString(tbx_ContrasenaHashed.Text);
 
-                bool ruts = rutCliente || rutProfesional;
-
-                return correo && ruts && contrasena;
+                return correo && rut && contrasena;
             }
             catch (Exception)
             {
@@ -84,19 +81,16 @@ namespace UserInterface.Pages
             tbx_Correo.Text = "";
             tbx_ContrasenaHashed.Text = "";
             dtp_IsHabilitado.IsChecked = true;
-            tbx_RutCliente.Text = "";
-            tbx_RutProfesional.Text = "";
+            tbx_Rut.Text = "";
             cb_Perfil.SelectedItem = cb_Perfil.Items[0];
 
             // habilitamos campos clave
 
             tbx_IdUsuario.IsReadOnly = true;
-            tbx_RutCliente.IsReadOnly = false;
-            tbx_RutProfesional.IsReadOnly = false;
+            tbx_Rut.IsReadOnly = false;
 
             tbx_IdUsuario.IsEnabled = false;
-            tbx_RutCliente.IsEnabled = true;
-            tbx_RutProfesional.IsEnabled = true;
+            tbx_Rut.IsEnabled = true;
 
             // disponibilizar los campos
 
@@ -122,20 +116,17 @@ namespace UserInterface.Pages
                 tbx_Correo.Text = selected.Correo.ToString();
                 tbx_ContrasenaHashed.Text = selected.Contrasenahashed.ToString();
                 dtp_IsHabilitado.IsChecked = (selected.Ishabilitado ?? "0").Equals("1");
-                tbx_RutCliente.Text = selected.Rutcliente?.ToString();
-                tbx_RutProfesional.Text = selected.Rutprofesional?.ToString();
+                tbx_Rut.Text = selected.Rutcliente != null? selected.Rutcliente?.ToString() : selected.Rutprofesional?.ToString();
                 cb_Perfil.SelectedItem = Business.DTO.PerfilUsuario.Read((int)selected.Idperfil);
             }
 
             // deshabilitamos campos clave
 
             tbx_IdUsuario.IsReadOnly = true;
-            tbx_RutCliente.IsReadOnly = true;
-            tbx_RutProfesional.IsReadOnly = true;
+            tbx_Rut.IsReadOnly = true;
 
             tbx_IdUsuario.IsEnabled = false;
-            tbx_RutCliente.IsEnabled = false;
-            tbx_RutProfesional.IsEnabled = false;
+            tbx_Rut.IsEnabled = false;
 
             // disponibilizar los campos
 
@@ -193,12 +184,17 @@ namespace UserInterface.Pages
 
         private async void Save(object sender, RoutedEventArgs e)
         {
+            // logica para determinar los ruts a insertar
+            string rutProfesional = cb_Perfil.SelectedItem.ToString().Equals("Cliente") ? null : tbx_Rut.Text;
+            string rutCliente = cb_Perfil.SelectedItem.ToString().Equals("Cliente") ? tbx_Rut.Text : null;
+            
+
             Business.DTO.Usuario newData = new Business.DTO.Usuario()
             {
                 Correo = tbx_Correo.Text,
                 Contrasenahashed = tbx_ContrasenaHashed.Text,
-                Rutcliente = tbx_RutCliente.Text.Equals("") ? null : tbx_RutCliente.Text,
-                Rutprofesional = tbx_RutProfesional.Text.Equals("") ? null : tbx_RutProfesional.Text,
+                Rutcliente = rutCliente,
+                Rutprofesional = rutProfesional,
                 Ishabilitado = (dtp_IsHabilitado.IsChecked ?? false) ? "1" : "0",
                 Idperfil = Business.DTO.PerfilUsuario.Read(cb_Perfil.SelectedItem.ToString()).Idperfil
             };

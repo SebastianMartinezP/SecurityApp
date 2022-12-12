@@ -45,7 +45,6 @@ namespace UserInterface.Pages
             {
                 bool rutProfesional = ValidationHandler.ValidateRut(tbx_Rutprofesional.Text);
                 bool pNombre = ValidationHandler.ValidateString(tbx_Primernombre.Text);
-                //bool sNombre = ValidationHandler.ValidateString(tbx_Segundonombre.Text);
                 bool pApellido = ValidationHandler.ValidateString(tbx_Primerapellido.Text);
                 bool sApellido = ValidationHandler.ValidateString(tbx_Segundoapellido.Text);
                 bool numeroContacto = ValidationHandler.ValidateString(tbx_Numerocontacto.Text);
