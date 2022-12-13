@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\
+C:\SecurityApp\UserInterface\obj\Debug\net6.0-windows7.0\
 UserInterface
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\DUOC\Portafolio\Repositorios\SecurityApp\SecurityApp\UserInterface\App.xaml
+C:\SecurityApp\UserInterface\App.xaml
 14-1043080584
 
 171199737722
-223956359957
+2232136799708
 MainWindow.xaml;Pages\LoginWindow.xaml;Pages\PageActividad.xaml;Pages\PageCheckList.xaml;Pages\PageCliente.xaml;Pages\PageContrato.xaml;Pages\PageError.xaml;Pages\PageHome.xaml;Pages\PagePago.xaml;Pages\PagePerfilUsuario.xaml;Pages\PageProfesional.xaml;Pages\PageReporte.xaml;Pages\PageReporteGeneral.xaml;Pages\PageUsuario.xaml;
 
 False

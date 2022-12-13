@@ -26,3 +26,17 @@ C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\Database\obj\Deb
 C:\Users\Relentless\Source\Repos\SebastianMartinezP\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.pdb
 C:\Users\Relentless\source\repos\SebastianMartinezP\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.genruntimeconfig.cache
 C:\Users\Relentless\source\repos\SebastianMartinezP\SecurityApp\Database\obj\Debug\net6.0-windows7.0\ref\Database.dll
+C:\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.deps.json
+C:\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.runtimeconfig.json
+C:\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.dll
+C:\SecurityApp\Database\bin\Debug\net6.0-windows7.0\Database.pdb
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.csproj.AssemblyReference.cache
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.AssemblyInfoInputs.cache
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.AssemblyInfo.cs
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.csproj.CoreCompileInputs.cache
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.dll
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\refint\Database.dll
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.pdb
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\Database.genruntimeconfig.cache
+C:\SecurityApp\Database\obj\Debug\net6.0-windows7.0\ref\Database.dll

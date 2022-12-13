@@ -11,7 +11,7 @@ namespace Database.Models
         public DateTime Fechacontrato { get; set; }
         public decimal Idpago { get; set; }
         public string Rutcliente { get; set; } = null!;
-        public decimal Idactividad { get; set; }
+        public decimal? Idactividad { get; set; }
         public string Vigente { get; set; } = null!;
         public decimal? Asesoria { get; set; }
         public decimal? Capacitacion { get; set; }

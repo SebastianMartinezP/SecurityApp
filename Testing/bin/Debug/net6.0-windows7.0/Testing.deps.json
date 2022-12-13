@@ -904,6 +904,43 @@
           "lib/net6.0/RestSharp.dll": {}
         }
       },
+      "Syncfusion.Compression.Base/20.3.0.59": {
+        "runtime": {
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "20.3500.0.59",
+            "fileVersion": "20.3500.0.59"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/20.3.0.59": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.3.0.59",
+            "fileVersion": "20.3.0.59"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Wpf/20.3.0.59": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.59",
+          "Syncfusion.Licensing": "20.3.0.59"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "assemblyVersion": "20.3500.0.59",
+            "fileVersion": "20.3500.0.59"
+          }
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {}
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
@@ -1054,7 +1091,8 @@
           "MahApps.Metro": "2.4.9",
           "MahApps.Metro.IconPacks.BootstrapIcons": "4.11.0",
           "MahApps.Metro.IconPacks.FontAwesome": "4.11.0",
-          "Microsoft.EntityFrameworkCore": "6.0.9"
+          "Microsoft.EntityFrameworkCore": "6.0.9",
+          "Syncfusion.Pdf.Wpf": "20.3.0.59"
         },
         "runtime": {
           "UserInterface.dll": {}
@@ -3297,6 +3335,27 @@
       "sha512": "sha512-zI1lzI+Jjzl6bcicyUYfLIGmmOAdJRkYepMnSPzrxd1o9RxztPaR/blUOmY8BpXdN3I+XlK9dtwCYRGCxvaODw==",
       "path": "restsharp/108.0.2",
       "hashPath": "restsharp.108.0.2.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Base/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nS3aZlJ+AV5xthKeQD4b7k7BAXCmQFJ7h62oAwOnF7/Xiskzznff2qFxACUom46dGB4nQ523JHWecR/zYMDZTg==",
+      "path": "syncfusion.compression.base/20.3.0.59",
+      "hashPath": "syncfusion.compression.base.20.3.0.59.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x382oKD8fd5LAq/6lF9FeAXWvWBTgV3wXaisGf0uQbGI+uDv1r7Zciq/E5+GtG6/jU7AjPFnfd2AZnCJkU8ioQ==",
+      "path": "syncfusion.licensing/20.3.0.59",
+      "hashPath": "syncfusion.licensing.20.3.0.59.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Wpf/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w/ICrvXjAgb3ptMAWEJkoyIFJXBUoMW8sMDuon+LSnivE1QKwLxY2jm/ESpVi9ieMnYFQkc8261WWzvQ1F/5zA==",
+      "path": "syncfusion.pdf.wpf/20.3.0.59",
+      "hashPath": "syncfusion.pdf.wpf.20.3.0.59.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

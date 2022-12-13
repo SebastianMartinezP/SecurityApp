@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj": {}
+    "C:\\SecurityApp\\Testing\\Testing.csproj": {}
   },
   "projects": {
-    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
+    "C:\\SecurityApp\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\SecurityApp\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj",
-        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
-        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\obj\\",
+        "projectPath": "C:\\SecurityApp\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\SecurityApp\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+              "C:\\SecurityApp\\Database\\Database.csproj": {
+                "projectPath": "C:\\SecurityApp\\Database\\Database.csproj"
               }
             }
           }
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
+    "C:\\SecurityApp\\Database\\Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj",
+        "projectUniqueName": "C:\\SecurityApp\\Database\\Database.csproj",
         "projectName": "Database",
-        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj",
-        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
-        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\obj\\",
+        "projectPath": "C:\\SecurityApp\\Database\\Database.csproj",
+        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\SecurityApp\\Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,21 +154,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj": {
+    "C:\\SecurityApp\\Testing\\Testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
+        "projectUniqueName": "C:\\SecurityApp\\Testing\\Testing.csproj",
         "projectName": "Testing",
-        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\Testing.csproj",
-        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
-        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Testing\\obj\\",
+        "projectPath": "C:\\SecurityApp\\Testing\\Testing.csproj",
+        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\SecurityApp\\Testing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,14 +182,14 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+              "C:\\SecurityApp\\Business\\Business.csproj": {
+                "projectPath": "C:\\SecurityApp\\Business\\Business.csproj"
               },
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+              "C:\\SecurityApp\\Database\\Database.csproj": {
+                "projectPath": "C:\\SecurityApp\\Database\\Database.csproj"
               },
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj"
+              "C:\\SecurityApp\\UserInterface\\UserInterface.csproj": {
+                "projectPath": "C:\\SecurityApp\\UserInterface\\UserInterface.csproj"
               }
             }
           }
@@ -253,21 +253,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj": {
+    "C:\\SecurityApp\\UserInterface\\UserInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
+        "projectUniqueName": "C:\\SecurityApp\\UserInterface\\UserInterface.csproj",
         "projectName": "UserInterface",
-        "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\UserInterface.csproj",
-        "packagesPath": "C:\\Users\\Seba\\.nuget\\packages\\",
-        "outputPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\UserInterface\\obj\\",
+        "projectPath": "C:\\SecurityApp\\UserInterface\\UserInterface.csproj",
+        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\SecurityApp\\UserInterface\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Seba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -281,11 +281,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Business\\Business.csproj"
+              "C:\\SecurityApp\\Business\\Business.csproj": {
+                "projectPath": "C:\\SecurityApp\\Business\\Business.csproj"
               },
-              "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj": {
-                "projectPath": "E:\\DUOC\\Portafolio\\Repositorios\\SecurityApp\\SecurityApp\\Database\\Database.csproj"
+              "C:\\SecurityApp\\Database\\Database.csproj": {
+                "projectPath": "C:\\SecurityApp\\Database\\Database.csproj"
               }
             }
           }
@@ -350,7 +350,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
